@@ -36,6 +36,11 @@ h1,h2,h3,h4,h5,h6{color:#1a2b3c;margin-top:.8em;margin-bottom:.4em}
 .research-links li{margin-bottom:8px}
 .research-links a{color:#1a4d6e;font-weight:500}
 
+/* Dark red only for "New Research" heading */
+.research-section h2 {
+  color: #8B0000;
+}
+
 /* Dark red section */
 .research-section{color:#8B0000}
 .research-section a{color:#8B0000;font-weight:500}
