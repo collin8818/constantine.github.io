@@ -54,7 +54,7 @@ img,video{max-width:100%;height:auto}
 /* Prevent sideways scroll */
 html,body{overflow-x:hidden}
 
-/* --- Inline links (CSS separators on desktop) --- */
+/* --- Inline links (desktop with separators) --- */
 .inline-links{white-space:nowrap}
 .inline-links a{margin:0 6px;position:relative}
 .inline-links a + a::before{content:" | ";margin:0 .35rem;color:#6b7280}
@@ -81,17 +81,18 @@ html,body{overflow-x:hidden}
     -webkit-hyphens:auto;hyphens:auto;
   }
 
-  /* Inline links: 2 + 2 grid on phones; hide separators */
+  /* Inline links: stack vertically on phones; hide separators */
   .inline-links{
-    display:grid;
-    grid-template-columns:repeat(2,auto);
-    gap:6px 12px;
+    display:block;
     white-space:normal;
-    justify-content:start;
   }
-  .inline-links a{margin:0}
+  .inline-links a{
+    display:block;
+    margin:6px 0;
+  }
   .inline-links a::before{content:none !important}
 }
 
 /* Footer tone */
 footer{color:#555;font-size:.9rem}
+
