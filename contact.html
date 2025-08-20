@@ -1,1 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - Collin M. Constantine</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Contact Collin Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge.">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="site-title">
+        <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin Constantine</a>
+      </div>
+      <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/teaching.html">Teaching</a>
+        <a href="/contact.html" aria-current="page">Contact</a>
+        <a href="/cv.pdf" class="button">CV</a>
+      </nav>
+    </header>
 
+    <!-- Page title -->
+    <section class="hero">
+      <h1 style="font-size:1.6rem; margin:0 0 6px 0;">Contact</h1>
+      <p style="margin:0; color:var(--muted)">Reach me at Girton College or by email.</p>
+    </section>
+
+    <!-- Contact details -->
+    <div class="card">
+      <h2>Address</h2>
+      <p>
+        Girton College<br>
+        Huntingdon Road<br>
+        Cambridge CB3 0JG<br>
+        United Kingdom
+      </p>
+      <h2>Email</h2>
+      <p>
+        <a href="mailto:cc2082@cam.ac.uk">cc2082@cam.ac.uk</a>
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>
+        © <span id="y"></span> Collin Constantine · All views my own ·
+        <a href="https://collinconstantine.com">collinconstantine.com</a>
+      </div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    </footer>
+  </div>
+
+  <!-- Mobile nav script -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('site-nav');
+    if (btn && nav) {
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>
