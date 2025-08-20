@@ -1,11 +1,10 @@
-
 :root{--bg:#ffffff;--fg:#111111;--muted:#6b7280;--link:#1a4d6e;--accent:#111111;}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
-
 a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline}
 
+/* Layout */
 .container{max-width:920px;margin:0 auto;padding:32px 20px}
 .header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .site-title{font-size:28px;font-weight:700;letter-spacing:.2px}
@@ -13,7 +12,7 @@ a:hover{text-decoration:underline}
 .hero{margin:28px 0 18px 0}
 .hero h1{font-size:30px;margin:0 0 8px 0}
 .hero p{color:var(--muted);margin:0}
-.card{border:1px solid #e5e7eb;border-radius:14px;padding:18px 18px;margin:14px 0;background:#fff}
+.card{border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0;background:#fff}
 .card h2{font-size:20px;margin:0 0 8px 0}
 .list{margin:0;padding-left:18px}
 .footer{margin-top:36px;padding-top:18px;border-top:1px solid #e5e7eb;color:var(--muted);font-size:14px}
@@ -23,17 +22,17 @@ a:hover{text-decoration:underline}
 ul.clean{list-style:none;padding-left:0;margin:0}
 h2.section{margin-top:26px}
 
-/* two-column layout only on wide screens */
+/* Two-column only on wide screens */
 @media (min-width:800px){
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 }
 
-/* --- Muted navy palette --- */
+/* Palette */
 body{color:#1a2b3c;background-color:#ffffff}
 h1,h2,h3,h4,h5,h6{color:#1a2b3c;margin-top:.8em;margin-bottom:.4em}
 
 /* Research links (simple list) */
-.research-links{list-style:none;padding:0;margin:0;overflow-x:auto;white-space:nowrap}
+.research-links{list-style:none;padding:0;margin:0}
 .research-links li{margin-bottom:8px}
 .research-links a{color:#1a4d6e;font-weight:500}
 
@@ -41,38 +40,41 @@ h1,h2,h3,h4,h5,h6{color:#1a2b3c;margin-top:.8em;margin-bottom:.4em}
 .research-section{color:#8B0000}
 .research-section a{color:#8B0000;font-weight:500}
 
-/* Mobile-first improvements */
+/* Media elements */
 img,video{max-width:100%;height:auto}
 
-/* Header menu button */
+/* Mobile menu button */
 #menu-btn{
   display:none;border:1px solid #e5e7eb;background:#fff;border-radius:10px;
   padding:8px 12px;font-size:16px;line-height:1;cursor:pointer
 }
 
-/* Larger tap targets */
+/* Bigger tap targets */
 .nav a,.button,.pill{padding:8px 12px}
 
-/* Container spacing on small screens */
-.container{padding:24px 16px}
+/* Prevent sideways scroll */
+html,body{overflow-x:hidden}
 
-/* Type scale on mobile */
-h1{font-size:1.6rem}
-h2{font-size:1.3rem}
-.hero p{margin-top:4px}
-
-/* Card spacing */
-.card{padding:16px 16px;border-radius:12px}
-
-/* Mobile nav: collapsed by default */
+/* Mobile tweaks */
 @media (max-width:760px){
-  .header{align-items:flex-start}
+  .container{padding:18px 14px}
+  .site-title{font-size:22px}
+  .hero h1{font-size:1.4rem}
+  .hero h2{font-size:1.1rem}
+  .card{padding:14px;border-radius:12px}
+  .grid-2{display:block}
+
+  /* Mobile nav */
   #menu-btn{display:inline-block}
   .nav{display:none;width:100%;margin-top:8px}
   .nav.open{display:block}
-  .nav a{display:block;margin:6px 0}
-  .button{display:inline-block;margin-top:8px}
+  .nav a{display:block;margin:6px 0;padding:10px 0}
+
+  /* Long inline link rows should wrap on phones */
+  .inline-links{white-space:normal;overflow-x:visible}
+  .inline-links a{display:inline-block;margin:4px 0}
 }
 
-/* Footer text tone */
+/* Footer tone */
 footer{color:#555;font-size:.9rem}
+
