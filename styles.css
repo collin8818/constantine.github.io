@@ -5,7 +5,9 @@
   --link:#1a4d6e;
   --accent:#111111;
 }
+
 * {box-sizing:border-box}
+
 html,body {
   margin:0;
   padding:0;
@@ -13,22 +15,45 @@ html,body {
   color:var(--fg);
   background:var(--bg);
   line-height:1.6;
+  overflow-x:hidden; /* prevent sideways scroll */
 }
+
 a {color:var(--link);text-decoration:none}
 a:hover {text-decoration:underline}
 
 /* Layout */
 .container {max-width:920px;margin:0 auto;padding:32px 20px}
 .header {display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.site-title {font-size:28px;font-weight:700;letter-spacing:.2px}
+
+.site-title {
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.2px;
+  color:#001f3f; /* dark navy blue */
+}
+
 .nav a {margin-right:16px;color:var(--fg)}
 .hero {margin:28px 0 18px 0}
 .hero h1 {font-size:30px;margin:0 0 8px 0}
 .hero p {color:var(--muted);margin:0}
-.card {border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0;background:#fff}
+
+.card {
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:18px;
+  margin:14px 0;
+  background:#fff
+}
 .card h2 {font-size:20px;margin:0 0 8px 0}
+
 .list {margin:0;padding-left:18px}
-.footer {margin-top:36px;padding-top:18px;border-top:1px solid #e5e7eb;color:var(--muted);font-size:14px}
+.footer {
+  margin-top:36px;
+  padding-top:18px;
+  border-top:1px solid #e5e7eb;
+  color:var(--muted);
+  font-size:14px
+}
 .badge {display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:13px;color:var(--muted);}
 .button {display:inline-block;border:1px solid var(--fg);padding:10px 14px;border-radius:999px;color:var(--fg)}
 .tag {font-size:12px;color:#374151;background:#f3f4f6;border-radius:999px;padding:4px 10px;margin-left:8px}
@@ -57,22 +82,25 @@ img,video {max-width:100%;height:auto}
 
 /* Mobile menu button */
 #menu-btn {
-  display:none;border:1px solid #e5e7eb;background:#fff;border-radius:10px;
-  padding:8px 12px;font-size:16px;line-height:1;cursor:pointer
+  display:none;
+  border:1px solid #e5e7eb;
+  background:#fff;
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:16px;
+  line-height:1;
+  cursor:pointer
 }
 
 /* Bigger tap targets */
 .nav a,.button,.pill {padding:8px 12px}
 
-/* Prevent sideways scroll */
-html,body {overflow-x:hidden}
-
-/* --- Inline links (desktop with separators, bolded) --- */
+/* Inline links (desktop) */
 .inline-links {white-space:nowrap}
 .inline-links a {
   margin:0 6px;
   position:relative;
-  font-weight:700; /* bold links */
+  font-weight:normal; /* normal not bold */
 }
 .inline-links a + a::before {
   content:" | ";
@@ -80,7 +108,7 @@ html,body {overflow-x:hidden}
   color:#6b7280;
 }
 
-/* Mobile tweaks */
+/* --- Mobile tweaks --- */
 @media (max-width:760px){
   .container {padding:18px 14px}
   .site-title {font-size:22px}
@@ -95,28 +123,15 @@ html,body {overflow-x:hidden}
   .nav.open {display:block}
   .nav a {display:block;margin:6px 0;padding:10px 0}
 
-  /* Bio: justify paragraphs on phones (not the link row) */
+  /* Bio: justify paragraphs on phones */
   .card p:not(.inline-links) {
     text-align:justify !important;
     text-justify:inter-word;
-    -webkit-hyphens:auto;hyphens:auto;
+    -webkit-hyphens:auto;
+    hyphens:auto;
   }
 
- /* --- Inline links (desktop with separators, normal weight) --- */
-.inline-links {white-space:nowrap}
-.inline-links a {
-  margin:0 6px;
-  position:relative;
-  font-weight:normal; /* normal instead of bold */
-}
-.inline-links a + a::before {
-  content:" | ";
-  margin:0 .35rem;
-  color:#6b7280;
-}
-
-/* Mobile tweaks */
-@media (max-width:760px){
+  /* Inline links stacked */
   .inline-links {
     display:block;
     white-space:normal;
@@ -124,21 +139,10 @@ html,body {overflow-x:hidden}
   .inline-links a {
     display:block;
     margin:6px 0;
-    font-weight:normal; /* ensure not bold on mobile too */
+    font-weight:normal;
   }
   .inline-links a::before {content:none !important}
 }
-
-/* Homepage title in dark navy blue */
-.site-title {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  color: #001f3f; /* dark navy blue */
-}
-
-
-
 
 /* Footer tone */
 footer {color:#555;font-size:.9rem}
