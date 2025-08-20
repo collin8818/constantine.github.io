@@ -70,6 +70,25 @@ a:hover {
 .research-grid img:hover {
   transform: scale(1.05);
 }
+.research-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.research-links li {
+  margin-bottom: 8px;
+}
+
+.research-links a {
+  text-decoration: none;
+  color: #1a4d6e; /* muted navy link */
+  font-weight: 500;
+}
+
+.research-links a:hover {
+  text-decoration: underline;
+}
 
 
 /* Footer */
