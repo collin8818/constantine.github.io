@@ -129,13 +129,14 @@ html,body {overflow-x:hidden}
   .inline-links a::before {content:none !important}
 }
 
-/* Homepage title in green */
+/* Homepage title in dark navy blue */
 .site-title {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: .2px;
-  color: #257570; /* green-teal */
+  color: #001f3f; /* dark navy blue */
 }
+
 
 
 
