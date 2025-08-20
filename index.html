@@ -4,27 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Home - Collin M. Constantine</title>
-  <!-- Remove this line if you don't want any favicon -->
-  <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
+  <!-- favicon intentionally removed -->
   <link rel="stylesheet" href="/styles.css">
-  <meta name="description" content="Collin Constantine - College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
+  <meta name="description" content="Collin Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
 </head>
 <body>
   <div class="container">
     <header class="header">
       <div class="site-title">Collin Constantine</div>
       <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
-      <nav class="nav" id="site-nav">
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
         <a href="/index.html">Home</a>
         <a href="/research.html">Research</a>
         <a href="/teaching.html">Teaching</a>
-          <a href="/contact.html">Contact</a>
+        <a href="/contact.html">Contact</a>
         <a href="/cv.pdf" class="button">CV</a>
       </nav>
     </header>
 
     <section class="hero">
-      <h2 style="font-size:1.2rem; font-weight:normal; margin:0;">
+      <h2 style="font-size:1.2rem;font-weight:normal;margin:0;">
         College Assistant Professor of Economics
       </h2>
       <p>Girton College, University of Cambridge</p>
@@ -42,14 +41,15 @@
         real-world puzzles that emerge when conventional theory fails to explain key stylized facts.
       </p>
 
-      <p style="white-space:nowrap">
+      <!-- inline links row; CSS handles wrapping on mobile -->
+      <p class="inline-links">
         <a href="/cv.pdf">Download CV</a> |
         <a href="https://scholar.google.com/citations?user=8pueeqQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> |
         <a href="https://www.researchgate.net/profile/Collin-Constantine-2?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a> |
         <a href="https://twitter.com/cmc_constantine" target="_blank" rel="noopener">@cmc_constantine</a> |
         <a href="mailto:cc2082@cam.ac.uk">cc2082@cam.ac.uk</a>
       </p>
-    </div> <!-- end first card -->
+    </div>
 
     <div class="card research-section">
       <h2>New Research</h2>
@@ -60,7 +60,8 @@
     </div>
 
     <footer class="footer">
-      <div>© <span id="y"></span> Collin Constantine · All views my own ·
+      <div>
+        © <span id="y"></span> Collin Constantine · All views my own ·
         <a href="https://collinconstantine.com">collinconstantine.com</a>
       </div>
       <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
@@ -79,3 +80,4 @@
   </script>
 </body>
 </html>
+
