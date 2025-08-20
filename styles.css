@@ -102,7 +102,21 @@ html,body {overflow-x:hidden}
     -webkit-hyphens:auto;hyphens:auto;
   }
 
-  /* Inline links: stack vertically on phones; hide separators */
+ /* --- Inline links (desktop with separators, normal weight) --- */
+.inline-links {white-space:nowrap}
+.inline-links a {
+  margin:0 6px;
+  position:relative;
+  font-weight:normal; /* normal instead of bold */
+}
+.inline-links a + a::before {
+  content:" | ";
+  margin:0 .35rem;
+  color:#6b7280;
+}
+
+/* Mobile tweaks */
+@media (max-width:760px){
   .inline-links {
     display:block;
     white-space:normal;
@@ -110,9 +124,11 @@ html,body {overflow-x:hidden}
   .inline-links a {
     display:block;
     margin:6px 0;
+    font-weight:normal; /* ensure not bold on mobile too */
   }
   .inline-links a::before {content:none !important}
 }
+
 
 /* Footer tone */
 footer {color:#555;font-size:.9rem}
