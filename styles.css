@@ -55,9 +55,10 @@ img,video{max-width:100%;height:auto}
 /* Prevent sideways scroll */
 html,body{overflow-x:hidden}
 
-/* --- Inline links layout --- */
-/* Default (desktop/tablet): keep on one line (your pipes stay visible) */
+/* --- Inline links (with CSS separators) --- */
 .inline-links{white-space:nowrap}
+.inline-links a{margin:0 6px;position:relative}
+.inline-links a + a::before{content:" | ";margin:0 .35rem;color:#6b7280}
 
 /* Mobile tweaks */
 @media (max-width:760px){
@@ -74,24 +75,23 @@ html,body{overflow-x:hidden}
   .nav.open{display:block}
   .nav a{display:block;margin:6px 0;padding:10px 0}
 
-  /* Inline links: break into 3 items (row 1) + 2 items (row 2).
-     We hide the literal pipes visually by zeroing parent font-size,
-     but anchors keep normal size so the pipes don't disrupt the grid. */
+  /* Bio: justify paragraphs on phones (but not the link row) */
+  .card p:not(.inline-links){
+    text-align:justify !important;
+    text-justify:inter-word;
+    -webkit-hyphens:auto;hyphens:auto;
+  }
+
+  /* Inline links: 3 on first row, 2 on second; hide separators */
   .inline-links{
     display:grid;
-    grid-template-columns:repeat(3, auto);
+    grid-template-columns:repeat(3,auto);
     gap:6px 12px;
     white-space:normal;
-    font-size:0; /* hides the '|' text nodes from affecting layout */
   }
-  .inline-links a{
-    display:inline-block;
-    font-size:1rem;  /* restore text size for links */
-    margin:0;
-  }
+  .inline-links a{margin:0}
+  .inline-links a::before{content:none !important}
 }
-
-
 
 /* Footer tone */
 footer{color:#555;font-size:.9rem}
