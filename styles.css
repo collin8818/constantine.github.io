@@ -91,12 +91,6 @@ html,body{overflow-x:hidden}
   }
 }
 
-/* Mobile view: justify bio text */
-@media (max-width:760px){
-  .card p {
-    text-align: justify;
-  }
-}
 
 
 /* Footer tone */
