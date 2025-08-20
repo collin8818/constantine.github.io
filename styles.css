@@ -46,7 +46,6 @@ a:hover {
   text-decoration: underline;
 }
 
- 
 .research-links {
   list-style-type: none;
   padding: 0;
@@ -66,6 +65,7 @@ a:hover {
 .research-links a:hover {
   text-decoration: underline;
 }
+
 
 
 /* Footer */
