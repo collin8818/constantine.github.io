@@ -37,13 +37,7 @@ h1,h2,h3,h4,h5,h6{color:#1a2b3c;margin-top:.8em;margin-bottom:.4em}
 .research-links a{color:#1a4d6e;font-weight:500}
 
 /* Dark red only for "New Research" heading */
-.research-section h2 {
-  color: #8B0000;
-}
-
-/* Dark red section */
-.research-section{color:#8B0000}
-.research-section a{color:#8B0000;font-weight:500}
+.research-section h2{color:#8B0000}
 
 /* Media elements */
 img,video{max-width:100%;height:auto}
@@ -60,7 +54,7 @@ img,video{max-width:100%;height:auto}
 /* Prevent sideways scroll */
 html,body{overflow-x:hidden}
 
-/* --- Inline links (with CSS separators) --- */
+/* --- Inline links (CSS separators on desktop) --- */
 .inline-links{white-space:nowrap}
 .inline-links a{margin:0 6px;position:relative}
 .inline-links a + a::before{content:" | ";margin:0 .35rem;color:#6b7280}
@@ -80,13 +74,24 @@ html,body{overflow-x:hidden}
   .nav.open{display:block}
   .nav a{display:block;margin:6px 0;padding:10px 0}
 
-  /* Bio: justify paragraphs on phones (but not the link row) */
+  /* Bio: justify paragraphs on phones (not the link row) */
   .card p:not(.inline-links){
     text-align:justify !important;
     text-justify:inter-word;
     -webkit-hyphens:auto;hyphens:auto;
   }
 
- 
+  /* Inline links: 2 + 2 grid on phones; hide separators */
+  .inline-links{
+    display:grid;
+    grid-template-columns:repeat(2,auto);
+    gap:6px 12px;
+    white-space:normal;
+    justify-content:start;
+  }
+  .inline-links a{margin:0}
+  .inline-links a::before{content:none !important}
+}
+
 /* Footer tone */
 footer{color:#555;font-size:.9rem}
