@@ -11,16 +11,17 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <div class="site-title">Collin Constantine</div>
-      <nav class="nav">
-        <a href="/index.html">Home</a>
-        <a href="/research.html">Research</a>
-        <a href="/teaching.html">Teaching</a>
-         <a href="/contact.html">Contact</a>
-        <a href="/cv.pdf" class="button">CV</a>
-      </nav>
-    </header>
+<header class="header">
+  <div class="site-title">Collin Constantine</div>
+  <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+  <nav class="nav" id="site-nav">
+    <a href="/index.html">Home</a>
+    <a href="/research.html">Research</a>
+    <a href="/teaching.html">Teaching</a>
+    <a href="/cv.pdf" class="button">CV</a>
+  </nav>
+</header>
+
 
 
  <section class="hero">
@@ -68,5 +69,14 @@
       <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
     </footer>
   </div>
+    <script>
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('site-nav');
+  btn?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
 </body>
 </html>
