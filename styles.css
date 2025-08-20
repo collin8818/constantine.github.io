@@ -1,98 +1,118 @@
-:root{--bg:#ffffff;--fg:#111111;--muted:#6b7280;--link:#1a4d6e;--accent:#111111;}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
+:root {
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#6b7280;
+  --link:#1a4d6e;
+  --accent:#111111;
+}
+* {box-sizing:border-box}
+html,body {
+  margin:0;
+  padding:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+  color:var(--fg);
+  background:var(--bg);
+  line-height:1.6;
+}
+a {color:var(--link);text-decoration:none}
+a:hover {text-decoration:underline}
 
 /* Layout */
-.container{max-width:920px;margin:0 auto;padding:32px 20px}
-.header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.site-title{font-size:28px;font-weight:700;letter-spacing:.2px}
-.nav a{margin-right:16px;color:var(--fg)}
-.hero{margin:28px 0 18px 0}
-.hero h1{font-size:30px;margin:0 0 8px 0}
-.hero p{color:var(--muted);margin:0}
-.card{border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0;background:#fff}
-.card h2{font-size:20px;margin:0 0 8px 0}
-.list{margin:0;padding-left:18px}
-.footer{margin-top:36px;padding-top:18px;border-top:1px solid #e5e7eb;color:var(--muted);font-size:14px}
-.badge{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:13px;color:var(--muted);}
-.button{display:inline-block;border:1px solid var(--fg);padding:10px 14px;border-radius:999px;color:var(--fg)}
-.tag{font-size:12px;color:#374151;background:#f3f4f6;border-radius:999px;padding:4px 10px;margin-left:8px}
-ul.clean{list-style:none;padding-left:0;margin:0}
-h2.section{margin-top:26px}
+.container {max-width:920px;margin:0 auto;padding:32px 20px}
+.header {display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.site-title {font-size:28px;font-weight:700;letter-spacing:.2px}
+.nav a {margin-right:16px;color:var(--fg)}
+.hero {margin:28px 0 18px 0}
+.hero h1 {font-size:30px;margin:0 0 8px 0}
+.hero p {color:var(--muted);margin:0}
+.card {border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0;background:#fff}
+.card h2 {font-size:20px;margin:0 0 8px 0}
+.list {margin:0;padding-left:18px}
+.footer {margin-top:36px;padding-top:18px;border-top:1px solid #e5e7eb;color:var(--muted);font-size:14px}
+.badge {display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:13px;color:var(--muted);}
+.button {display:inline-block;border:1px solid var(--fg);padding:10px 14px;border-radius:999px;color:var(--fg)}
+.tag {font-size:12px;color:#374151;background:#f3f4f6;border-radius:999px;padding:4px 10px;margin-left:8px}
+ul.clean {list-style:none;padding-left:0;margin:0}
+h2.section {margin-top:26px}
 
 /* Two-column only on wide screens */
 @media (min-width:800px){
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .grid-2 {display:grid;grid-template-columns:1fr 1fr;gap:18px}
 }
 
 /* Palette */
-body{color:#1a2b3c;background-color:#ffffff}
-h1,h2,h3,h4,h5,h6{color:#1a2b3c;margin-top:.8em;margin-bottom:.4em}
+body {color:#1a2b3c;background-color:#ffffff}
+h1,h2,h3,h4,h5,h6 {color:#1a2b3c;margin-top:.8em;margin-bottom:.4em}
 
 /* Research links (simple list) */
-.research-links{list-style:none;padding:0;margin:0}
-.research-links li{margin-bottom:8px}
-.research-links a{color:#1a4d6e;font-weight:500}
+.research-links {list-style:none;padding:0;margin:0}
+.research-links li {margin-bottom:8px}
+.research-links a {color:#1a4d6e;font-weight:500}
 
 /* Dark red only for "New Research" heading */
-.research-section h2{color:#8B0000}
+.research-section h2 {color:#8B0000}
 
 /* Media elements */
-img,video{max-width:100%;height:auto}
+img,video {max-width:100%;height:auto}
 
 /* Mobile menu button */
-#menu-btn{
+#menu-btn {
   display:none;border:1px solid #e5e7eb;background:#fff;border-radius:10px;
   padding:8px 12px;font-size:16px;line-height:1;cursor:pointer
 }
 
 /* Bigger tap targets */
-.nav a,.button,.pill{padding:8px 12px}
+.nav a,.button,.pill {padding:8px 12px}
 
 /* Prevent sideways scroll */
-html,body{overflow-x:hidden}
+html,body {overflow-x:hidden}
 
-/* --- Inline links (desktop with separators) --- */
-.inline-links{white-space:nowrap}
-.inline-links a{margin:0 6px;position:relative}
-.inline-links a + a::before{content:" | ";margin:0 .35rem;color:#6b7280}
+/* --- Inline links (desktop with separators, bolded) --- */
+.inline-links {white-space:nowrap}
+.inline-links a {
+  margin:0 6px;
+  position:relative;
+  font-weight:700; /* bold links */
+}
+.inline-links a + a::before {
+  content:" | ";
+  margin:0 .35rem;
+  color:#6b7280;
+}
 
 /* Mobile tweaks */
 @media (max-width:760px){
-  .container{padding:18px 14px}
-  .site-title{font-size:22px}
-  .hero h1{font-size:1.4rem}
-  .hero h2{font-size:1.1rem}
-  .card{padding:14px;border-radius:12px}
-  .grid-2{display:block}
+  .container {padding:18px 14px}
+  .site-title {font-size:22px}
+  .hero h1 {font-size:1.4rem}
+  .hero h2 {font-size:1.1rem}
+  .card {padding:14px;border-radius:12px}
+  .grid-2 {display:block}
 
   /* Mobile nav */
-  #menu-btn{display:inline-block}
-  .nav{display:none;width:100%;margin-top:8px}
-  .nav.open{display:block}
-  .nav a{display:block;margin:6px 0;padding:10px 0}
+  #menu-btn {display:inline-block}
+  .nav {display:none;width:100%;margin-top:8px}
+  .nav.open {display:block}
+  .nav a {display:block;margin:6px 0;padding:10px 0}
 
   /* Bio: justify paragraphs on phones (not the link row) */
-  .card p:not(.inline-links){
+  .card p:not(.inline-links) {
     text-align:justify !important;
     text-justify:inter-word;
     -webkit-hyphens:auto;hyphens:auto;
   }
 
   /* Inline links: stack vertically on phones; hide separators */
-  .inline-links{
+  .inline-links {
     display:block;
     white-space:normal;
   }
-  .inline-links a{
+  .inline-links a {
     display:block;
     margin:6px 0;
   }
-  .inline-links a::before{content:none !important}
+  .inline-links a::before {content:none !important}
 }
 
 /* Footer tone */
-footer{color:#555;font-size:.9rem}
-
+footer {color:#555;font-size:.9rem}
