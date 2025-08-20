@@ -129,19 +129,14 @@ html,body {overflow-x:hidden}
   .inline-links a::before {content:none !important}
 }
 
-  /* Homepage title */
+/* Homepage title in green */
 .site-title {
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: 0.2px;
-  color: #1A2B3C; /* Deep Navy */
-  transition: color 0.3s ease;
+  letter-spacing: .2px;
+  color: #257570; /* green-teal */
 }
 
-/* Accent on hover */
-.site-title:hover {
-  color: #A3C1AD; /* Cambridge Blue */
-}
 
 
 /* Footer tone */
