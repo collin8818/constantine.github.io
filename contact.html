@@ -9,17 +9,16 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-  <header class="header">
+<header class="header">
   <div class="site-title">
     <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin Constantine</a>
   </div>
-  <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+  <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
   <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
     <a href="/index.html">Home</a>
     <a href="/research.html">Research</a>
     <a href="/teaching.html">Teaching</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/contact.html" aria-current="page">Contact</a>
     <a href="/CV_CMC.pdf" class="button">CV</a>
   </nav>
 </header>
@@ -65,5 +64,19 @@
   </script>
   <script src="/site.js" defer></script>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('site-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+</script>
+
+
+  
 </body>
 </html>
