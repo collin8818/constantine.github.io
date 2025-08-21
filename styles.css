@@ -314,6 +314,15 @@ img,video { max-width: 100%; height: auto; }
 }
 
 
+.bio {
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .bio {
+    text-align: left;
+  }
+}
 
 
 
