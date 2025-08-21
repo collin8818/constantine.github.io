@@ -124,7 +124,7 @@ img,video {max-width:100%;height:auto}
   .nav a {display:block;margin:6px 0;padding:10px 0}
 
   /* Bio: justify paragraphs on phones */
-  .card p:not(.inline-links) {
+  .bio-card p {
     text-align:justify !important;
     text-justify:inter-word;
     -webkit-hyphens:auto;
@@ -144,40 +144,37 @@ img,video {max-width:100%;height:auto}
   .inline-links a::before {content:none !important}
 }
 
-
-
-
 /* Bio picture: circle headshot */
 .bio-card { text-align: center; }
-.bio-card::after { content:""; display:block; clear:both; } /* clearfix for desktop float */
+.bio-card::after { content:""; display:block; clear:both; } /* clearfix */
 
 .bio-pic {
-  width: 180px;           /* adjust as needed */
-  height: 180px;          /* keep square for perfect circle */
-  object-fit: cover;      /* crop nicely */
+  width: 180px;           
+  height: 180px;          
+  object-fit: cover;      
   border-radius: 50%;
   display: block;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 20px auto;
   box-shadow: 0 2px 6px rgba(0,0,0,.12);
 }
 
-/* Place headshot beside text on wider screens */
+/* Place headshot beside text on wide screens */
 @media (min-width: 800px){
   .bio-card { text-align: left; }
   .bio-pic {
     float: left;
-    margin: 0 20px 10px 0; /* space around image */
+    margin: 0 24px 16px 0;
   }
 }
 
 /* Improved spacing for bio text */
 .bio-card p {
-  line-height: 1.8;       /* Controls spacing between lines */
-  margin-bottom: 1.6em;   /* Adds room between paragraphs */
+  line-height: 1.8;     
+  margin-bottom: 1.6em; 
 }
-
-
-
+.bio-card p:last-child {
+  margin-bottom: 0;     
+}
 
 /* Footer tone */
 footer {color:#555;font-size:.9rem}
