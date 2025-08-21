@@ -158,6 +158,29 @@ img,video{max-width:100%;height:auto}
 .bio-card p:last-child{margin-bottom:0}
 
 
+.paper {
+  margin-bottom: 1.8em;
+}
+
+.paper-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.paper-authors {
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.paper-status {
+  margin-top: 2px;
+  color: #444;
+}
+
+.paper-links {
+  margin-top: 2px;
+  font-size: 0.9rem;
+}
 
 
 
