@@ -153,5 +153,12 @@ img,video {max-width:100%;height:auto}
 }
 
 
+.card p {
+  margin-bottom: 1.6em; /* extra space between paragraphs */
+  line-height: 1.75;    /* more space within each paragraph */
+}
+
+
+
 /* Footer tone */
 footer {color:#555;font-size:.9rem}
