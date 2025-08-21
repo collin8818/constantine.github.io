@@ -110,11 +110,16 @@ img,video{max-width:100%;height:auto}
   .card{padding:14px;border-radius:12px}
   .grid-2{display:block}
 
+
+  
+  
   /* Mobile nav */
   #menu-btn{display:inline-block}
   .nav{display:none;width:100%;margin-top:8px}
-  .nav.open{display:block !important}
+  .nav.open{display:block}
   .nav a{display:block;margin:6px 0;padding:10px 0}
+
+
 
   /* Bio: justify paragraphs on phones */
   .bio-card p{
@@ -153,11 +158,7 @@ img,video{max-width:100%;height:auto}
 .bio-card p:last-child{margin-bottom:0}
 
 
-@media (max-width:760px){
-  #menu-btn{display:inline-block}
-  .nav{display:none;width:100%;margin-top:8px}
-  .nav.open{display:block}
-}
+
 
 
 /* Footer tone */
