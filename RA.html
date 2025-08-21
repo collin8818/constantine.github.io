@@ -53,5 +53,20 @@
   </div>
   <script src="/site.js" defer></script>
 
+
+    <!-- Mobile nav script (single, known-good) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
 </body>
 </html>
+
+
