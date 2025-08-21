@@ -4,42 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Home - Collin M. Constantine</title>
-  <!-- favicon intentionally removed -->
   <link rel="stylesheet" href="/styles.css">
   <meta name="description" content="Collin Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
 </head>
 <body>
   <div class="container">
     <header class="header">
-  <div class="site-title">
-    <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin Constantine</a>
-  </div>
-  <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
-  <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
-    <a href="/index.html">Home</a>
-    <a href="/research.html">Research</a>
-    <a href="/teaching.html">Teaching</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/CV_CMC.pdf" class="button">CV</a>
-  </nav>
-</header>
+      <div class="site-title">
+        <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin Constantine</a>
+      </div>
+      <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/teaching.html">Teaching</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
 
-    <section class="hero">
-      <section class="hero" style="text-align:center;">
-
-  <h2 style="font-size:1.2rem;font-weight:normal;margin:0;">
-      <h2 style="font-size:1.2rem;font-weight:normal;margin:0;">College Assistant Professor of Economics</h2>
+    <!-- Hero -->
+    <section class="hero" style="text-align:center;">
+      <h2 style="font-size:1.2rem; font-weight:normal; margin:0;">
+        College Assistant Professor of Economics
+      </h2>
       <p>Girton College, University of Cambridge</p>
     </section>
 
-<div class="card bio-card">
-  <img src="Untitled.jpg" alt="Collin M. Constantine" class="bio-pic" loading="lazy">
+    <!-- Bio card with circle headshot -->
+    <div class="card bio-card">
+      <!-- Update the src to your actual file and path -->
+      <img src="Untitled.jpg" alt="Collin M. Constantine" class="bio-pic" loading="lazy">
+
       <p>
         Collin M. Constantine is a College Assistant Professor of Economics and Official Fellow at Girton College, University of Cambridge, where he also serves as Director of Studies in Economics.
       </p>
-
-        </p>
-        </p>
       <p>
         Collin is an applied theorist working at the intersection of international macroeconomics, income inequality, and political economy. His research is motivated by real-world puzzles that standard models fail to explain, with a focus on foreign exchange stock-flow dynamics, banking and international finance, and macroeconomic policy in open economies. He also pursues a broader agenda on development, the distribution of income and wealth, and the political economy of conflict.
       </p>
@@ -47,7 +46,7 @@
         His recent work reinterprets the “Dutch Disease,” shifting the emphasis from resource windfalls to the role of central bank financing of fiscal deficits. He is also developing new perspectives on fiscal dominance, geoeconomics, and the measurement of macroeconomic fundamentals in balance-of-payments constrained economies.
       </p>
 
-      <!-- Inline links: separators on desktop via CSS; stacked vertically on mobile -->
+      <!-- Inline links: separators on desktop via CSS; stacked on mobile -->
       <p class="inline-links">
         <a href="/CV_CMC.pdf">Download CV</a>
         <a href="https://scholar.google.com/citations?user=8pueeqQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -56,6 +55,7 @@
       </p>
     </div>
 
+    <!-- New Research -->
     <div class="card research-section">
       <h2>New Research</h2>
       <ul class="research-links">
@@ -66,23 +66,25 @@
 
     <footer class="footer">
       <div>
-        © <span id="y"></span> Collin Constantine 
+        © <span id="y"></span> Collin Constantine
       </div>
       <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
     </footer>
   </div>
 
+  <!-- Mobile menu script -->
   <script>
-    const btn = document.getElementById('menu-btn');
-    const nav = document.getElementById('site-nav');
-    if (btn && nav) {
-      btn.addEventListener('click', () => {
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
         const open = nav.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
-    }
+    });
   </script>
+  <!-- Or load your shared script -->
   <script src="/site.js" defer></script>
-
 </body>
 </html>
