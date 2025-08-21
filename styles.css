@@ -109,7 +109,14 @@ h1,h2,h3,h4,h5,h6 {
 /* Dark red only for "New Research" heading */
 .research-section h2 { color: var(--accent); }
 
-/* Collapsible abstracts */
+/* Collapsible papers */
+.paper { margin-bottom: 2.2em; }
+.paper-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.3em; }
+.paper-status { font-size: 0.95rem; color: #555; margin-bottom: 0.5em; }
+.paper-links { font-size: 0.9rem; margin-bottom: 0.5em; }
+.paper-links a { color: var(--link); margin-right: 6px; }
+
+/* --- Clean summary (no default box/marker) --- */
 details.abstract {
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -117,31 +124,20 @@ details.abstract {
   background: #fafafa;
 }
 details.abstract[open] { background: #fff; }
-
 details.abstract summary {
   cursor: pointer;
   font-weight: 500;
   color: var(--link);
-  list-style: none;       /* removes default marker */
+  list-style: none;          /* remove marker in most browsers */
+  -webkit-appearance: none;  /* Safari */
+  appearance: none;
 }
-details.abstract summary::-webkit-details-marker {
-  display: none;          /* hides the “box” completely */
-}
-details.abstract summary::after {
-  content: " ▼";          /* down arrow */
-  font-size: 0.9em;
-}
-details.abstract[open] summary::after {
-  content: " ▲";          /* up arrow when open */
-}
+details.abstract summary::marker { content: ""; } /* Firefox */
+details.abstract summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
+details.abstract summary::after { content:" ▼"; font-size: .9em; }
+details.abstract[open] summary::after { content:" ▲"; }
 
-.paper-abstract {
-  margin-top: .7em;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #333;
-}
-
+.paper-abstract { margin-top: .7em; font-size: .95rem; line-height: 1.7; color: #333; }
 
 /* Media elements */
 img,video { max-width: 100%; height: auto; }
@@ -216,3 +212,4 @@ img,video { max-width: 100%; height: auto; }
 
 /* Footer tone */
 footer { color: #555; font-size: .9rem; }
+
