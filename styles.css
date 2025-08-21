@@ -154,6 +154,39 @@ img,video { max-width: 100%; height: auto; }
   cursor: pointer;
 }
 
+/* --- Force visible separators on mobile --- */
+@media (max-width:760px){
+  /* Make sure each entry is block-level and spaced */
+  .papers .paper,
+  .research-section .paper{
+    display:block;
+    border-bottom:1px solid #e5e7eb;
+    padding-bottom:1rem;
+    margin-bottom:1.4rem;
+  }
+
+  /* Keep the last one clean */
+  .papers .paper:last-child,
+  .research-section .paper:last-child{
+    border-bottom:0;
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+
+  /* Give the details/summary a bit of breathing room */
+  .research-section details.abstract{
+    margin-top:.5rem;
+  }
+
+  /* If your list is a <ul>, remove bullets and left indent on mobile */
+  .papers{
+    list-style:none;
+    padding-left:0;
+    margin-left:0;
+  }
+}
+
+
 /* Bigger tap targets */
 .nav a,.button,.pill { padding: 8px 12px; }
 
