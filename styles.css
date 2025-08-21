@@ -245,49 +245,61 @@ img,video { max-width: 100%; height: auto; }
 
 
 
-/* Kill the default summary marker everywhere and use a custom arrow */
-.research-section details.abstract summary,
-.forthcoming-section details.abstract summary{
-  cursor: pointer;
-  font-weight: 500;
-  color: var(--link);
-  list-style: none;          /* Firefox/Safari */
-  -webkit-appearance: none;  /* Safari/iOS */
+/* Kill the default summary box/marker on all browsers + mobile */
+.research-section details.abstract > summary,
+.forthcoming-section details.abstract > summary{
+  display: inline-flex;           /* no list box */
+  align-items: center;
+  gap: .4rem;
+  list-style: none !important;    /* Firefox/Safari */
+  -webkit-appearance: none;       /* iOS Safari */
   appearance: none;
-  position: relative;
-  padding-right: 1.25rem;    /* room for the arrow on the right */
-  margin: 0;                 /* avoid odd boxes from default margins */
-  border: 0;
-  background: transparent;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 .95rem 0 0;          /* room on right for arrow */
+  margin: 0;
+  color: var(--link);
+  font-weight: 500;
+  cursor: pointer;
 }
 
-/* Hide native markers in Chrome/Safari */
-.research-section details.abstract summary::-webkit-details-marker,
-.forthcoming-section details.abstract summary::-webkit-details-marker{
-  display: none;
+/* Hide native markers in all engines */
+.research-section details.abstract > summary::-webkit-details-marker,
+.forthcoming-section details.abstract > summary::-webkit-details-marker{
+  display: none !important;
+}
+.research-section details.abstract > summary::marker,
+.forthcoming-section details.abstract > summary::marker{
+  content: "" !important;
+}
+.research-section details.abstract > summary::-moz-list-bullet,
+.forthcoming-section details.abstract > summary::-moz-list-bullet{
+  font-size: 0 !important;
 }
 
-/* Hide native marker in Firefox */
-.research-section details.abstract summary::marker,
-.forthcoming-section details.abstract summary::marker{
-  content: "";
-}
-
-/* Custom right-aligned arrow (no box) */
-.research-section details.abstract summary::after,
-.forthcoming-section details.abstract summary::after{
+/* Custom right–aligned arrow */
+.research-section details.abstract > summary::after,
+.forthcoming-section details.abstract > summary::after{
   content: "▼";
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin-left: auto;              /* push arrow to the right */
   line-height: 1;
   font-size: .9em;
 }
-
-/* Flip arrow when open */
-.research-section details.abstract[open] summary::after,
-.forthcoming-section details.abstract[open] summary::after{
+.research-section details.abstract[open] > summary::after,
+.forthcoming-section details.abstract[open] > summary::after{
   content: "▲";
+}
+
+/* Nice focus without a boxy background */
+.research-section details.abstract > summary:focus-visible,
+.forthcoming-section details.abstract > summary:focus-visible{
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* Ensure list bullets are not showing on mobile around abstracts */
+@media (max-width:760px){
+  .papers, .research-links{ list-style: none; padding-left: 0; }
 }
 
 
