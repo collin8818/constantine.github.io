@@ -303,20 +303,7 @@ img,video { max-width: 100%; height: auto; }
 }
 
 
-#ra-positions {
-  max-width: 750px;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  background: #f9fafb;
-  border-left: 4px solid #1a4d6e; /* subtle academic blue accent */
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
 
-#ra-positions h2 {
-  margin-top: 0;
-  color: #1a2b3c;
-}
 
 
 
