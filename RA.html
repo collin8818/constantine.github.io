@@ -1,60 +1,52 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RA Positions - Collin M. Constantine</title>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles.css">
-<meta name="description" content="Assistant Professor of Economics - research, publications, teaching.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RA Positions - Collin M. Constantine</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Research assistant opportunities with Collin M. Constantine.">
 </head>
 <body>
   <div class="container">
-<header class="header">
-  <div class="site-title">
-    <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin M. Constantine</a>
-  </div>
-  <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
-  <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
-    <a href="/index.html">Home</a>
-    <a href="/research.html">Research</a>
-    <a href="/RA.html">RA Positions</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/CV_CMC.pdf" class="button">CV</a>
-  </nav>
-</header>
+    <header class="header">
+      <div class="site-title">
+        <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
+      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/RA.html" aria-current="page">RA Positions</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
 
-
-<section id="ra-positions">
-  <h2>Research Assistant Opportunities</h2>
-  <p>
-    I occasionally work with pre-docs and graduate students as research assistants on projects 
-    related to macro-finance, political economy, and development. Typical tasks may include 
-    literature reviews, data collection, coding, or assistance with preparing presentation slides.
-  </p>
-  <p>
-    I welcome interest from students who are curious, motivated, and eager to develop research skills. 
-    While opportunities are limited and depend on current projects, I am always glad to hear from 
-    students about their research interests and aspirations.
-  </p>
-  <p>
-    If you are interested in working with me, please send a brief note outlining your academic background, 
-    research interests, and relevant skills.
-  </p>
-</section>
-
-
-  
+    <!-- RA content inside the same card wrapper -->
+    <div class="card">
+      <h2>Research Assistant Opportunities</h2>
+      <p>
+        I occasionally work with pre-docs and graduate students as research assistants on projects
+        related to macro-finance, political economy, and development. Typical tasks may include
+        literature reviews, data collection, coding, or help preparing presentation slides.
+      </p>
+      <p>
+        I welcome interest from students who are curious, motivated, and eager to build research skills.
+        Opportunities are limited and depend on current projects, but I’m glad to hear about your interests.
+      </p>
+      <p>
+        If you’re interested, please send a short note outlining your academic background, research interests,
+        and relevant skills.
+      </p>
+    </div>
 
     <footer class="footer">
-    
-      <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+      <div>© <span id="y"></span> Collin Constantine</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
     </footer>
   </div>
-  <script src="/site.js" defer></script>
 
-
-    <!-- Mobile nav script (single, known-good) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const btn = document.getElementById('menu-btn');
@@ -68,5 +60,3 @@
   </script>
 </body>
 </html>
-
-
