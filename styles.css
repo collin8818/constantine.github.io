@@ -170,6 +170,13 @@ img,video {max-width:100%;height:auto}
   }
 }
 
+/* Improved spacing for bio text */
+.bio-card p {
+  line-height: 1.8;       /* Controls spacing between lines */
+  margin-bottom: 1.6em;   /* Adds room between paragraphs */
+}
+
+
 
 
 /* Footer tone */
