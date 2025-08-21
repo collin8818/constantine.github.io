@@ -243,6 +243,56 @@ img,video { max-width: 100%; height: auto; }
 .bio-card p { line-height: 1.85; margin-bottom: 1.7em; }
 .bio-card p:last-child { margin-bottom: 0; }
 
+
+
+/* Kill the default summary marker everywhere and use a custom arrow */
+.research-section details.abstract summary,
+.forthcoming-section details.abstract summary{
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--link);
+  list-style: none;          /* Firefox/Safari */
+  -webkit-appearance: none;  /* Safari/iOS */
+  appearance: none;
+  position: relative;
+  padding-right: 1.25rem;    /* room for the arrow on the right */
+  margin: 0;                 /* avoid odd boxes from default margins */
+  border: 0;
+  background: transparent;
+}
+
+/* Hide native markers in Chrome/Safari */
+.research-section details.abstract summary::-webkit-details-marker,
+.forthcoming-section details.abstract summary::-webkit-details-marker{
+  display: none;
+}
+
+/* Hide native marker in Firefox */
+.research-section details.abstract summary::marker,
+.forthcoming-section details.abstract summary::marker{
+  content: "";
+}
+
+/* Custom right-aligned arrow (no box) */
+.research-section details.abstract summary::after,
+.forthcoming-section details.abstract summary::after{
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 1;
+  font-size: .9em;
+}
+
+/* Flip arrow when open */
+.research-section details.abstract[open] summary::after,
+.forthcoming-section details.abstract[open] summary::after{
+  content: "▲";
+}
+
+
+
+
 /* Footer tone */
 footer { color: #555; font-size: .9rem; }
 
