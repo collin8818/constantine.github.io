@@ -144,34 +144,26 @@ img,video {max-width:100%;height:auto}
   .inline-links a::before {content:none !important}
 }
 
-.profile-pic {
-  width: 180px;         /* adjust size as you like */
-  height: auto;
-  border-radius: 50%;   /* makes it circular */
-  margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
 
 
-/* Bio picture styling */
-.bio-card {
-  text-align: center; /* center image on mobile */
-}
+
+/* Bio picture: circle headshot */
+.bio-card { text-align: center; }
+.bio-card::after { content:""; display:block; clear:both; } /* clearfix for desktop float */
 
 .bio-pic {
-  max-width: 180px;   /* keeps headshot small */
-  border-radius: 50%; /* makes it circular */
-  margin-bottom: 16px;
+  width: 180px;           /* adjust as needed */
+  height: 180px;          /* keep square for perfect circle */
+  object-fit: cover;      /* crop nicely */
+  border-radius: 50%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
 }
 
-/* On wider screens, float image left beside text */
-@media (min-width: 800px) {
-  .bio-card {
-    text-align: left;
-  }
+/* Place headshot beside text on wider screens */
+@media (min-width: 800px){
+  .bio-card { text-align: left; }
   .bio-pic {
     float: left;
     margin: 0 20px 10px 0; /* space around image */
