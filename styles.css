@@ -152,5 +152,13 @@ img,video{max-width:100%;height:auto}
 .bio-card p{line-height:1.8;margin-bottom:1.6em}
 .bio-card p:last-child{margin-bottom:0}
 
+
+@media (max-width:760px){
+  #menu-btn{display:inline-block}
+  .nav{display:none;width:100%;margin-top:8px}
+  .nav.open{display:block}
+}
+
+
 /* Footer tone */
 footer{color:#555;font-size:.9rem}
