@@ -349,6 +349,15 @@ img,video { max-width: 100%; height: auto; }
 }
 
 
+/* Media headshot sizing */
+.media-headshot {
+  max-width: 220px;   /* adjust to the size you want */
+  height: auto;       /* keeps aspect ratio */
+  border-radius: 6px; /* optional: makes it look polished */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
+  display: block;
+  margin: 0 auto;     /* center it */
+}
 
 
 
