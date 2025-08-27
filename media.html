@@ -1,1 +1,123 @@
+<!-- media.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Media - Collin M. Constantine</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Media resources for Collin M. Constantine: 100-word bio and downloadable headshots.">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="site-title">
+        <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
+      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/RA.html">RA Positions</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/media.html" aria-current="page">Media</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
 
+    <main>
+      <div class="card">
+        <h1>Media Resources</h1>
+        <p class="muted">Copyable bio and high-resolution headshots for press and event organizers.</p>
+
+        <h2>100-word bio</h2>
+        <div id="media-bio" class="prose">
+          <p>
+            Collin M. Constantine is a College Assistant Professor of Economics and Official Fellow at Girton College,
+            University of Cambridge, where he also serves as Director of Studies in Economics. His research sits at the
+            intersection of international macroeconomics, finance, and political economy, with particular attention to how fiscal
+            dominance, exchange rate dynamics, and inequality shape development outcomes in small open and multi-ethnic economies.
+            He is Co-Editor of <em>Economics</em> and serves on the Editorial Review Board of the <em>Journal of Stratification
+            Economics</em>. Constantine frequently advises policymakers and delivers invited talks at international conferences,
+            academic seminars, and policy forums.
+          </p>
+        </div>
+        <button type="button" class="button" id="copy-bio" aria-label="Copy media bio">Copy bio</button>
+      </div>
+
+      <div class="card">
+        <h2>Headshots</h2>
+        <div class="headshot-grid">
+          <figure class="headshot">
+            <img src="/images/headshot-constantine-1.jpg" alt="Headshot of Collin M. Constantine">
+            <figcaption>
+              Formal headshot
+              <div class="downloads">
+                <a href="/images/headshot-constantine-1.jpg" download>Download JPG</a>
+                <a href="/images/headshot-constantine-1.png" download>Download PNG</a>
+              </div>
+            </figcaption>
+          </figure>
+         
+        </div>
+        <p class="muted">Alt text and filenames can be adjusted to match your preferred images.</p>
+      </div>
+    </main>
+
+  
+
+  <!-- Mobile nav + copy button -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+      if (btn && nav) {
+        btn.addEventListener('click', function () {
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      const copyBtn = document.getElementById('copy-bio');
+      const bioEl = document.getElementById('media-bio');
+      if (copyBtn && bioEl) {
+        copyBtn.addEventListener('click', async () => {
+          const text = bioEl.innerText.trim();
+          try {
+            await navigator.clipboard.writeText(text);
+            copyBtn.textContent = 'Copied';
+            setTimeout(()=>copyBtn.textContent='Copy bio',1500);
+          } catch {
+            // Fallback
+            const ta = document.createElement('textarea');
+            ta.value = text; document.body.appendChild(ta);
+            ta.select(); document.execCommand('copy'); ta.remove();
+            copyBtn.textContent = 'Copied';
+            setTimeout(()=>copyBtn.textContent='Copy bio',1500);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Collin M. Constantine</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
