@@ -1,363 +1,255 @@
-:root {
-  --bg: #ffffff;
-  --fg: #1a2b3c;
-  --muted: #6b7280;
-  --link: #1a4d6e; /* academic navy */
-  --accent: #8B0000; /* dark red for highlights */
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Research Agenda - Collin M. Constantine</title>
+  <meta name="description" content="Research agenda: New Structural Open Economy Macroeconomics (NSOEM) by Collin M. Constantine.">
 
-/* Base */
-* { box-sizing: border-box; }
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
-  color: var(--fg);
-  background: var(--bg);
-  line-height: 1.65;
-  overflow-x: hidden;
-}
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Layout */
-.container { max-width: 920px; margin: 0 auto; padding: 32px 20px; }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.site-title {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  color: #001f3f; /* dark navy */
-}
-.nav a { margin-right: 16px; color: var(--fg); }
-
-.hero { margin: 28px 0 18px 0; }
-.hero h1 { font-size: 30px; margin: 0 0 8px 0; }
-.hero h2 { font-size: 1.2rem; font-weight: 500; margin: 0; color: var(--muted); }
-
-.card {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 22px;
-  margin: 18px 0;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,.05);
-}
-.card h2 { font-size: 20px; margin: 0 0 10px 0; }
-
-.list { margin: 0; padding-left: 18px; }
-.footer {
-  margin-top: 36px;
-  padding-top: 18px;
-  border-top: 1px solid #e5e7eb;
-  color: var(--muted);
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Extras */
-.badge {
-  display: inline-block;
-  border: 1px solid #e5e7eb;
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 13px;
-  color: var(--muted);
-}
-.button {
-  display: inline-block;
-  border: 1px solid var(--fg);
-  padding: 10px 14px;
-  border-radius: 999px;
-  color: var(--fg);
-  text-decoration: none;
-}
-.tag {
-  font-size: 12px;
-  color: #374151;
-  background: #f3f4f6;
-  border-radius: 999px;
-  padding: 4px 10px;
-  margin-left: 8px;
-}
-ul.clean { list-style: none; padding-left: 0; margin: 0; }
-h2.section { margin-top: 26px; }
-
-/* Two-column only on wide screens */
-@media (min-width:800px){
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-}
-
-/* Headings / body palette */
-h1,h2,h3,h4,h5,h6 {
-  color: var(--fg);
-  margin-top: .8em;
-  margin-bottom: .4em;
-}
-
-/* Research section */
-.research-links { list-style: none; padding: 0; margin: 0; }
-.research-links li { margin-bottom: 12px; }
-.research-links a { color: var(--link); font-weight: 500; }
-
-/* Dark red only for "New Research" heading */
-.research-section h2 { color: var(--accent); }
-
-/* Collapsible papers */
-.paper { margin-bottom: 2.2em; }
-.paper-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.3em; }
-.paper-status { font-size: 0.95rem; color: #555; margin-bottom: 0.5em; }
-.paper-links { font-size: 0.9rem; margin-bottom: 0.5em; }
-.paper-links a { color: var(--link); margin-right: 6px; }
-
-/* --- Clean summary (no default box/marker) --- */
-details.abstract {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 10px 14px;
-  background: #fafafa;
-}
-details.abstract[open] { background: #fff; }
-details.abstract summary {
-  cursor: pointer;
-  font-weight: 500;
-  color: var(--link);
-  list-style: none;          /* remove marker in most browsers */
-  -webkit-appearance: none;  /* Safari */
-  appearance: none;
-}
-details.abstract summary::marker { content: ""; } /* Firefox */
-details.abstract summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
-details.abstract summary::after { content:" ▼"; font-size: .9em; }
-details.abstract[open] summary::after { content:" ▲"; }
-
-.paper-abstract { margin-top: .7em; font-size: .95rem; line-height: 1.7; color: #333; }
-
-/* Media elements */
-img,video { max-width: 100%; height: auto; }
-
-/* Mobile menu button */
-#menu-btn {
-  display: none;
-  border: 1px solid #e5e7eb;
-  background: #fff;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-/* --- Force visible separators on mobile --- */
-@media (max-width:760px){
-  /* Make sure each entry is block-level and spaced */
-  .papers .paper,
-  .research-section .paper{
-    display:block;
-    border-bottom:1px solid #e5e7eb;
-    padding-bottom:1rem;
-    margin-bottom:1.4rem;
+  <!-- Inline CSS (you can move this into /styles.css if you prefer) -->
+  <style>
+  :root{
+    --bg:#ffffff;
+    --fg:#1a2b3c;
+    --muted:#6b7280;
+    --link:#1a4d6e; /* academic navy */
+    --accent:#8B0000; /* dark red for highlights */
   }
 
-  /* Keep the last one clean */
-  .papers .paper:last-child,
-  .research-section .paper:last-child{
-    border-bottom:0;
-    margin-bottom:0;
-    padding-bottom:0;
+  /* Base */
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;padding:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+    color:var(--fg);background:var(--bg);
+    line-height:1.65;overflow-x:hidden
+  }
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Layout */
+  .container{max-width:920px;margin:0 auto;padding:32px 20px}
+  .header{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;
+    position:relative;z-index:10; /* keep above content on mobile */
+  }
+  .site-title{font-size:28px;font-weight:700;letter-spacing:.2px;color:#001f3f}
+  .nav a{margin-right:16px;color:var(--fg)}
+
+  .hero{margin:28px 0 18px}
+  .hero h1{font-size:30px;margin:0 0 8px}
+  .hero h2{font-size:1.2rem;font-weight:500;margin:0;color:var(--muted)}
+
+  .card{
+    background:#fff;border:1px solid #e5e7eb;border-radius:12px;
+    padding:1.25rem 1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.04);margin:1.5rem 0
+  }
+  .card h2{font-size:20px;margin:0 0 10px}
+
+  .list{margin:0;padding-left:18px}
+  .footer{margin-top:36px;padding-top:18px;border-top:1px solid #e5e7eb;color:var(--muted);font-size:14px;text-align:center}
+
+  /* Extras */
+  .badge{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:13px;color:var(--muted)}
+  .button{display:inline-block;border:1px solid var(--fg);padding:10px 14px;border-radius:999px;color:var(--fg);text-decoration:none}
+  .tag{font-size:12px;color:#374151;background:#f3f4f6;border-radius:999px;padding:4px 10px;margin-left:8px}
+  ul.clean{list-style:none;padding-left:0;margin:0}
+  h2.section{margin-top:26px}
+
+  /* Two-column on wide screens */
+  @media (min-width:800px){
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   }
 
-  /* Give the details/summary a bit of breathing room */
-  .research-section details.abstract{
-    margin-top:.5rem;
+  /* Headings */
+  h1,h2,h3,h4,h5,h6{color:var(--fg);margin-top:.8em;margin-bottom:.4em}
+
+  /* Research section */
+  .research-links{list-style:none;padding:0;margin:0}
+  .research-links li{margin-bottom:12px}
+  .research-links a{color:var(--link);font-weight:500}
+  .research-section h2{color:var(--accent)}
+
+  /* Collapsible papers */
+  .paper{margin-bottom:2.2em}
+  .paper-title{font-weight:600;font-size:1rem;margin-bottom:.3em}
+  .paper-status{font-size:.95rem;color:#555;margin-bottom:.5em}
+  .paper-links{font-size:.9rem;margin-bottom:.5em}
+  .paper-links a{color:var(--link);margin-right:6px}
+
+  /* Abstract details */
+  details.abstract{border:1px solid #e5e7eb;border-radius:10px;padding:10px 14px;background:#fafafa}
+  details.abstract[open]{background:#fff}
+  details.abstract summary{
+    cursor:pointer;font-weight:500;color:var(--link);
+    list-style:none;-webkit-appearance:none;appearance:none
+  }
+  details.abstract summary::marker{content:""}
+  details.abstract summary::-webkit-details-marker{display:none}
+  details.abstract summary::after{content:" ▼";font-size:.9em}
+  details.abstract[open] summary::after{content:" ▲"}
+  .paper-abstract{margin-top:.7em;font-size:.95rem;line-height:1.7;color:#333}
+
+  /* Media elements */
+  img,video{max-width:100%;height:auto}
+
+  /* Mobile menu button */
+  #menu-btn{
+    display:none;border:1px solid #e5e7eb;background:#fff;border-radius:10px;
+    padding:8px 12px;font-size:16px;line-height:1;cursor:pointer;position:relative;z-index:11
+  }
+  .nav{position:relative;z-index:9}
+
+  /* Bigger tap targets */
+  .nav a,.button,.pill{padding:8px 12px}
+
+  /* Inline links */
+  .inline-links{white-space:nowrap}
+  .inline-links a{margin:0 6px;position:relative;font-weight:normal}
+  .inline-links a + a::before{content:" | ";margin:0 .35rem;color:#6b7280}
+
+  /* Bio picture */
+  .bio-card{text-align:center}
+  .bio-card::after{content:"";display:block;clear:both}
+  .bio-pic{
+    width:180px;height:180px;object-fit:cover;border-radius:50%;
+    display:block;margin:0 auto 20px;box-shadow:0 2px 6px rgba(0,0,0,.12)
+  }
+  @media (min-width:800px){
+    .bio-card{text-align:left}
+    .bio-pic{float:left;margin:0 24px 16px 0}
+  }
+  .bio-card p{line-height:1.85;margin-bottom:1.7em}
+  .bio-card p:last-child{margin-bottom:0}
+
+  /* Clean summary marker across sections */
+  .research-section details.abstract>summary,
+  .forthcoming-section details.abstract>summary{
+    display:inline-flex;align-items:center;gap:.4rem;list-style:none!important;
+    -webkit-appearance:none;appearance:none;background:transparent!important;border:0!important;
+    padding:0 .95rem 0 0;margin:0;color:var(--link);font-weight:500;cursor:pointer
+  }
+  .research-section details.abstract>summary::-webkit-details-marker,
+  .forthcoming-section details.abstract>summary::-webkit-details-marker{display:none!important}
+  .research-section details.abstract>summary::marker,
+  .forthcoming-section details.abstract>summary::marker{content:""!important}
+  .research-section details.abstract>summary::-moz-list-bullet,
+  .forthcoming-section details.abstract>summary::-moz-list-bullet{font-size:0!important}
+  .research-section details.abstract>summary::after,
+  .forthcoming-section details.abstract>summary::after{content:"▼";margin-left:auto;line-height:1;font-size:.9em}
+  .research-section details.abstract[open]>summary::after,
+  .forthcoming-section details.abstract[open]>summary::after{content:"▲"}
+  .research-section details.abstract>summary:focus-visible,
+  .forthcoming-section details.abstract>summary:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+
+  /* Media page */
+  .prose{line-height:1.7}
+  .muted{color:#6b7280;font-size:.95rem}
+  .headshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;align-items:start}
+  .headshot figcaption{margin-top:.5rem;font-size:.95rem}
+  .downloads a{margin-right:.75rem;text-decoration:underline}
+  .media-headshot{max-width:220px;height:auto;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.15);display:block;margin:0 auto}
+
+  /* Mobile tweaks */
+  @media (max-width:760px){
+    .container{padding:18px 14px}
+    .site-title{font-size:22px}
+    .hero h1{font-size:1.4rem}
+    .hero h2{font-size:1.1rem}
+    .card{padding:14px;border-radius:12px}
+    .grid-2{display:block}
+
+    /* Mobile nav */
+    #menu-btn{display:inline-block}
+    .nav{display:none;width:100%;margin-top:8px}
+    .nav.open{display:block}
+    .nav a{display:block;margin:6px 0;padding:12px 0}
+
+    /* Clear separators for lists */
+    .papers .paper,.research-section .paper{
+      display:block;border-bottom:1px solid #e5e7eb;padding-bottom:1rem;margin-bottom:1.4rem
+    }
+    .papers .paper:last-child,.research-section .paper:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+
+    .research-section details.abstract{margin-top:.5rem}
+
+    .papers,.research-links{list-style:none;padding-left:0;margin-left:0}
+
+    /* Bio paragraph readability */
+    .bio-card p{text-align:justify!important;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto}
+    .inline-links{display:block;white-space:normal}
+    .inline-links a{display:block;margin:6px 0}
+    .inline-links a::before{content:none!important}
   }
 
-  /* If your list is a <ul>, remove bullets and left indent on mobile */
-  .papers{
-    list-style:none;
-    padding-left:0;
-    margin-left:0;
-  }
-}
+  /* Footer tone */
+  footer{color:#555;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="site-title">
+        <a href="/" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
+      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/agenda.html" aria-current="page">Research Agenda</a>
+        <a href="/research.html">Research</a>
+        <a href="/RA.html">RA Positions</a>
+        <a href="/about.html">About</a>
+        <a href="/media.html">Press Kit</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
 
+    <main>
+      <h2>New Structural Open Economy Macroeconomics</h2>
 
-/* Bigger tap targets */
-.nav a,.button,.pill { padding: 8px 12px; }
+      <div class="card bio-card">
+        <p>Modern macroeconomics—particularly <em>New Open Economy Macroeconomics (NOEM)</em>—has been shaped largely by the experience of advanced, financially integrated small open economies…</p>
+        <p>By contrast, the stylised facts that define <em>developing and low-income open economies</em> are fundamentally different…</p>
+        <p>In these economies, adjustment occurs primarily through <em>quantity changes</em>…</p>
+        <p>Building on these realities, my research develops <strong>New Structural Open Economy Macroeconomics (NSOEM)</strong>…</p>
 
-/* Inline links */
-.inline-links { white-space: nowrap; }
-.inline-links a { margin: 0 6px; position: relative; font-weight: normal; }
-.inline-links a + a::before { content:" | "; margin: 0 .35rem; color: #6b7280; }
+        <h3>What NSOEM Adds</h3>
+        <ul>
+          <li>Updated stylised facts for developing and import-dependent economies;</li>
+          <li>FX-constrained output gap and import-driven aggregate supply;</li>
+          <li>Banks embedded in adjustment dynamics;</li>
+          <li>Policy thresholds (e.g., limits of inflation targeting at high import shares);</li>
+          <li>Stock–flow consistency across external, fiscal, and banking sectors.</li>
+        </ul>
 
-/* Mobile tweaks */
-@media (max-width:760px){
-  .container { padding: 18px 14px; }
-  .site-title { font-size: 22px; }
-  .hero h1 { font-size: 1.4rem; }
-  .hero h2 { font-size: 1.1rem; }
-  .card { padding: 14px; border-radius: 12px; }
-  .grid-2 { display: block; }
+        <h3>Precursors</h3>
+        <p>Traditional Structuralist Macroeconomics emphasised import dependence and FX constraints but focused on real-sector flows and underplayed money, banking, and stocks. The <em>Monetary Approach to the Balance of Payments (MABP)</em> takes the opposite view—external imbalances reflect monetary disequilibrium—but its money-demand foundations are empirically unstable and it abstracts from institutional realities. Both are largely detached from modern debates and micro-founded tools.</p>
+      </div>
+    </main>
 
-  /* Mobile nav */
-  #menu-btn { display: inline-block; }
-  .nav { display: none; width: 100%; margin-top: 8px; }
-  .nav.open { display: block; }
-  .nav a { display: block; margin: 6px 0; padding: 10px 0; }
+    <footer class="footer">
+      <div>© <span id="y"></span> Collin M. Constantine</div>
+    </footer>
+  </div>
 
-  /* Bio */
-  .bio-card p {
-    text-align: justify !important;
-    text-justify: inter-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-  }
+  <!-- Mobile nav JS -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-  /* Inline links stacked */
-  .inline-links { display: block; white-space: normal; }
-  .inline-links a { display: block; margin: 6px 0; }
-  .inline-links a::before { content: none !important; }
-}
-
-/* Bio picture */
-.bio-card { text-align: center; }
-.bio-card::after { content:""; display: block; clear: both; }
-.bio-pic {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 20px auto;
-  box-shadow: 0 2px 6px rgba(0,0,0,.12);
-}
-@media (min-width:800px){
-  .bio-card { text-align: left; }
-  .bio-pic { float: left; margin: 0 24px 16px 0; }
-}
-.bio-card p { line-height: 1.85; margin-bottom: 1.7em; }
-.bio-card p:last-child { margin-bottom: 0; }
-
-
-
-/* Kill the default summary box/marker on all browsers + mobile */
-.research-section details.abstract > summary,
-.forthcoming-section details.abstract > summary{
-  display: inline-flex;           /* no list box */
-  align-items: center;
-  gap: .4rem;
-  list-style: none !important;    /* Firefox/Safari */
-  -webkit-appearance: none;       /* iOS Safari */
-  appearance: none;
-  background: transparent !important;
-  border: 0 !important;
-  padding: 0 .95rem 0 0;          /* room on right for arrow */
-  margin: 0;
-  color: var(--link);
-  font-weight: 500;
-  cursor: pointer;
-}
-
-/* Hide native markers in all engines */
-.research-section details.abstract > summary::-webkit-details-marker,
-.forthcoming-section details.abstract > summary::-webkit-details-marker{
-  display: none !important;
-}
-.research-section details.abstract > summary::marker,
-.forthcoming-section details.abstract > summary::marker{
-  content: "" !important;
-}
-.research-section details.abstract > summary::-moz-list-bullet,
-.forthcoming-section details.abstract > summary::-moz-list-bullet{
-  font-size: 0 !important;
-}
-
-/* Custom right–aligned arrow */
-.research-section details.abstract > summary::after,
-.forthcoming-section details.abstract > summary::after{
-  content: "▼";
-  margin-left: auto;              /* push arrow to the right */
-  line-height: 1;
-  font-size: .9em;
-}
-.research-section details.abstract[open] > summary::after,
-.forthcoming-section details.abstract[open] > summary::after{
-  content: "▲";
-}
-
-/* Nice focus without a boxy background */
-.research-section details.abstract > summary:focus-visible,
-.forthcoming-section details.abstract > summary:focus-visible{
-  outline: 2px solid var(--link);
-  outline-offset: 2px;
-}
-
-/* Ensure list bullets are not showing on mobile around abstracts */
-@media (max-width:760px){
-  .papers, .research-links{ list-style: none; padding-left: 0; }
-}
-
-
-
-.card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04);
-  margin: 1.5rem 0;
-}
-
-
-.bio {
-  text-align: justify;
-}
-
-@media (max-width: 768px) {
-  .bio {
-    text-align: left;
-  }
-}
-
-/* Media page */
-.prose { line-height: 1.7; }
-.muted { color: #6b7280; font-size: 0.95rem; }
-.headshot-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  align-items: start;
-}
-.headshot figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-}
-.downloads a {
-  margin-right: 0.75rem;
-  text-decoration: underline;
-}
-
-/* Media headshot sizing */
-.media-headshot {
-  max-width: 220px;   /* adjust to the size you want */
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  display: block;
-  margin: 0 auto;
-}
-
-
-
-
-
-
-
+    (function(){
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+</body>
+</html>
 
 
 
