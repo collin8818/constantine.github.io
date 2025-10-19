@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Research Agenda - Collin M. Constantine</title>
+  <title>Home - Collin M. Constantine</title>
   <link rel="stylesheet" href="/styles.css">
-  <meta name="description" content="Research Agenda with Collin M. Constantine.">
+  <meta name="description" content="Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
 </head>
 <body>
   <div class="container">
     <header class="header">
       <div class="site-title">
-        <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin M. Constantine</a>
+        <a href="https://collinconstantine.com/" class="site-title-link" rel="home">Collin M. Constantine</a>
       </div>
       <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
       <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
-        <a href="/index.html">Home</a>
+        <a href="/index.html" aria-current="page">Home</a>
          <a href="/Agenda.html">Research Agenda</a>
         <a href="/research.html">Research</a>
         <a href="/RA.html">RA Positions</a>
           <a href="/about.html">About</a>
-         <a href="/media.html">Press Kit</a>
+      <a href="/media.html">Press Kit</a>
         <a href="/contact.html">Contact</a>
         <a href="/CV_CMC.pdf" class="button">CV</a>
       </nav>
@@ -35,6 +35,7 @@
       <!-- Prefer an absolute site path so it works everywhere -->
       <img src="Untitled.jpg" alt="Collin M. Constantine" class="bio-pic" loading="lazy">
 
+      
       <p><p>
 </p>
       <p>
