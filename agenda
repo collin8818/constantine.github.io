@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Research Agenda - Collin M. Constantine</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Research agenda: Structural Open Economy Macroeconomics (SOEM) by Collin M. Constantine.">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="site-title">
+        <a href="/" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
+      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/agenda.html" aria-current="page">Research Agenda</a>
+        <a href="/research.html">Research</a>
+        <a href="/RA.html">RA Positions</a>
+        <a href="/about.html">About</a>
+        <a href="/media.html">Press Kit</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Research Agenda</h2>
+
+      <div class="card bio-card">
+        <img src="/Untitled.jpg" alt="Collin M. Constantine" class="bio-pic" loading="lazy">
+        <p>Modern open-economy macroeconomics—particularly the tradition of
+        <em>New Open Economy Macroeconomics (NOEM)</em>—has been shaped largely by the
+        experience of advanced, financially integrated small open economies. Its foundational
+        stylised facts are well established: prices and wages are sticky; foreign exchange is abundant
+        and freely traded; capital markets are deep and smooth cyclical fluctuations; and credible
+        monetary policy anchors inflation expectations. In such environments, domestic capital
+        overwhelmingly dominates total investment, inflation is primarily home-grown, and monetary
+        policy transmits effectively through the interest-rate channel. External balance, in turn, is
+        maintained through flexible exchange-rate adjustment with incomplete but predictable pass-through.</p>
+
+        <p>By contrast, the stylised facts that define <em>developing and low-income open economies</em>
+        are fundamentally different. Prices are relatively flexible, and imported inflation transmits rapidly to
+        domestic prices. Nominal exchange rates are fixed or tightly managed, so external imbalances adjust through
+        movements in foreign reserves at the central bank. Fiscal dominance and shallow capital markets render the
+        traditional interest-rate channel of monetary transmission largely ineffective, while financial intermediation
+        remains predominantly bank-based. Domestic capital represents only a small fraction of the total capital stock,
+        reflecting high import dependence for both consumption and investment goods.</p>
+
+        <p>In these economies, macroeconomic adjustment occurs primarily through <em>quantity changes</em>—in the
+        volume of bank credit, foreign exchange use and allocation, and fluctuations in real output rather than in prices.
+        Therefore, inflation, nominal exchange rates, and interest rates are poor signals of underlying macroeconomic
+        conditions and provide limited guidance for forward-looking expectations. This configuration of
+        fiscal–monetary–external interdependence defines a distinctive form of openness—not rooted in financial integration,
+        but in <em>import dependence and persistent foreign exchange scarcity</em>.</p>
+
+        <p>Building on these empirical realities, my research develops a new analytical framework:
+        <strong>Structural Open Economy Macroeconomics (SOEM)</strong>, which replaces the analytical role of price rigidity
+        with the <em>availability of foreign exchange</em>. The framework embeds the external sector, fiscal operations, and the
+        banking system within a unified <em>stock–flow accounting structure</em>, offering a coherent explanation for the stylised
+        facts that characterise developing and import-dependent economies.</p>
+
+        <p>Traditional Structuralist Macroeconomics long emphasised import dependence, foreign exchange constraints, and
+        supply-side bottlenecks. Yet its focus on real-sector relationships often overlooked the roles of money, banking, and
+        the stock dimensions of the external constraint, favouring flow-based analyses instead. Moreover, it remained detached
+        from contemporary debates—such as the flattening of the Phillips Curve—or from modern modelling innovations grounded in
+        microfoundations.</p>
+
+        <p>My work also shares analytical affinities with other traditions. Post-Keynesian and Kaleckian frameworks highlight
+        demand-led growth, financial fragility, and income distribution, while recent research on dominant currency pricing
+        underscores that international trade is largely invoiced in foreign currency. Each recognises the importance of external
+        constraint, but none systematically integrates foreign exchange, banking, and fiscal operations within a stock–flow
+        consistent framework. More importantly, they do not explore how the inadequate supply of foreign exchange reshapes core
+        macroeconomic relationships—business cycle dynamics, output-gap measurement, inflation targeting, or the slope of the
+        Phillips Curve.</p>
+
+        <p><em>New Structural Open Economy Macroeconomics</em> advances this agenda by:</p>
+        <ul>
+          <li>Updating the stylised facts that contemporary macro theory must explain for developing and import-dependent economies;</li>
+          <li>Developing new tools, such as an FX-constrained output gap and an import-driven aggregate supply function;</li>
+          <li>Embedding financial intermediaries explicitly within the adjustment process;</li>
+          <li>Identifying threshold effects in policy effectiveness—for example, limits of inflation targeting under high import shares;</li>
+          <li>Anchoring analysis in stock–flow consistent models that capture both the flow and accumulation of foreign assets and liabilities across sectors.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Collin M. Constantine</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script src="/site.js" defer></script>
+</body>
+</html>
+
+  <script src="/site.js" defer></script>
+
+</body>
+</html>
