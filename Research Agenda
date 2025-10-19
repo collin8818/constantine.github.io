@@ -16,7 +16,7 @@
       <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
       <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
         <a href="/index.html" aria-current="page">Home</a>
- <a href="/Research agenda.html">Research Agenda</a>
+ <a href="/Research Agenda.html">Research Agenda</a>
         <a href="/research.html">Research</a>
         <a href="/RA.html">RA Positions</a>
           <a href="/about.html">About</a>
