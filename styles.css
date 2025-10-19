@@ -367,46 +367,6 @@ img,video { max-width: 100%; height: auto; }
 
 
 
-#new-structural-open-economy-macroeconomics {
-  max-width: 850px;
-  margin: 3rem auto;
-  font-family: "Garamond", "Georgia", serif;
-  line-height: 1.7;
-  color: #1a1a1a;
-}
-
-#new-structural-open-economy-macroeconomics h2 {
-  font-size: 1.9rem;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
-}
-
-#new-structural-open-economy-macroeconomics h3 {
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  color: #333;
-}
-
-#new-structural-open-economy-macroeconomics p {
-  text-align: justify;
-  margin-bottom: 1rem;
-}
-
-#new-structural-open-economy-macroeconomics em {
-  color: #5b5b5b;
-}
-
-#new-structural-open-economy-macroeconomics strong {
-  color: #8b0000;
-}
-
-#new-structural-open-economy-macroeconomics ul {
-  margin-left: 1.5rem;
-}
-
-
-
 /* Footer tone */
 footer { color: #555; font-size: .9rem; }
 
