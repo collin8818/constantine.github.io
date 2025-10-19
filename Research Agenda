@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home - Collin M. Constantine</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="site-title">
+        <a href="https://collinconstantine.com/" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
+      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/RA.html">RA Positions</a>
+          <a href="/about.html">About</a>
+      <a href="/media.html">Press Kit</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
+
+
+
+  <h2>Overview of Research</h2>
+
+    <!-- Bio card with circle headshot -->
+    <div class="card bio-card">
+      <!-- Prefer an absolute site path so it works everywhere -->
+      <img src="Untitled.jpg" alt="Collin M. Constantine" class="bio-pic" loading="lazy">
+
+      <p><p>
+</p>
+      <p>Collin M. Constantine has built a research agenda at the intersection of international macroeconomics, finance, and political economy. By connecting distributive conflict to fiscal dominance and class-ethnic cleavages to policy trade-offs, his work exemplifies applied theory as a bridge between rigorous modelling and the pressing challenges of small open and multi-ethnic economies. He develops tractable models to resolve empirical puzzles in exchange rate dynamics, fiscal–monetary interactions, and inequality, with a central focus on how macro-financial dynamics and distributional cleavages shape development outcomes.</p>
+      <p>One strand redefines classic debates on the “Dutch Disease” and the “Resource Curse,” showing how central bank financing of fiscal deficits fuels inflation, real exchange rate appreciation, and financial distortions. This framework highlights the role of distributional conflict, where political pressures to expand wages and spending exceed available resource rents and force central banks into deficit financing. It also offers new perspectives on fiscal dominance and the paradox of banking, where resource wealth is accompanied by excess bank reserves, widening interest rate spreads, and other related distortions.</p>
+      <p>Constantine’s research further advances understanding of fiscal and debt sustainability, the measurement of macroeconomic fundamentals in balance-of-payments–constrained economies, inflation in open economies, and the political economy of trade conflict. Another strand develops formal models of class and ethnic divisions, generating testable implications for how ideology, inequality, and distributive conflict constrain policy space. This work demonstrates how redistributive struggles shape macroeconomic choices, linking class-ethnic cleavages to fiscal dominance, limited stabilisation capacity, and sharp policy trade-offs in diverse societies.<p>
+     <p>These projects advance a research agenda that integrates macro-finance with the political economy of inequality. By tying deep theoretical mechanisms to empirical puzzles, Constantine’s work provides new frameworks for understanding how institutional, economic, and political forces jointly structure inequality, stabilisation, and economic growth.</p>
+
+      
+    <footer class="footer">
+      <div>© <span id="y"></span> Collin M. Constantine</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    </footer>
+  </div>
+
+ 
+
+  
+      
+      <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    </footer>
+  </div>
+  <script src="/site.js" defer></script>
+
+</body>
+</html>
