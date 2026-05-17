@@ -496,17 +496,6 @@ a:hover {
 
 
 
-.substack-embed {
-  display: flex;
-  justify-content: center;
-  margin: 1.5rem 0 2rem 0;
-}
-
-.substack-embed iframe {
-  max-width: 100%;
-  width: 480px;
-  border-radius: 8px;
-}
 
 
 
