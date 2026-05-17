@@ -352,7 +352,30 @@ img,video { max-width: 100%; height: auto; }
   margin: 0 auto;
 }
 
+.toolkit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+}
 
+.toolkit-table th,
+.toolkit-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.toolkit-table th {
+  font-weight: 600;
+  color: #1f3a5f;
+}
+
+.toolkit-table td:first-child {
+  width: 28%;
+  font-weight: 600;
+}
 
 
 
