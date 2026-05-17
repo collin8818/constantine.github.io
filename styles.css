@@ -415,7 +415,22 @@ img,video { max-width: 100%; height: auto; }
 }
 
 
+h2, h3 {
+  color: #1f3a5f;
+}
 
+a {
+  color: #1f3a5f;
+}
+
+a:hover {
+  color: #345b8c;
+}
+
+.toolkit-table thead th {
+  background: #f4f7fb;
+  color: #1f3a5f;
+}
 
 
 /* Footer tone */
