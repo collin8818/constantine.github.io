@@ -470,6 +470,29 @@ a:hover {
   }
 }
 
+.cluster-block {
+  background: #fafbfd;
+  border: 1px solid #e3e7ee;
+  border-left: 4px solid #1f3a5f;
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+  margin: 1.25rem 0;
+}
+
+.cluster-block h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+  color: #1f3a5f;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.cluster-block p {
+  margin: 0;
+  font-size: 0.99rem;
+  line-height: 1.65;
+  color: #222;
+}
 
 
 
