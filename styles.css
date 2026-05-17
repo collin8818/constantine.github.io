@@ -427,16 +427,11 @@ a:hover {
   color: #345b8c;
 }
 
-.toolkit-table thead th {
-  background: #f4f7fb;
-  color: #1f3a5f;
-}
-
 
 
 .toolkit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0 2rem 0;
 }
@@ -467,6 +462,12 @@ a:hover {
 .toolkit-card:hover {
   background: #f7f9fc;
   border-color: #d4dbe6;
+}
+
+@media (max-width: 700px) {
+  .toolkit-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
