@@ -355,28 +355,38 @@ img,video { max-width: 100%; height: auto; }
 .toolkit-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  font-size: 0.98rem;
+  margin: 1.25rem 0 2rem 0;
+  font-size: 0.97rem;
+  line-height: 1.5;
+  border-top: 2px solid #cfd8e3;
+  border-bottom: 2px solid #cfd8e3;
 }
 
-.toolkit-table th,
+.toolkit-table thead th {
+  text-align: left;
+  background: #f7f9fc;
+  color: #1f3a5f;
+  font-weight: 700;
+  padding: 1rem 1rem;
+  border-bottom: 2px solid #cfd8e3;
+}
+
 .toolkit-table td {
   text-align: left;
   vertical-align: top;
-  padding: 0.85rem 0.9rem;
-  border-bottom: 1px solid #ddd;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #e3e7ee;
 }
 
-.toolkit-table th {
+.toolkit-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.toolkit-table td:first-child,
+.toolkit-table th:first-child {
+  width: 30%;
   font-weight: 600;
-  color: #1f3a5f;
 }
-
-.toolkit-table td:first-child {
-  width: 28%;
-  font-weight: 600;
-}
-
 
 
 
