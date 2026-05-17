@@ -380,13 +380,29 @@ img,video { max-width: 100%; height: auto; }
 
 
 
-.section-divider {
-  border: 0;
-  height: 1px;
-  background: #d8d8d8;
-  margin: 2.75rem 0 1.75rem 0;
+.section-break {
+  text-align: center;
+  margin: 2.5rem 0 1.5rem 0;
+  position: relative;
 }
 
+.section-break::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #d8d8d8;
+  z-index: 0;
+}
+
+.section-break span {
+  position: relative;
+  background: #fff;
+  padding: 0 0.75rem;
+  color: #888;
+  z-index: 1;
+}
 
 
 
