@@ -613,27 +613,26 @@ a:hover {
 
 
 
-
-/* Larger research-page layout, closer to Macro Policy Lab */
+/* Research page: 20% smaller than the large version */
 
 main,
 .research-page {
-  max-width: 1450px !important;
-  width: 96% !important;
+  max-width: 1250px !important;
+  width: 94% !important;
   margin: 0 auto !important;
 }
 
 .research-item {
   display: grid !important;
-  grid-template-columns: 620px 1fr !important;
-  gap: 3rem !important;
+  grid-template-columns: 500px 1fr !important;
+  gap: 2.4rem !important;
   align-items: start !important;
-  margin-bottom: 4rem !important;
+  margin-bottom: 3.2rem !important;
 }
 
 .research-thumb {
   width: 100% !important;
-  height: 390px !important;
+  height: 312px !important;
   background: #fff !important;
   overflow: hidden !important;
 }
@@ -648,11 +647,15 @@ main,
   box-shadow: none !important;
 }
 
+.research-content {
+  min-width: 0 !important;
+}
+
 .research-title {
-  font-size: 2.15rem !important;
-  line-height: 1.12 !important;
+  font-size: 1.72rem !important;
+  line-height: 1.15 !important;
   font-weight: 700 !important;
-  margin: 0 0 0.8rem 0 !important;
+  margin: 0 0 0.65rem 0 !important;
 }
 
 .research-title a {
@@ -665,45 +668,41 @@ main,
 }
 
 .research-meta {
-  font-size: 0.95rem !important;
+  font-size: 0.9rem !important;
   line-height: 1.4 !important;
   color: #777 !important;
-  margin-bottom: 0.65rem !important;
-}
-
-.research-authors {
-  font-size: 1.05rem !important;
-  line-height: 1.45 !important;
-  color: #444 !important;
-  margin-bottom: 0.7rem !important;
-}
-
-.research-abstract {
-  font-size: 1.05rem !important;
-  line-height: 1.6 !important;
-  color: #444 !important;
-  max-width: 780px !important;
-  margin-bottom: 0.8rem !important;
-}
-
-.research-status {
-  font-size: 0.95rem !important;
-  color: #666 !important;
   margin-bottom: 0.55rem !important;
 }
 
+.research-authors {
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+  color: #444 !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.research-abstract {
+  font-size: 1rem !important;
+  line-height: 1.58 !important;
+  color: #444 !important;
+  max-width: 720px !important;
+  margin-bottom: 0.7rem !important;
+}
+
+.research-status {
+  font-size: 0.92rem !important;
+  color: #666 !important;
+  margin-bottom: 0.5rem !important;
+}
+
 .research-links a {
-  font-size: 0.98rem !important;
+  font-size: 0.95rem !important;
   color: #1f3a5f !important;
   text-decoration: none !important;
   font-weight: 600 !important;
 }
 
-.research-links a:hover {
-  text-decoration: underline !important;
-}
-
-/* Mobile fix */
+/* Mobile */
 @media only screen and (max-width: 900px) {
   main,
   .research-page {
@@ -716,7 +715,7 @@ main,
   .research-item {
     display: block !important;
     width: 100% !important;
-    margin-bottom: 3rem !important;
+    margin-bottom: 2.6rem !important;
   }
 
   .research-thumb {
@@ -732,16 +731,15 @@ main,
   }
 
   .research-title {
-    font-size: 1.55rem !important;
+    font-size: 1.45rem !important;
     line-height: 1.22 !important;
   }
 
   .research-abstract {
     max-width: 100% !important;
-    font-size: 0.98rem !important;
+    font-size: 0.96rem !important;
   }
 }
-
 
 
 
