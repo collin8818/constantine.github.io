@@ -530,7 +530,7 @@ a:hover {
 
 .paper-card.with-thumb {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 500px 1fr;
   gap: 1.6rem;
   align-items: start;
 }
