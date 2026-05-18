@@ -515,12 +515,11 @@ a:hover {
 
 
 .research-item {
-  grid-template-columns: 300px 1fr;
-  gap: 2.4rem;
+  grid-template-columns: 330px 1fr;
 }
 
 .research-thumb {
-  height: 320px;
+  height: 210px;
 }
 
 
