@@ -513,6 +513,31 @@ a:hover {
 
 
 
+.research-item {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 2.2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.research-thumb {
+  width: 100%;
+  height: 275px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.research-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 
 .research-item {
   grid-template-columns: 330px 1fr;
