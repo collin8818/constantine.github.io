@@ -514,7 +514,7 @@ a:hover {
 
 
 .card {
-  max-width: 1050px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0;
   border: none;
@@ -531,13 +531,13 @@ a:hover {
 .paper-card.with-thumb {
   display: grid;
   grid-template-columns: 500px 1fr;
-  gap: 1.6rem;
+  gap: 1.8rem;
   align-items: start;
 }
 
 .paper-thumb img {
-  width: 260px;
-  height: 165px;
+  width: 100%;
+  height: 315px;
   object-fit: cover;
   display: block;
   border: none;
@@ -574,7 +574,7 @@ a:hover {
   color: #666;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .paper-card.with-thumb {
     grid-template-columns: 1fr;
   }
@@ -584,7 +584,6 @@ a:hover {
     height: auto;
   }
 }
-
 
 
 
