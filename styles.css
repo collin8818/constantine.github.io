@@ -524,7 +524,7 @@ a:hover {
 
 .paper-card.with-thumb {
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 1.5rem;
   align-items: start;
 }
