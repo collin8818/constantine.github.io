@@ -549,71 +549,7 @@ a:hover {
 
 
 
-/* Mobile portrait fix for research page */
-@media only screen and (max-width: 900px) {
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .research-page {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
-  }
-
-  .research-item {
-    display: block !important;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 2.5rem;
-  }
-
-  .research-thumb {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin-bottom: 1rem;
-  }
-
-  .research-thumb img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain;
-    display: block;
-  }
-
-  .research-content {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .research-title {
-    font-size: 1.3rem;
-    line-height: 1.25;
-  }
-
-  .research-abstract {
-    max-width: 100%;
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
-}
-
-
-
-
-
-
-
-
-/* Research page: 20% smaller than the large version */
+/* Research page layout */
 
 main,
 .research-page {
@@ -656,10 +592,11 @@ main,
   line-height: 1.15 !important;
   font-weight: 700 !important;
   margin: 0 0 0.65rem 0 !important;
+  color: #1f3a5f !important;
 }
 
 .research-title a {
-  color: #1f2933 !important;
+  color: #1f3a5f !important;
   text-decoration: none !important;
 }
 
@@ -702,8 +639,20 @@ main,
   font-weight: 600 !important;
 }
 
+.research-links a:hover {
+  text-decoration: underline !important;
+}
+
 /* Mobile */
+
 @media only screen and (max-width: 900px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   main,
   .research-page {
     width: 100% !important;
@@ -715,19 +664,29 @@ main,
   .research-item {
     display: block !important;
     width: 100% !important;
+    max-width: 100% !important;
     margin-bottom: 2.6rem !important;
   }
 
   .research-thumb {
     width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     margin-bottom: 1rem !important;
   }
 
   .research-thumb img {
     width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
+    display: block !important;
+  }
+
+  .research-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 
   .research-title {
@@ -738,15 +697,11 @@ main,
   .research-abstract {
     max-width: 100% !important;
     font-size: 0.96rem !important;
+    line-height: 1.55 !important;
   }
 }
 
-
-
-
-
-
-
+/* Remove any special styling from CV nav link */
 
 nav a[href*="cv"],
 nav a[href*="CV"],
