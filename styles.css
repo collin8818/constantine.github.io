@@ -508,7 +508,7 @@ a:hover {
 
 
 .paper-card {
-  padding: 1.1rem 0;
+  padding: 1.2rem 0 1.3rem 0;
   border-bottom: 1px solid #e3e7ee;
 }
 
@@ -539,14 +539,21 @@ a:hover {
 .paper-authors {
   font-size: 0.94rem;
   color: #555;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.paper-abstract {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: #222;
+  margin-bottom: 0.55rem;
+  max-width: 900px;
 }
 
 .paper-status {
   font-size: 0.9rem;
   color: #666;
 }
-
 
 
 
