@@ -515,7 +515,7 @@ a:hover {
 
 
 .research-item {
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 2.4rem;
 }
 
