@@ -514,14 +514,14 @@ a:hover {
 
 
 
-
-
 .research-item {
-  display: grid;
-  grid-template-columns: 330px 1fr;
-  gap: 2rem;
+  grid-template-columns: 500px 1fr;
+  gap: 2.4rem;
 }
 
+.research-thumb {
+  height: 320px;
+}
 
 
 
