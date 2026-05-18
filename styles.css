@@ -748,7 +748,14 @@ main,
 
 
 
-
+nav a[href*="cv"],
+nav a[href*="CV"],
+nav a[href*="Cv"] {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
 
 
