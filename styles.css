@@ -495,7 +495,10 @@ a:hover {
 }
 
 
-
+.paper-title {
+  font-style: italic;
+  color: #355e4b;
+}
 
 
 
