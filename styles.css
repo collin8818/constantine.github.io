@@ -524,8 +524,8 @@ a:hover {
 
 .paper-card.with-thumb {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
   align-items: start;
 }
 
@@ -576,13 +576,13 @@ a:hover {
   color: #666;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .paper-card.with-thumb {
     grid-template-columns: 1fr;
   }
 
   .paper-thumb {
-    max-width: 220px;
+    max-width: 320px;
   }
 }
 
