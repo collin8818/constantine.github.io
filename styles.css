@@ -513,6 +513,9 @@ a:hover {
 
 
 
+
+
+
 .card {
   max-width: 1200px;
   margin: 0 auto;
@@ -523,6 +526,11 @@ a:hover {
   background: transparent;
 }
 
+.paper-card {
+  padding: 1.4rem 0 1.6rem 0;
+  border: none;
+}
+
 .paper-card.with-thumb {
   display: grid;
   grid-template-columns: 560px 1fr;
@@ -530,17 +538,43 @@ a:hover {
   align-items: start;
 }
 
-.paper-thumb img {
+.paper-thumb {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.paper-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
 
+.paper-content {
+  min-width: 0;
+}
 
+@media (max-width: 900px) {
+  .paper-card.with-thumb {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-thumb {
+    height: auto;
+  }
+
+  .paper-thumb img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 
 
