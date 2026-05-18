@@ -506,6 +506,32 @@ a:hover {
 }
 
 
+.concept-rotator {
+  margin: 1rem 0 1.75rem 0;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#rotating-concept {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border: 1px solid #d8dde6;
+  border-radius: 999px;
+  background: #f7f9fc;
+  color: #7a1f1f;
+  font-size: 0.98rem;
+  font-weight: 500;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+
+
+
+
 
 
 
