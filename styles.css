@@ -513,34 +513,42 @@ a:hover {
 
 
 
-.paper-card {
-  padding: 1.2rem 0 1.3rem 0;
-  border-bottom: 1px solid #e3e7ee;
+.card {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
 }
 
-.paper-card:last-child {
-  border-bottom: none;
+.paper-card {
+  padding: 1.4rem 0 1.6rem 0;
+  border: none;
 }
 
 .paper-card.with-thumb {
   display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 260px 1fr;
+  gap: 1.6rem;
   align-items: start;
 }
 
 .paper-thumb img {
-  width: 100%;
-  height: auto;
+  width: 260px;
+  height: 165px;
+  object-fit: cover;
   display: block;
-  border-radius: 8px;
-  border: 1px solid #d8dde6;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .paper-title {
   margin: 0 0 0.35rem 0;
   font-size: 1.08rem;
-  line-height: 1.45;
+  line-height: 1.4;
   font-weight: 600;
 }
 
@@ -553,36 +561,27 @@ a:hover {
   text-decoration: underline;
 }
 
-.forthcoming-title {
-  color: #222;
-}
-
-.paper-authors {
-  font-size: 0.94rem;
-  color: #555;
-  margin-bottom: 0.4rem;
-}
-
 .paper-abstract {
-  font-size: 0.97rem;
-  line-height: 1.65;
-  color: #222;
-  margin-bottom: 0.55rem;
-  max-width: 900px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #444;
+  margin-bottom: 0.45rem;
 }
 
-.paper-status {
+.paper-status,
+.paper-authors {
   font-size: 0.9rem;
   color: #666;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .paper-card.with-thumb {
     grid-template-columns: 1fr;
   }
 
-  .paper-thumb {
-    max-width: 420px;
+  .paper-thumb img {
+    width: 100%;
+    height: auto;
   }
 }
 
