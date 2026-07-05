@@ -786,15 +786,12 @@ body {
 
 
 
-
-
-
-/* Keep site title dark navy even when it is a link */
-.header .site-title a.site-title-link,
-.header .site-title a.site-title-link:link,
-.header .site-title a.site-title-link:visited,
-.header .site-title a.site-title-link:hover,
-.header .site-title a.site-title-link:active {
+/* Final override: keep clickable site title dark navy */
+.site-title a,
+.site-title a:link,
+.site-title a:visited,
+.site-title a:hover,
+.site-title a:active {
   color: #001f3f !important;
   text-decoration: none !important;
   font-weight: 700 !important;
