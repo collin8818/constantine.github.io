@@ -8,7 +8,7 @@
 
   <meta name="description" content="Macro-Finance Intelligence provides historically informed and institutionally grounded macro-financial analysis for emerging-market economies.">
 
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=12">
 </head>
 
 <body>
@@ -38,64 +38,88 @@
         <a href="/CV_CMC.pdf" class="button">CV</a>
       </nav>
     </header>
-
-    <h2>Macro-Finance Intelligence (MFI)</h2>
-
-  
-      <p>
-        Macro-Finance Intelligence is concerned with economies where standard models travel poorly: import-dependent economies, financially dollarised systems, commodity exporters, foreign-exchange-constrained states, and countries where fiscal dominance weakens monetary control.
-      </p>
-
-      <p>
-        MFI provides historically informed and institutionally grounded macro-financial analysis for clients who need to understand how policy choices, institutional constraints, and balance-sheet dynamics shape economic and political risk.
-      </p>
-
-      <p>
-        The purpose of MFI is to help decision-makers distinguish symptoms from causes, temporary relief from durable adjustment, and official narratives from underlying macro-financial realities.
-      </p>
-
-
-     <h2> Contact </h2>
-    
-
-      <form action="https://formspree.io/f/mykqopkl" method="POST" class="contact-form">
-        <input type="hidden" name="_subject" value="New MFI enquiry">
-
-        <label for="name">Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          required>
-
-        <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          required>
-
-        <label for="subject">Subject</label>
-        <input 
-          type="text" 
-          id="subject" 
-          name="subject">
-
-        <label for="message">Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="6" 
-          required></textarea>
-
-        <button type="submit" class="button">Send message</button>
-      </form>
-   
-
-    <footer class="footer">
-      <div>© <span id="y"></span> Collin M. Constantine</div>
-    </footer>
   </div>
+
+  <main>
+    <section class="mfi-hero">
+      <video class="mfi-hero-video" autoplay muted loop playsinline poster="/media/mfi-poster.jpg">
+        <source src="/media/mfi-hero.mp4" type="video/mp4">
+      </video>
+
+      <div class="mfi-hero-overlay"></div>
+
+      <div class="mfi-hero-content">
+        <div class="mfi-kicker">Macro-Finance Intelligence</div>
+
+        <h1>MFI</h1>
+
+        <p>
+          Intelligence for economies where money, production, and foreign exchange do not move in separate spheres.
+        </p>
+
+        <a href="#mfi-philosophy" class="mfi-scroll">Scroll</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <section id="mfi-philosophy" class="mfi-section">
+        <h2>Macro-Finance Intelligence (MFI)</h2>
+
+        <p>
+          Macro-Finance Intelligence is concerned with economies where standard models travel poorly: import-dependent economies, financially dollarised systems, commodity exporters, foreign-exchange-constrained states, and countries where fiscal dominance weakens monetary control.
+        </p>
+
+        <p>
+          MFI provides historically informed and institutionally grounded macro-financial analysis for clients who need to understand how policy choices, institutional constraints, and balance-sheet dynamics shape economic and political risk.
+        </p>
+
+        <p>
+          The purpose of MFI is to help decision-makers distinguish symptoms from causes, temporary relief from durable adjustment, and official narratives from underlying macro-financial realities.
+        </p>
+      </section>
+
+      <section class="mfi-section">
+        <h2>Contact</h2>
+
+        <form action="https://formspree.io/f/mykqopkl" method="POST" class="contact-form">
+          <input type="hidden" name="_subject" value="New MFI enquiry">
+
+          <label for="name">Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required>
+
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required>
+
+          <label for="subject">Subject</label>
+          <input 
+            type="text" 
+            id="subject" 
+            name="subject">
+
+          <label for="message">Message</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="6" 
+            required></textarea>
+
+          <button type="submit" class="button">Send message</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div>© <span id="y"></span> Collin M. Constantine</div>
+      </footer>
+    </div>
+  </main>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
