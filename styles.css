@@ -789,7 +789,23 @@ body {
 
 
 
+/* Site title link */
+.site-title {
+  color: #001f3f !important;
+}
 
+.site-title-link {
+  color: #001f3f !important;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+
+.site-title-link:visited,
+.site-title-link:hover,
+.site-title-link:active {
+  color: #001f3f !important;
+  text-decoration: none !important;
+}
 
 
 
