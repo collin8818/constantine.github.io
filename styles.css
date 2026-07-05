@@ -808,7 +808,17 @@ body {
 
 
 
-
+/* Global site-title colour */
+.header .site-title,
+.header .site-title a,
+.header .site-title a:link,
+.header .site-title a:visited,
+.header .site-title a:hover,
+.header .site-title a:active {
+  color: #1f3a5f !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+}
 
 
 
