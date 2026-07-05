@@ -822,7 +822,39 @@ body {
 
 
 
+.mfi-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 2.5rem 0 2rem;
+}
 
+.mfi-logo {
+  width: 110px;
+  height: auto;
+}
+
+.mfi-brand h2 {
+  margin: 0 0 0.35rem;
+  color: #1f3a5f;
+}
+
+.mfi-brand p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .mfi-brand {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mfi-logo {
+    width: 95px;
+  }
+}
 
 
 
