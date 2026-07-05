@@ -1,25 +1,120 @@
-<h2>Contact MFI</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<div class="card">
-  <p>
-    For enquiries about briefings, presentations, advisory work, or macro-financial analysis, please use the form below.
-  </p>
+  <title>Macro-Finance Intelligence - Collin M. Constantine</title>
 
-  <form action="https://formspree.io/f/mykqopkl" method="POST" class="contact-form">
-    <input type="hidden" name="_subject" value="New MFI enquiry">
+  <meta name="description" content="Macro-Finance Intelligence provides historically informed and institutionally grounded macro-financial analysis for emerging-market economies.">
 
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
+  <link rel="stylesheet" href="/styles.css">
+</head>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="site-title">
+        <a href="/" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
 
-    <label for="subject">Subject</label>
-    <input type="text" id="subject" name="subject">
+      <button 
+        type="button" 
+        id="menu-btn" 
+        aria-label="Menu" 
+        aria-expanded="false" 
+        aria-controls="site-nav">
+        ☰
+      </button>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/research.html">Papers</a>
+        <a href="/RA.html">RA Positions</a>
+        <a href="/about.html">Research Agenda</a>
+        <a href="/media.html">Press Kit</a>
+        <a href="/MFI.html">MFI</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
 
-    <button type="submit" class="button">Send message</button>
-  </form>
-</div>
+    <h2>Macro-Finance Intelligence (MFI)</h2>
+
+    <div class="card">
+      <p>
+        Macro-Finance Intelligence is concerned with economies where standard models travel poorly: import-dependent economies, financially dollarised systems, commodity exporters, foreign-exchange-constrained states, and countries where fiscal dominance weakens monetary control.
+      </p>
+
+      <p>
+        MFI provides historically informed and institutionally grounded macro-financial analysis for clients who need to understand how policy choices, institutional constraints, and balance-sheet dynamics shape economic and political risk.
+      </p>
+
+      <p>
+        The purpose of MFI is to help decision-makers distinguish symptoms from causes, temporary relief from durable adjustment, and official narratives from underlying macro-financial realities.
+      </p>
+    </div>
+
+    <h2>Contact MFI</h2>
+
+    <div class="card">
+      <p>
+        For enquiries about briefings, presentations, advisory work, or macro-financial analysis, please use the form below.
+      </p>
+
+      <form action="https://formspree.io/f/mykqopkl" method="POST" class="contact-form">
+        <input type="hidden" name="_subject" value="New MFI enquiry">
+
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required>
+
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required>
+
+        <label for="subject">Subject</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject">
+
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="6" 
+          required></textarea>
+
+        <button type="submit" class="button">Send message</button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Collin M. Constantine</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+
+      if (!btn || !nav) return;
+
+      btn.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
