@@ -786,6 +786,35 @@ body {
 
 
 
+.site-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: #001f3f;
+}
+
+.site-title-link,
+.site-title-link:link,
+.site-title-link:visited,
+.site-title-link:hover,
+.site-title-link:active {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
