@@ -789,24 +789,16 @@ body {
 
 
 
-/* Site title link */
-.site-title {
-  color: #001f3f !important;
-}
-
-.site-title-link {
-  color: #001f3f !important;
-  text-decoration: none !important;
-  font-weight: 700;
-}
-
-.site-title-link:visited,
-.site-title-link:hover,
-.site-title-link:active {
+/* Keep site title dark navy even when it is a link */
+.header .site-title a.site-title-link,
+.header .site-title a.site-title-link:link,
+.header .site-title a.site-title-link:visited,
+.header .site-title a.site-title-link:hover,
+.header .site-title a.site-title-link:active {
   color: #001f3f !important;
   text-decoration: none !important;
+  font-weight: 700 !important;
 }
-
 
 
 
