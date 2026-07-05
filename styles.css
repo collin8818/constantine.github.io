@@ -822,16 +822,22 @@ body {
 
 
 
+
+
+
+/* MFI logo block */
+
 .mfi-brand {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin: 2.5rem 0 2rem;
+  margin-bottom: 2rem;
 }
 
 .mfi-logo {
-  width: 110px;
+  width: 115px;
   height: auto;
+  flex-shrink: 0;
 }
 
 .mfi-brand h2 {
@@ -847,15 +853,14 @@ body {
 
 @media (max-width: 700px) {
   .mfi-brand {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .mfi-logo {
-    width: 95px;
+    width: 100px;
   }
 }
-
 
 
 
