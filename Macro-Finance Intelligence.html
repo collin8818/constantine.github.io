@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RA Positions - Collin M. Constantine</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Research assistant opportunities with Collin M. Constantine.">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="site-title">
+        <a href="https://collinconstantine.com" class="site-title-link" rel="home">Collin M. Constantine</a>
+      </div>
+      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/research.html">Papers</a>
+        <a href="/RA.html">RA Positions</a>
+          <a href="/about.html">Research Agenda</a>
+         <a href="/media.html">Press Kit</a>
+        <a href="/Macro-Finance Intelligence.html">Macro-Finance Intelligence</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf" class="button">CV</a>
+      </nav>
+    </header>
+
+    <!-- RA content inside the same card wrapper -->
+    <h2>Research Assistant Opportunities</h2>
+    <div class="card">
+      <p>
+        I occasionally work with pre-docs and graduate students as research assistants on projects
+        related to macro-finance, political economy, and development. Typical tasks may include
+        literature reviews, data collection, coding, or help preparing presentation slides.
+      </p>
+      <p>
+        I welcome interest from students who are curious, motivated, and eager to build research skills.
+        Opportunities are limited and depend on current projects, but I’m glad to hear about your interests.
+      </p>
+      <p>
+        If you would like to be considered, please send a brief note outlining your academic background, research interests, and relevant skills.
+      </p>
+    </div>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Collin M. Constantine</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
