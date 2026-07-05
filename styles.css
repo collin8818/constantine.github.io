@@ -786,17 +786,6 @@ body {
 
 
 
-/* Final override: keep clickable site title dark navy */
-.site-title a,
-.site-title a:link,
-.site-title a:visited,
-.site-title a:hover,
-.site-title a:active {
-  color: #001f3f !important;
-  text-decoration: none !important;
-  font-weight: 700 !important;
-}
-
 
 
 
