@@ -965,6 +965,26 @@ body {
 
 
 
+/* Remove horizontal separator lines from latest commentary/feed */
+
+.feed-item,
+.feed-item:last-child,
+.commentary-item,
+.commentary-item:last-child {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
