@@ -824,19 +824,21 @@ body {
 
 
 
-/* Full MFI logo display */
+/* MFI brand hero */
 
-.mfi-logo-full-wrap {
-  width: 100%;
-  margin: 1.5rem auto 2rem;
+.mfi-brand-hero {
+  max-width: 900px;
+  margin: 2.25rem auto 3rem;
+  padding: 2.5rem 1.5rem 2.25rem;
   text-align: center;
+  border-top: 1px solid rgba(31, 58, 95, 0.18);
+  border-bottom: 1px solid rgba(31, 58, 95, 0.18);
 }
 
-.mfi-logo-full {
+.mfi-brand-logo {
   display: block;
-  width: min(520px, 100%);
+  width: min(620px, 100%);
   height: auto;
-  max-width: 100%;
   margin: 0 auto;
   object-fit: contain;
   border-radius: 0 !important;
@@ -844,10 +846,37 @@ body {
   clip-path: none !important;
 }
 
+.mfi-brand-tagline {
+  max-width: 680px;
+  margin: 1.25rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #4b5563;
+}
 
+.mfi-section {
+  max-width: 850px;
+  margin: 3rem auto;
+}
 
+.mfi-section h2 {
+  color: #1f3a5f;
+}
 
+.mfi-section p {
+  line-height: 1.75;
+}
 
+@media (max-width: 700px) {
+  .mfi-brand-hero {
+    margin: 1.75rem auto 2.25rem;
+    padding: 2rem 0.5rem;
+  }
+
+  .mfi-brand-logo {
+    width: 100%;
+  }
+}
 
 
 
