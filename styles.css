@@ -977,7 +977,10 @@ body {
 
 
 
-
+.media-section {
+  max-width: 850px;
+  margin: 2rem auto;
+}
 
 
 
