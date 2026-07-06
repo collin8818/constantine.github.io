@@ -97,6 +97,81 @@
       </div>
     </div>
 
+
+
+
+
+
+<section class="latest-feed">
+  <h2><span class="updates-title">Latest Commentary</span></h2>
+
+  <p>
+    Recent essays and notes on macro-finance, foreign-exchange constraints, fiscal dominance, and policy risk.
+  </p>
+
+  <div id="substack-feed" class="feed-list">
+    <p>Loading latest posts...</p>
+  </div>
+
+  <p class="feed-more">
+    <a href="https://collinconstantine.substack.com" target="_blank" rel="noopener">
+      Read more on Substack
+    </a>
+  </p>
+</section>
+
+<script>
+  async function loadSubstackFeed() {
+    const feedContainer = document.getElementById('substack-feed');
+    const feedUrl = encodeURIComponent('https://collinconstantine.substack.com/feed');
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
+
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      if (!data.items || data.items.length === 0) {
+        feedContainer.innerHTML = '<p>Latest posts could not be loaded.</p>';
+        return;
+      }
+
+      const posts = data.items.slice(0, 3);
+
+      feedContainer.innerHTML = posts.map(post => {
+        const date = new Date(post.pubDate).toLocaleDateString('en-GB', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+
+        const description = post.description
+          ? post.description.replace(/<[^>]*>?/gm, '').slice(0, 180) + '...'
+          : '';
+
+        return `
+          <article class="feed-item">
+            <div class="feed-date">${date}</div>
+            <h3>
+              <a href="${post.link}" target="_blank" rel="noopener">
+                ${post.title}
+              </a>
+            </h3>
+            <p>${description}</p>
+          </article>
+        `;
+      }).join('');
+    } catch (error) {
+      feedContainer.innerHTML = '<p>Latest posts could not be loaded.</p>';
+    }
+  }
+
+  loadSubstackFeed();
+</script>
+
+
+
+    
+
     <footer class="footer">
       <div>© <span id="y"></span> Collin M. Constantine</div>
     </footer>
