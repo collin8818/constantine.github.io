@@ -9,7 +9,7 @@
   <meta name="description" content="Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
   <meta name="google-site-verification" content="luO5IkFzKO6OnJfulAR-xGdN7-XADGQ8_12w_P0mNog">
 
-  <link rel="stylesheet" href="/styles.css?v=17">
+  <link rel="stylesheet" href="/styles.css?v=18">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CSXZE3K2Z"></script>
@@ -79,7 +79,7 @@
         <a href="/MFI.html">Macro-Finance Intelligence (MFI)</a>
       </p>
 
-      <h2><span class="updates-title">Updates</span></h2>
+      <h2><span class="updates-title">Latest Commentary</span></h2>
 
       <p>
         Subscribe for occasional updates on new papers and accessible commentary on live macroeconomic puzzles in SODEs.
@@ -97,71 +97,11 @@
       </div>
     </div>
 
-
-
-
-
-
-<section class="latest-feed">
-
-
-  <div id="substack-feed" class="feed-list">
-    <p>Loading latest posts...</p>
-  </div>
-
-
-
-<script>
-  async function loadSubstackFeed() {
-    const feedContainer = document.getElementById('substack-feed');
-    const feedUrl = encodeURIComponent('https://collinconstantine.substack.com/feed');
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
-
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      if (!data.items || data.items.length === 0) {
-        feedContainer.innerHTML = '<p>Latest posts could not be loaded.</p>';
-        return;
-      }
-
-      const posts = data.items.slice(0, 3);
-
-      feedContainer.innerHTML = posts.map(post => {
-        const date = new Date(post.pubDate).toLocaleDateString('en-GB', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-
-        const description = post.description
-          ? post.description.replace(/<[^>]*>?/gm, '').slice(0, 180) + '...'
-          : '';
-
-        return `
-          <article class="feed-item">
-            <div class="feed-date">${date}</div>
-            <h3>
-              <a href="${post.link}" target="_blank" rel="noopener">
-                ${post.title}
-              </a>
-            </h3>
-            <p>${description}</p>
-          </article>
-        `;
-      }).join('');
-    } catch (error) {
-      feedContainer.innerHTML = '<p>Latest posts could not be loaded.</p>';
-    }
-  }
-
-  loadSubstackFeed();
-</script>
-
-
-
-    
+    <section class="latest-feed" aria-label="Latest Substack posts">
+      <div id="substack-feed" class="feed-list">
+        <p>Loading latest posts...</p>
+      </div>
+    </section>
 
     <footer class="footer">
       <div>© <span id="y"></span> Collin M. Constantine</div>
@@ -182,6 +122,52 @@
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     });
+
+    async function loadSubstackFeed() {
+      const feedContainer = document.getElementById('substack-feed');
+      const feedUrl = encodeURIComponent('https://collinconstantine.substack.com/feed');
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (!data.items || data.items.length === 0) {
+          feedContainer.innerHTML = '<p>Latest posts could not be loaded.</p>';
+          return;
+        }
+
+        const posts = data.items.slice(0, 3);
+
+        feedContainer.innerHTML = posts.map(post => {
+          const date = new Date(post.pubDate).toLocaleDateString('en-GB', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+
+          const description = post.description
+            ? post.description.replace(/<[^>]*>?/gm, '').slice(0, 180) + '...'
+            : '';
+
+          return `
+            <article class="feed-item">
+              <div class="feed-date">${date}</div>
+              <h3>
+                <a href="${post.link}" target="_blank" rel="noopener">
+                  ${post.title}
+                </a>
+              </h3>
+              <p>${description}</p>
+            </article>
+          `;
+        }).join('');
+      } catch (error) {
+        feedContainer.innerHTML = '<p>Latest posts could not be loaded.</p>';
+      }
+    }
+
+    loadSubstackFeed();
   </script>
 </body>
 </html>
