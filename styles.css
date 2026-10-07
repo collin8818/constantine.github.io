@@ -211,9 +211,23 @@ img,video { max-width: 100%; height: auto; }
     hyphens: auto;
   }
 
-  .inline-links { display: block; white-space: normal; }
-  .inline-links a { display: block; margin: 6px 0; }
-  .inline-links a::before { content: none !important; }
+  .inline-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem 0.9rem;
+    white-space: normal;
+    margin-top: 1rem;
+  }
+
+  .inline-links a {
+    display: inline;
+    margin: 0;
+  }
+
+  .inline-links a::before {
+    content: none !important;
+  }
 }
 
 /* Bio picture */
