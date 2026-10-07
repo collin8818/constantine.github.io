@@ -911,4 +911,10 @@ body {
 /* Footer tone */
 footer { color: #555; font-size: .9rem; }
 
+/* Research Agenda: Portable Concepts titles */
+.agenda-page .agenda-concept h3 {
+  color: #222 !important;
+}
+
+
 
