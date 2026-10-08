@@ -930,5 +930,15 @@ footer { color: #555; font-size: .9rem; }
   color: #1f3a5f !important;
 }
 
+/* Research Agenda: tighten space between concept grid and following prose */
+.agenda-page .agenda-concepts {
+  margin-bottom: 1rem !important;
+}
+
+.agenda-page .agenda-concepts + .media-section {
+  margin-top: 0 !important;
+}
+
+
 
 
