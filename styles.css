@@ -1205,7 +1205,7 @@ footer { color: #555; font-size: .9rem; }
 
 /* Papers page: final professional colour hierarchy */
 
-/* Paper title: charcoal, bold but compact */
+/* Paper title: softer navy, bold but compact */
 .paper-entry-title {
   margin: 0 0 0.3rem 0 !important;
   font-size: 0.98rem !important;
@@ -1216,13 +1216,13 @@ footer { color: #555; font-size: .9rem; }
 .paper-entry-title a,
 .paper-entry-title a:link,
 .paper-entry-title a:visited {
-  color: #1a2b3c !important;
+  color: #29496f !important;
   font-weight: 700 !important;
   text-decoration: none !important;
 }
 
 .paper-entry-title a:hover {
-  color: #29496f !important;
+  color: #3a5f86 !important;
   text-decoration: underline !important;
 }
 
@@ -1277,7 +1277,6 @@ footer { color: #555; font-size: .9rem; }
   color: #9A7418 !important;
   text-decoration: underline !important;
 }
-
 
 
 
