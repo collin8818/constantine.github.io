@@ -1264,6 +1264,21 @@ footer { color: #555; font-size: .9rem; }
   }
 }
 
+/* Papers page: policy brief link */
+.paper-policy-link,
+.paper-policy-link:link,
+.paper-policy-link:visited {
+  color: #9A7418 !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.paper-policy-link:hover {
+  color: #9A7418 !important;
+  text-decoration: underline !important;
+}
+
+
 
 
 
