@@ -1205,14 +1205,16 @@ footer { color: #555; font-size: .9rem; }
 
 /* Papers page: final professional colour hierarchy */
 
-/* Paper title: dark navy, semi-bold */
+/* Paper title: dark navy, medium weight */
 .paper-entry-title {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
-.paper-entry-title a {
+.paper-entry-title a,
+.paper-entry-title a:link,
+.paper-entry-title a:visited {
   color: #1f3a5f !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   text-decoration: none !important;
 }
 
