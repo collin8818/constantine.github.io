@@ -118,19 +118,26 @@ h1,h2,h3,h4,h5,h6 {
 
 /* --- Clean summary (no default box/marker) --- */
 details.abstract {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 10px 14px;
-  background: #fafafa;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  margin: 0.5rem 0 0.7rem 0;
 }
-details.abstract[open] { background: #fff; }
+details.abstract[open] {
+  background: transparent;
+}
 details.abstract summary {
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--link);
   list-style: none;
   -webkit-appearance: none;
   appearance: none;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 details.abstract summary::marker { content: ""; }
 details.abstract summary::-webkit-details-marker { display: none; }
@@ -138,6 +145,11 @@ details.abstract summary::after { content:" ▼"; font-size: .9em; }
 details.abstract[open] summary::after { content:" ▲"; }
 
 .paper-abstract { margin-top: .7em; font-size: .95rem; line-height: 1.7; color: #333; }
+
+details.abstract .research-abstract {
+  margin-top: 0.7rem !important;
+  margin-bottom: 0 !important;
+}
 
 /* Media elements */
 img,video { max-width: 100%; height: auto; }
