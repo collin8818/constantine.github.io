@@ -29,16 +29,19 @@
       margin: 0 0 0.3rem 0 !important;
       font-size: 1.05rem !important;
       line-height: 1.4 !important;
-      font-weight: 700 !important;
+      font-weight: 500 !important;
     }
 
-    .paper-entry-title a {
-      color: #1a2b3c !important;
+    .paper-entry-title a,
+    .paper-entry-title a:link,
+    .paper-entry-title a:visited {
+      color: #1f3a5f !important;
+      font-weight: 500 !important;
       text-decoration: none !important;
     }
 
     .paper-entry-title a:hover {
-      color: #1f3a5f !important;
+      color: #345b8c !important;
       text-decoration: underline !important;
     }
 
@@ -66,16 +69,16 @@
       padding: 0;
       margin: 0;
       background: transparent;
-      color: #1a2b3c;
+      color: #1F5A3A;
       font: inherit;
-      font-weight: 600;
+      font-weight: 400;
       cursor: pointer;
     }
 
     .abstract-toggle::after {
       content: " ▾";
       font-size: 0.85em;
-      color: #666;
+      color: #1F5A3A;
     }
 
     .abstract-toggle[aria-expanded="true"]::after {
@@ -93,7 +96,7 @@
 
     .paper-substack-link {
       color: #8B0000 !important;
-      font-weight: 600;
+      font-weight: 400;
       text-decoration: none !important;
     }
 
@@ -348,6 +351,17 @@
           >
             Abstract
           </button>
+
+          <span class="paper-separator">·</span>
+
+          <a
+            class="paper-substack-link"
+            href="https://collinconstantine.substack.com/p/the-open-economy-golden-rule-of-public"
+            target="_blank"
+            rel="noopener"
+          >
+            Substack
+          </a>
 
           <span class="paper-separator">·</span>
 
