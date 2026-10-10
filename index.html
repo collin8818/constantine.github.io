@@ -32,6 +32,32 @@
       font-weight: 700;
     }
 
+    /* Latest Commentary: subscribe box + carousel */
+
+    .commentary-row {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin: 1.5rem 0 2.75rem;
+    }
+
+    .commentary-row .substack-embed {
+      width: 300px;
+      margin: 0;
+    }
+
+    .commentary-row .substack-embed iframe {
+      display: block;
+      max-width: 100%;
+    }
+
+    .commentary-row .substack-carousel {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+    }
+
     /* Substack carousel */
 
     .substack-carousel {
@@ -154,8 +180,23 @@
         line-height: 1.55;
       }
 
+      .commentary-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+
+      .commentary-row .substack-embed {
+        width: 100%;
+      }
+
+      .commentary-row .substack-embed iframe {
+        width: 300px;
+        max-width: 100%;
+      }
+
       .substack-carousel {
-        margin-top: 1.25rem;
+        margin-top: 0;
       }
 
       .substack-carousel .feed-item h3 {
@@ -413,93 +454,100 @@
       </p>
 
 
-      <div class="substack-embed">
+      <div class="commentary-row">
 
-        <iframe
-          src="https://collinconstantine.substack.com/embed"
-          width="300"
-          height="180"
-          style="border: none; background: white;"
-          frameborder="0"
-          scrolling="no"
-          title="Subscribe to Collin Constantine on Substack"
-        ></iframe>
+
+        <!-- Subscribe box -->
+
+        <div class="substack-embed">
+
+          <iframe
+            src="https://collinconstantine.substack.com/embed"
+            width="300"
+            height="180"
+            style="border: none; background: white;"
+            frameborder="0"
+            scrolling="no"
+            title="Subscribe to Collin Constantine on Substack"
+          ></iframe>
+
+        </div>
+
+
+
+        <!-- Latest Substack posts carousel -->
+
+        <section
+          class="latest-feed substack-carousel"
+          id="substack-carousel"
+          aria-label="Latest Substack posts"
+        >
+
+          <div
+            id="substack-feed"
+            class="substack-carousel-stage"
+            aria-live="off"
+          >
+
+            <p>
+              Loading latest posts...
+            </p>
+
+          </div>
+
+
+          <div
+            class="substack-carousel-controls"
+            id="substack-carousel-controls"
+            aria-label="Latest commentary controls"
+            hidden
+          >
+
+            <button
+              class="substack-carousel-arrow"
+              id="substack-prev"
+              type="button"
+              aria-label="Previous post"
+            >
+              ←
+            </button>
+
+
+            <span
+              class="substack-carousel-count"
+              id="substack-count"
+              aria-live="polite"
+            >
+              1 / 3
+            </span>
+
+
+            <button
+              class="substack-carousel-arrow"
+              id="substack-next"
+              type="button"
+              aria-label="Next post"
+            >
+              →
+            </button>
+
+
+            <a
+              class="substack-carousel-all"
+              href="https://collinconstantine.substack.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              View all commentary
+            </a>
+
+          </div>
+
+        </section>
 
       </div>
 
     </div>
-
-
-
-    <!-- Latest Substack posts carousel -->
-
-    <section
-      class="latest-feed substack-carousel"
-      id="substack-carousel"
-      aria-label="Latest Substack posts"
-    >
-
-      <div
-        id="substack-feed"
-        class="substack-carousel-stage"
-        aria-live="off"
-      >
-
-        <p>
-          Loading latest posts...
-        </p>
-
-      </div>
-
-
-      <div
-        class="substack-carousel-controls"
-        id="substack-carousel-controls"
-        aria-label="Latest commentary controls"
-        hidden
-      >
-
-        <button
-          class="substack-carousel-arrow"
-          id="substack-prev"
-          type="button"
-          aria-label="Previous post"
-        >
-          ←
-        </button>
-
-
-        <span
-          class="substack-carousel-count"
-          id="substack-count"
-          aria-live="polite"
-        >
-          1 / 3
-        </span>
-
-
-        <button
-          class="substack-carousel-arrow"
-          id="substack-next"
-          type="button"
-          aria-label="Next post"
-        >
-          →
-        </button>
-
-
-        <a
-          class="substack-carousel-all"
-          href="https://collinconstantine.substack.com/"
-          target="_blank"
-          rel="noopener"
-        >
-          View all commentary
-        </a>
-
-      </div>
-
-    </section>
 
 
 
