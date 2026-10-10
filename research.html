@@ -25,7 +25,6 @@
       margin: 0 0 2.5rem 0;
     }
 
-    /* Paper title */
     .paper-entry-title {
       margin: 0 0 0.3rem 0 !important;
       font-size: 1.05rem !important;
@@ -43,54 +42,67 @@
       text-decoration: underline !important;
     }
 
-    /* Coauthor and update information */
     .paper-meta {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
       font-size: 0.9rem;
       line-height: 1.45;
       color: #666;
     }
 
-    /* Expandable abstract */
-    .paper-entry details.abstract {
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 0 !important;
-      margin: 0.45rem 0 0 0 !important;
-      background: transparent !important;
-      box-shadow: none !important;
+    .paper-meta-line {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.38rem;
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
     }
 
-    .paper-entry details.abstract[open] {
-      background: transparent !important;
-    }
-
-    .paper-entry details.abstract > summary {
-      display: inline-block;
+    .abstract-toggle {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      padding: 0;
       margin: 0;
-      padding: 0 !important;
-      border: 0 !important;
-      background: transparent !important;
-      color: #1a2b3c !important;
+      background: transparent;
+      color: #1a2b3c;
+      font: inherit;
       font-weight: 600;
       cursor: pointer;
-      list-style: none !important;
-      -webkit-appearance: none;
-      appearance: none;
     }
 
-    .paper-entry details.abstract > summary::-webkit-details-marker {
-      display: none;
+    .abstract-toggle::after {
+      content: " ▾";
+      font-size: 0.85em;
+      color: #666;
     }
 
-    .paper-entry details.abstract > summary::marker {
-      content: "";
+    .abstract-toggle[aria-expanded="true"]::after {
+      content: " ▴";
     }
 
-    /* Remove abstract arrow */
-    .paper-entry details.abstract > summary::after,
-    .paper-entry details.abstract[open] > summary::after {
-      content: none !important;
+    .abstract-toggle:focus-visible {
+      outline: 2px solid #1f3a5f;
+      outline-offset: 2px;
+    }
+
+    .paper-separator {
+      color: #9ca3af;
+    }
+
+    .paper-substack-link {
+      color: #8B0000 !important;
+      font-weight: 600;
+      text-decoration: none !important;
+    }
+
+    .paper-substack-link:hover {
+      text-decoration: underline !important;
+    }
+
+    .paper-updated {
+      color: #666;
     }
 
     .paper-entry .research-abstract {
@@ -101,26 +113,10 @@
       color: #444 !important;
     }
 
-    /* Related Substack post */
-    .paper-substack {
-      margin-top: 0.45rem;
-      margin-bottom: 0.35rem;
-      font-size: 0.92rem;
-      line-height: 1.45;
+    .paper-entry .research-abstract[hidden] {
+      display: none !important;
     }
 
-    .paper-substack a {
-      color: #8B0000 !important;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .paper-substack a:hover {
-      color: #8B0000 !important;
-      text-decoration: underline;
-    }
-
-    /* Mobile */
     @media (max-width: 760px) {
 
       .paper-entry {
@@ -209,43 +205,57 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-1"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            This article examines a fiscal-reporting problem that arises under
-            fiscal dominance: net domestic financing may be recorded as domestic
-            borrowing even when its economic substance reflects central-bank
-            financing of the fiscal deficit. Under monetary dominance, domestic
-            borrowing replaces private demand with public demand, so accounting
-            classification and economic substance coincide. This article uses a
-            financial transactions matrix to show why conventional fiscal accounting
-            travels poorly to fiscal-dominance settings. It distinguishes
-            demand-absorbing domestic borrowing from direct central-bank financing
-            and securitised monetary financing, where commercial banks swap
-            non-borrowed and non-interest-bearing excess reserves for government
-            securities. An application to Guyana shows that banking-system financing
-            in the 2025 fiscal accounts is explained by direct and securitised
-            central-bank financing. The article recommends a more detailed reporting
-            format to improve fiscal transparency, economic diagnosis, and public
-            accountability.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
-
-        <div class="paper-substack">
           <a
+            class="paper-substack-link"
             href="https://collinconstantine.substack.com/p/when-domestic-borrowing-tells-the"
             target="_blank"
             rel="noopener"
           >
-            Substack: When Domestic Borrowing Tells the Wrong Story
+            Substack
           </a>
+
+          <span class="paper-separator">·</span>
+
+          <span class="paper-updated">
+            Last updated: June 2026
+          </span>
+
         </div>
 
-        <div class="paper-meta">
-          Last updated: June 2026
+        <div
+          class="research-abstract"
+          id="abstract-1"
+          hidden
+        >
+          This article examines a fiscal-reporting problem that arises under
+          fiscal dominance: net domestic financing may be recorded as domestic
+          borrowing even when its economic substance reflects central-bank
+          financing of the fiscal deficit. Under monetary dominance, domestic
+          borrowing replaces private demand with public demand, so accounting
+          classification and economic substance coincide. This article uses a
+          financial transactions matrix to show why conventional fiscal accounting
+          travels poorly to fiscal-dominance settings. It distinguishes
+          demand-absorbing domestic borrowing from direct central-bank financing
+          and securitised monetary financing, where commercial banks swap
+          non-borrowed and non-interest-bearing excess reserves for government
+          securities. An application to Guyana shows that banking-system financing
+          in the 2025 fiscal accounts is explained by direct and securitised
+          central-bank financing. The article recommends a more detailed reporting
+          format to improve fiscal transparency, economic diagnosis, and public
+          accountability.
         </div>
 
       </article>
@@ -266,34 +276,48 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-2"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            This paper develops a model in which the composition of fiscal financing
-            determines whether resource booms generate Dutch disease effects.
-            Resource-financed spending can be absorbed through imports, while
-            money-financed spending raises domestic demand without expanding import
-            capacity. The result is real exchange-rate pressure and contraction in the
-            tradable sector. The paper shows that identifying Dutch disease empirically
-            requires attention to monetary diagnostics.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
-
-        <div class="paper-substack">
           <a
+            class="paper-substack-link"
             href="https://collinconstantine.substack.com/p/rethinking-dutch-disease"
             target="_blank"
             rel="noopener"
           >
-            Substack: Rethinking Dutch Disease
+            Substack
           </a>
+
+          <span class="paper-separator">·</span>
+
+          <span class="paper-updated">
+            Last updated: May 2026
+          </span>
+
         </div>
 
-        <div class="paper-meta">
-          Last updated: May 2026
+        <div
+          class="research-abstract"
+          id="abstract-2"
+          hidden
+        >
+          This paper develops a model in which the composition of fiscal financing
+          determines whether resource booms generate Dutch disease effects.
+          Resource-financed spending can be absorbed through imports, while
+          money-financed spending raises domestic demand without expanding import
+          capacity. The result is real exchange-rate pressure and contraction in the
+          tradable sector. The paper shows that identifying Dutch disease empirically
+          requires attention to monetary diagnostics.
         </div>
 
       </article>
@@ -314,23 +338,36 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-3"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            This article derives the open-economy Golden Rule of public finance.
-            While the conventional condition equates the net marginal product of
-            public capital with the world interest rate, the open-economy rule
-            adjusts both the marginal return and the marginal cost of capital for
-            its foreign exchange (FX) footprint. Efficiency requires the
-            cost-normalised FX-adjusted return to equal the world interest rate.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
+          <span class="paper-updated">
+            Last updated: October 2026
+          </span>
 
-        <div class="paper-meta">
-          Last updated: October 2026
+        </div>
+
+        <div
+          class="research-abstract"
+          id="abstract-3"
+          hidden
+        >
+          This article derives the open-economy Golden Rule of public finance.
+          While the conventional condition equates the net marginal product of
+          public capital with the world interest rate, the open-economy rule
+          adjusts both the marginal return and the marginal cost of capital for
+          its foreign exchange (FX) footprint. Efficiency requires the
+          cost-normalised FX-adjusted return to equal the world interest rate.
         </div>
 
       </article>
@@ -352,21 +389,34 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-4"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            Examines how foreign exchange shortages can persist even in the
-            presence of balance-of-payments surpluses, and explores the
-            macroeconomic mechanisms that disconnect external accounting
-            outcomes from actual foreign exchange availability.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
+          <span class="paper-updated">
+            Last updated: October 2025
+          </span>
 
-        <div class="paper-meta">
-          Last updated: October 2025
+        </div>
+
+        <div
+          class="research-abstract"
+          id="abstract-4"
+          hidden
+        >
+          Examines how foreign exchange shortages can persist even in the
+          presence of balance-of-payments surpluses, and explores the
+          macroeconomic mechanisms that disconnect external accounting
+          outcomes from actual foreign exchange availability.
         </div>
 
       </article>
@@ -388,31 +438,45 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-5"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            Develops a framework for understanding how overheating can be
-            mis-measured in small open developing economies when CPI inflation
-            is a lagging indicator and foreign exchange market pressure is
-            omitted from standard output-gap analysis.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
-
-        <div class="paper-substack">
           <a
+            class="paper-substack-link"
             href="https://collinconstantine.substack.com/p/limits-of-conventional-indicators"
             target="_blank"
             rel="noopener"
           >
-            Substack: Limits of Conventional Indicators in a Sea of Oil
+            Substack
           </a>
+
+          <span class="paper-separator">·</span>
+
+          <span class="paper-updated">
+            Last updated: August 2025
+          </span>
+
         </div>
 
-        <div class="paper-meta">
-          Last updated: August 2025
+        <div
+          class="research-abstract"
+          id="abstract-5"
+          hidden
+        >
+          Develops a framework for understanding how overheating can be
+          mis-measured in small open developing economies when CPI inflation
+          is a lagging indicator and foreign exchange market pressure is
+          omitted from standard output-gap analysis.
         </div>
 
       </article>
@@ -434,20 +498,33 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-6"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            Reconsiders the relationship between tariffs, fiscal policy, and the
-            U.S. trade deficit through a macro-finance lens, with particular
-            attention to balance-sheet adjustment and external financing conditions.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
+          <span class="paper-updated">
+            Last updated: June 2025
+          </span>
 
-        <div class="paper-meta">
-          Last updated: June 2025
+        </div>
+
+        <div
+          class="research-abstract"
+          id="abstract-6"
+          hidden
+        >
+          Reconsiders the relationship between tariffs, fiscal policy, and the
+          U.S. trade deficit through a macro-finance lens, with particular
+          attention to balance-sheet adjustment and external financing conditions.
         </div>
 
       </article>
@@ -473,20 +550,33 @@
           With <strong>Tarron Khemraj</strong>
         </div>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-7"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            Investigates how political pressure influences central bank
-            monetisation of government outlay and shapes Dutch disease dynamics
-            in Ghana and Guyana.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
+          <span class="paper-updated">
+            Last updated: June 2025
+          </span>
 
-        <div class="paper-meta">
-          Last updated: June 2025
+        </div>
+
+        <div
+          class="research-abstract"
+          id="abstract-7"
+          hidden
+        >
+          Investigates how political pressure influences central bank
+          monetisation of government outlay and shapes Dutch disease dynamics
+          in Ghana and Guyana.
         </div>
 
       </article>
@@ -508,21 +598,34 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-8"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            Reassesses fiscal and debt sustainability in open economies and
-            develops an alternative framework that challenges conventional debt
-            rules by incorporating external balance-sheet constraints and
-            macro-financial interactions.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
+          <span class="paper-updated">
+            Last updated: October 2025
+          </span>
 
-        <div class="paper-meta">
-          Last updated: October 2025
+        </div>
+
+        <div
+          class="research-abstract"
+          id="abstract-8"
+          hidden
+        >
+          Reassesses fiscal and debt sustainability in open economies and
+          develops an alternative framework that challenges conventional debt
+          rules by incorporating external balance-sheet constraints and
+          macro-financial interactions.
         </div>
 
       </article>
@@ -544,20 +647,33 @@
           </a>
         </h3>
 
-        <details class="abstract">
+        <div class="paper-meta-line">
 
-          <summary>Abstract</summary>
+          <button
+            class="abstract-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="abstract-9"
+          >
+            Abstract
+          </button>
 
-          <div class="research-abstract">
-            Examines the political economy of ethnic income inequality in Guyana
-            and explores how distributional divisions interact with institutions,
-            political conflict, and long-run development outcomes.
-          </div>
+          <span class="paper-separator">·</span>
 
-        </details>
+          <span class="paper-updated">
+            Last updated: April 2022
+          </span>
 
-        <div class="paper-meta">
-          Last updated: April 2022
+        </div>
+
+        <div
+          class="research-abstract"
+          id="abstract-9"
+          hidden
+        >
+          Examines the political economy of ethnic income inequality in Guyana
+          and explores how distributional divisions interact with institutions,
+          political conflict, and long-run development outcomes.
         </div>
 
       </article>
@@ -581,6 +697,33 @@
     document.getElementById('y').textContent =
       new Date().getFullYear();
   </script>
+
+
+  <script>
+    document.querySelectorAll('.abstract-toggle').forEach(function (button) {
+
+      button.addEventListener('click', function () {
+
+        const abstract =
+          document.getElementById(
+            button.getAttribute('aria-controls')
+          );
+
+        const isOpen =
+          button.getAttribute('aria-expanded') === 'true';
+
+        button.setAttribute(
+          'aria-expanded',
+          String(!isOpen)
+        );
+
+        abstract.hidden = isOpen;
+
+      });
+
+    });
+  </script>
+
 
   <script src="/site.js" defer></script>
 
