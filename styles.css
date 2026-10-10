@@ -1205,35 +1205,35 @@ footer { color: #555; font-size: .9rem; }
 
 /* Papers page: final professional colour hierarchy */
 
-/* Paper title: softer navy, bold but compact */
+/* Paper title: dark green, regular and compact */
 .paper-entry-title {
   margin: 0 0 0.3rem 0 !important;
   font-size: 0.98rem !important;
   line-height: 1.38 !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
 }
 
 .paper-entry-title a,
 .paper-entry-title a:link,
 .paper-entry-title a:visited {
-  color: #29496f !important;
-  font-weight: 700 !important;
+  color: #1F5A3A !important;
+  font-weight: 400 !important;
   text-decoration: none !important;
 }
 
 .paper-entry-title a:hover {
-  color: #3a5f86 !important;
+  color: #2E7351 !important;
   text-decoration: underline !important;
 }
 
-/* Abstract: dark green, regular weight */
+/* Abstract: charcoal, regular weight */
 .abstract-toggle {
-  color: #1F5A3A !important;
+  color: #1a2b3c !important;
   font-weight: 400 !important;
 }
 
 .abstract-toggle::after {
-  color: #1F5A3A !important;
+  color: #666 !important;
 }
 
 /* Substack: dark red, regular weight */
