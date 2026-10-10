@@ -1203,6 +1203,56 @@ footer { color: #555; font-size: .9rem; }
   }
 }
 
+/* Papers page: final professional colour hierarchy */
+
+/* Paper title: dark navy, regular weight */
+.paper-entry-title {
+  font-weight: 400 !important;
+}
+
+.paper-entry-title a {
+  color: #1f3a5f !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+
+.paper-entry-title a:hover {
+  color: #345b8c !important;
+  text-decoration: underline !important;
+}
+
+/* Abstract: dark green, regular weight */
+.abstract-toggle {
+  color: #1F5A3A !important;
+  font-weight: 400 !important;
+}
+
+.abstract-toggle::after {
+  color: #1F5A3A !important;
+}
+
+/* Substack: dark red, regular weight */
+.paper-substack-link {
+  color: #8B0000 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+
+.paper-substack-link:hover {
+  color: #8B0000 !important;
+  text-decoration: underline !important;
+}
+
+/* Supporting metadata */
+.paper-updated {
+  color: #666 !important;
+}
+
+.paper-separator {
+  color: #9ca3af !important;
+}
+
+
 
 
 
