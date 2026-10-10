@@ -1205,16 +1205,19 @@ footer { color: #555; font-size: .9rem; }
 
 /* Papers page: final professional colour hierarchy */
 
-/* Paper title: dark navy, medium weight */
+/* Paper title: dark navy, bold but compact */
 .paper-entry-title {
-  font-weight: 500 !important;
+  margin: 0 0 0.3rem 0 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.38 !important;
+  font-weight: 700 !important;
 }
 
 .paper-entry-title a,
 .paper-entry-title a:link,
 .paper-entry-title a:visited {
   color: #1f3a5f !important;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
   text-decoration: none !important;
 }
 
@@ -1253,6 +1256,14 @@ footer { color: #555; font-size: .9rem; }
 .paper-separator {
   color: #9ca3af !important;
 }
+
+@media (max-width: 760px) {
+  .paper-entry-title {
+    font-size: 0.94rem !important;
+    line-height: 1.38 !important;
+  }
+}
+
 
 
 
