@@ -1279,6 +1279,206 @@ footer { color: #555; font-size: .9rem; }
 }
 
 
+/* =========================================================
+   Home page: Substack subscribe box + latest-post carousel
+   ========================================================= */
+
+.commentary-row {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin: 1.5rem 0 2.75rem;
+}
+
+.commentary-row .substack-embed {
+  width: 300px;
+  margin: 0;
+}
+
+.commentary-row .substack-embed iframe {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.commentary-row .substack-carousel {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+
+/* Carousel stage */
+
+.substack-carousel-stage {
+  display: grid;
+  position: relative;
+  min-width: 0;
+}
+
+.substack-carousel .feed-item {
+  grid-area: 1 / 1;
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 420ms ease;
+}
+
+.substack-carousel .feed-item.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* Carousel post typography */
+
+.substack-carousel .feed-date {
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.substack-carousel .feed-item h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.substack-carousel .feed-item h3 a,
+.substack-carousel .feed-item h3 a:link,
+.substack-carousel .feed-item h3 a:visited {
+  color: #1f3a5f;
+  text-decoration: none;
+}
+
+.substack-carousel .feed-item h3 a:hover {
+  color: #345b8c;
+  text-decoration: underline;
+}
+
+.substack-carousel .feed-item p {
+  max-width: 760px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+
+/* Carousel controls */
+
+.substack-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+}
+
+.substack-carousel-arrow {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0.15rem 0.2rem;
+  background: transparent;
+  color: #1f3a5f;
+  font: inherit;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.substack-carousel-arrow:hover {
+  color: #345b8c;
+}
+
+.substack-carousel-arrow:focus-visible {
+  outline: 2px solid #1f3a5f;
+  outline-offset: 3px;
+}
+
+.substack-carousel-count {
+  min-width: 2.6rem;
+  color: #777;
+  text-align: center;
+}
+
+.substack-carousel-all,
+.substack-carousel-all:link,
+.substack-carousel-all:visited {
+  margin-left: auto;
+  color: #8B0000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.substack-carousel-all:hover {
+  color: #8B0000;
+  text-decoration: underline;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .substack-carousel .feed-item {
+    transition: none;
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 760px) {
+
+  .commentary-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .commentary-row .substack-embed {
+    width: 100%;
+  }
+
+  .commentary-row .substack-embed iframe {
+    width: 300px;
+    max-width: 100%;
+  }
+
+  .commentary-row .substack-carousel {
+    width: 100%;
+  }
+
+  .substack-carousel .feed-item h3 {
+    font-size: 1rem;
+  }
+
+  .substack-carousel .feed-item p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .substack-carousel-controls {
+    gap: 0.65rem;
+  }
+
+  .substack-carousel-all {
+    margin-left: auto;
+  }
+}
+
 
 
 
