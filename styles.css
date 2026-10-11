@@ -1788,7 +1788,6 @@ main,
 @media (min-width: 800px) {
   .bio-card.no-card {
     display: grid;
-    padding-top: 0.75rem;
     grid-template-columns:
       minmax(0, 1fr)
       210px
@@ -1808,7 +1807,7 @@ main,
     float: none;
     width: 210px;
     height: 210px;
-    margin: 0;
+    margin: 1rem 0 0;
   }
 
   .bio-card.no-card > p:first-of-type {
@@ -1816,7 +1815,7 @@ main,
     grid-row: 1;
     width: 100%;
     max-width: none;
-    margin-top: 0;
+    margin-top: 1rem;
     text-align: left;
   }
 
