@@ -7,23 +7,123 @@
 
   <title>Media - Collin M. Constantine</title>
 
-  <meta name="description" content="Media resources for Collin M. Constantine: 100-word bio and downloadable headshots.">
+  <meta
+    name="description"
+    content="Media resources for Collin M. Constantine: 100-word bio and downloadable headshot."
+  >
 
- <link rel="stylesheet" href="/styles.css?v=23">
+  <link rel="stylesheet" href="/styles.css?v=23">
+
+  <style>
+
+    /* Press page: headshot + biography */
+
+    .media-intro {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-top: 1rem;
+    }
+
+    .media-photo-block {
+      width: 210px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .media-photo-block img {
+      display: block;
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    }
+
+    .media-photo-block figcaption {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .media-photo-block a {
+      color: #1f3a5f;
+      text-decoration: none;
+    }
+
+    .media-photo-block a:hover {
+      text-decoration: underline;
+    }
+
+    .media-bio-content {
+      min-width: 0;
+    }
+
+    .media-bio-content .prose {
+      max-width: none;
+      margin: 0;
+    }
+
+    .media-bio-content .prose p {
+      margin-top: 0;
+    }
+
+    .media-bio-content #copy-bio {
+      margin-top: 0.6rem;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 760px) {
+
+      .media-intro {
+        display: block;
+      }
+
+      .media-photo-block {
+        margin: 0 auto 1.5rem;
+      }
+
+      .media-bio-content {
+        width: 100%;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
+
   <div class="container">
+
     <header class="header">
+
       <div class="site-title">
-        <a href="/" class="site-title-link" rel="home">Collin M. Constantine</a>
+        <a href="/" class="site-title-link" rel="home">
+          Collin M. Constantine
+        </a>
       </div>
 
-      <button type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+      <button
+        type="button"
+        id="menu-btn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
         ☰
       </button>
 
-      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+      <nav
+        class="nav"
+        id="site-nav"
+        role="navigation"
+        aria-label="Main"
+      >
         <a href="/">Home</a>
         <a href="/research.html">Papers</a>
         <a href="/RA.html">RA Positions</a>
@@ -33,91 +133,161 @@
         <a href="/contact.html">Contact</a>
         <a href="/CV_CMC.pdf" class="button">CV</a>
       </nav>
+
     </header>
 
+
     <main>
-     
 
       <section class="media-section">
+
         <p class="muted">Short biography</p>
 
-        <div id="media-bio" class="prose">
-          <p>
-            Collin M. Constantine is a College Assistant Professor of Economics at Girton College, University of Cambridge. His research lies at the intersection of international macroeconomics, finance, and political economy, with a focus on how foreign exchange constraint, fiscal dominance, bank behaviour, and inequality shape economic outcomes in developing economies. He is Co-Editor of <em>Economics</em>, serves on the editorial board of the <em>Journal of Stratification Economics</em>, and is a member of the Central Bank Research Association (CEBRA).
-          </p>
-        </div>
 
-        <button type="button" class="button" id="copy-bio" aria-label="Copy media bio">
-          Copy biography
-        </button>
-      </section>
+        <div class="media-intro">
 
-      <section class="media-section">
-        <div class="headshot-grid">
-          <figure class="headshot">
+          <figure class="media-photo-block">
+
             <img
               src="/images/headshot-constantine-1.jpg"
               alt="Headshot of Collin M. Constantine"
-              class="media-headshot">
+            >
 
             <figcaption>
-              <div class="downloads">
-                <a href="/images/headshot-constantine-1.jpg" download>Download JPG</a>
-              </div>
+              <a
+                href="/images/headshot-constantine-1.jpg"
+                download
+              >
+                Download JPG
+              </a>
             </figcaption>
+
           </figure>
+
+
+          <div class="media-bio-content">
+
+            <div id="media-bio" class="prose">
+
+              <p>
+                Collin M. Constantine is a College Assistant Professor of Economics at Girton College, University of Cambridge. His research lies at the intersection of international macroeconomics, finance, and political economy, with a focus on how foreign exchange constraint, fiscal dominance, bank behaviour, and inequality shape economic outcomes in developing economies. He is Co-Editor of <em>Economics</em>, serves on the editorial board of the <em>Journal of Stratification Economics</em>, and is a member of the Central Bank Research Association (CEBRA).
+              </p>
+
+            </div>
+
+            <button
+              type="button"
+              class="button"
+              id="copy-bio"
+              aria-label="Copy media bio"
+            >
+              Copy biography
+            </button>
+
+          </div>
+
         </div>
+
       </section>
+
     </main>
 
+
     <footer class="footer">
-      <div>© <span id="y"></span> Collin M. Constantine</div>
+      <div>
+        © <span id="y"></span> Collin M. Constantine
+      </div>
     </footer>
+
   </div>
 
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+
+    document.getElementById('y').textContent =
+      new Date().getFullYear();
+
 
     document.addEventListener('DOMContentLoaded', function () {
-      const btn = document.getElementById('menu-btn');
-      const nav = document.getElementById('site-nav');
+
+      const btn =
+        document.getElementById('menu-btn');
+
+      const nav =
+        document.getElementById('site-nav');
+
 
       if (btn && nav) {
+
         btn.addEventListener('click', function () {
-          const open = nav.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+          const open =
+            nav.classList.toggle('open');
+
+          btn.setAttribute(
+            'aria-expanded',
+            open ? 'true' : 'false'
+          );
+
         });
+
       }
 
-      const copyBtn = document.getElementById('copy-bio');
-      const bioEl = document.getElementById('media-bio');
+
+      const copyBtn =
+        document.getElementById('copy-bio');
+
+      const bioEl =
+        document.getElementById('media-bio');
+
 
       if (copyBtn && bioEl) {
+
         copyBtn.addEventListener('click', async function () {
-          const text = bioEl.innerText.trim();
+
+          const text =
+            bioEl.innerText.trim();
 
           try {
+
             await navigator.clipboard.writeText(text);
+
             copyBtn.textContent = 'Copied';
+
             setTimeout(function () {
               copyBtn.textContent = 'Copy biography';
             }, 1500);
+
           } catch {
-            const ta = document.createElement('textarea');
+
+            const ta =
+              document.createElement('textarea');
+
             ta.value = text;
+
             document.body.appendChild(ta);
+
             ta.select();
+
             document.execCommand('copy');
+
             ta.remove();
 
             copyBtn.textContent = 'Copied';
+
             setTimeout(function () {
               copyBtn.textContent = 'Copy biography';
             }, 1500);
+
           }
+
         });
+
       }
+
     });
+
   </script>
+
 </body>
 </html>
