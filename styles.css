@@ -1514,10 +1514,6 @@ footer { color: #555; font-size: .9rem; }
 
 
 
-/* Home page: keep opening bio readable on the wider canvas */
-.bio-card > p:first-of-type {
-  max-width: 900px;
-}
 
 /* =========================================================
    Site-wide layout system: wider canvas, readable prose
@@ -1784,3 +1780,47 @@ main,
     font-size: 31px !important;
   }
 }
+
+/* =========================================================
+   Home page: centre portrait + opening paragraph as one unit
+   ========================================================= */
+
+@media (min-width: 800px) {
+  .bio-card.no-card {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      210px
+      24px
+      minmax(0, 706px)
+      minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .bio-card.no-card::after {
+    content: none;
+  }
+
+  .bio-card.no-card > .bio-pic {
+    grid-column: 2;
+    grid-row: 1;
+    float: none;
+    width: 210px;
+    height: 210px;
+    margin: 0;
+  }
+
+  .bio-card.no-card > p:first-of-type {
+    grid-column: 4;
+    grid-row: 1;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .bio-card.no-card > :not(.bio-pic):not(p:first-of-type) {
+    grid-column: 1 / -1;
+  }
+}
+
