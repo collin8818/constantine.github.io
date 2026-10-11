@@ -14,23 +14,75 @@
   >
 
   <style>
-    .contact-page .media-section {
+
+    /* Contact page: two-column layout */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      width: 100%;
       max-width: 900px;
-      margin-left: 60px;
-      margin-right: 0;
-      text-align: left;
+      margin: 3rem auto 0;
+      align-items: start;
     }
 
-    @media (max-width: 760px) {
-      .contact-page .media-section {
-        margin-left: 0;
-        margin-right: 0;
-      }
+    .contact-column {
+      min-width: 0;
     }
+
+    .contact-column .muted {
+      margin: 0 0 0.3rem;
+    }
+
+    .contact-column p {
+      margin-top: 0;
+      margin-bottom: 1.7rem;
+    }
+
+    .contact-column a {
+      text-decoration: none;
+    }
+
+    .contact-column a:hover {
+      text-decoration: underline;
+    }
+
+    .consulting-note {
+      max-width: 420px;
+    }
+
+    .consulting-note p {
+      line-height: 1.7;
+      color: #4b5563;
+    }
+
+    .consulting-note a {
+      color: #1f3a5f;
+      font-weight: 600;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 760px) {
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-top: 2rem;
+      }
+
+      .consulting-note {
+        max-width: none;
+      }
+
+    }
+
   </style>
 </head>
 
-<body class="contact-page">
+<body>
 
   <div class="container short-page">
 
@@ -75,36 +127,76 @@
     </header>
 
 
-    <section class="media-section">
+    <main class="contact-layout">
 
-      <p class="muted">
-        Address
-      </p>
+      <!-- Left column -->
 
-      <p>
-        Girton College<br>
-        University of Cambridge<br>
-        Huntingdon Road<br>
-        Cambridge CB3 0JG<br>
-        United Kingdom
-      </p>
+      <section class="contact-column">
 
-    </section>
+        <p class="muted">Address</p>
+
+        <p>
+          Girton College<br>
+          University of Cambridge<br>
+          Huntingdon Road<br>
+          Cambridge CB3 0JG<br>
+          United Kingdom
+        </p>
 
 
-    <section class="media-section">
+        <p class="muted">Email</p>
 
-      <p class="muted">
-        Email
-      </p>
+        <p>
+          <a href="mailto:cc2082@cam.ac.uk">
+            cc2082@cam.ac.uk
+          </a>
+        </p>
 
-      <p>
-        <a href="mailto:cc2082@cam.ac.uk">
-          cc2082@cam.ac.uk
-        </a>
-      </p>
 
-    </section>
+        <p class="muted">X</p>
+
+        <p>
+          <a
+            href="https://x.com/cmc_constantine"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @cmc_constantine
+          </a>
+        </p>
+
+
+        <p class="muted">Substack</p>
+
+        <p>
+          <a
+            href="https://collinconstantine.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            collinconstantine.substack.com
+          </a>
+        </p>
+
+      </section>
+
+
+      <!-- Right column -->
+
+      <section class="contact-column consulting-note">
+
+        <p class="muted">Consulting enquiries</p>
+
+        <p>
+          For consulting and advisory enquiries, please visit
+          <a href="/MFI.html">Macro-Finance Intelligence (MFI)</a>,
+          where I provide historically informed and institutionally grounded
+          macro-financial analysis for emerging-market economies.
+        </p>
+
+      </section>
+
+    </main>
 
 
     <footer class="footer">
