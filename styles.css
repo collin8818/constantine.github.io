@@ -845,8 +845,9 @@ body {
 
 @media (max-width: 700px) {
   .mfi-brand-hero {
-    margin: 1.75rem auto 2.25rem;
+    margin: 1.75rem 0 2.25rem;
     padding: 0;
+    text-align: left;
   }
 
   .mfi-brand-logo {
@@ -1501,12 +1502,6 @@ footer { color: #555; font-size: .9rem; }
   max-width: 900px;
 }
 
-@media (max-width: 760px) {
-  .bio-card > p:first-of-type {
-    max-width: 100%;
-  }
-}
-
 /* =========================================================
    Site-wide layout system: wider canvas, readable prose
    ========================================================= */
@@ -1560,11 +1555,15 @@ main,
     padding-right: 14px;
   }
 
-  .prose,
+  main,
+  .research-page,
   .media-section,
   .mfi-section,
-  .contact-form {
-    max-width: 100%;
+  .prose,
+  .contact-form,
+  .bio-card > p:first-of-type {
+    width: 100%;
+    max-width: 100% !important;
   }
 }
 
@@ -1594,6 +1593,85 @@ main,
   .agenda-page .media-section > p {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+/* =========================================================
+   Mobile navigation: restore compact original presentation
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .site-title {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  #menu-btn {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    border: 1px solid #e5e7eb !important;
+    background: #fff !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    color: #1a2b3c !important;
+    box-shadow: none !important;
+  }
+
+  .nav {
+    display: none !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    margin: 8px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav.open {
+    display: block !important;
+  }
+
+  .nav a,
+  .nav a:link,
+  .nav a:visited,
+  .nav .button,
+  .nav .button:link,
+  .nav .button:visited {
+    display: block !important;
+    width: 100% !important;
+    margin: 6px 0 !important;
+    padding: 10px 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #1a2b3c !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+  }
+
+  .nav a:hover,
+  .nav .button:hover {
+    color: #1f3a5f !important;
+    text-decoration: underline !important;
+  }
+
+  .nav a[aria-current="page"] {
+    color: #1f3a5f !important;
+    font-weight: 600 !important;
   }
 }
 
