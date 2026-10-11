@@ -21,7 +21,7 @@ a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* Layout */
-.container { max-width: 1140px; margin: 0 auto; padding: 32px 24px; }
+.container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 32px 24px; }
 .header {
   display: flex;
   align-items: center;
@@ -549,9 +549,10 @@ a:hover {
 
 main,
 .research-page {
-  max-width: 1250px !important;
-  width: 94% !important;
-  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .research-item {
@@ -824,8 +825,9 @@ body {
 }
 
 .mfi-section {
-  max-width: 900px;
-  margin: 3rem auto;
+  width: 100%;
+  max-width: none;
+  margin: 3rem 0;
 }
 
 .mfi-section h2 {
@@ -927,8 +929,9 @@ body {
 }
 
 .media-section {
-  max-width: 900px;
-  margin: 2rem auto;
+  width: 100%;
+  max-width: none;
+  margin: 2rem 0;
 }
 
 
@@ -1479,22 +1482,8 @@ footer { color: #555; font-size: .9rem; }
   }
 }
 
-
-
-
-/* Home page: keep opening bio readable on the wider canvas */
-.bio-card > p:first-of-type {
-  max-width: 800px;
-}
-
-@media (max-width: 760px) {
-  .bio-card > p:first-of-type {
-    max-width: 100%;
-  }
-}
-
 /* =========================================================
-   Site-wide layout system: wider canvas, readable prose
+   Site-wide layout system: one consistent outer canvas
    ========================================================= */
 
 :root {
@@ -1502,43 +1491,66 @@ footer { color: #555; font-size: .9rem; }
   --reading-width: 900px;
 }
 
-/* Main page canvas */
-.container {
-  width: 100%;
-  max-width: var(--site-canvas);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-/* Keep long-form reading sections comfortable */
-.prose,
-.media-section,
-.mfi-section {
-  max-width: var(--reading-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Forms should remain readable rather than stretching across the full canvas */
-.contact-form {
-  max-width: 820px;
-}
-
-/* The Papers page can use the full site canvas */
+/* One outer frame on every page */
+.container,
 main,
 .research-page {
-  max-width: var(--site-canvas) !important;
-}
-
-/* Horizontal homepage sections should use the wider canvas */
-.commentary-row {
   width: 100%;
-  max-width: var(--site-canvas);
+  max-width: var(--site-canvas) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* Mobile spacing remains compact */
+/* Keep the header and footer aligned to the same page frame */
+.header,
+.footer {
+  width: 100%;
+}
+
+/* Page-level sections no longer create narrower page templates */
+.media-section,
+.mfi-section {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Reading measure: constrain prose, not the page itself */
+.prose {
+  max-width: var(--reading-width);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.media-section > p,
+.mfi-section > p {
+  max-width: var(--reading-width);
+}
+
+/* Home page: keep the opening biography readable */
+.bio-card > p:first-of-type {
+  max-width: 800px;
+}
+
+/* Forms should not stretch across the full desktop canvas */
+.contact-form {
+  width: 100%;
+  max-width: 820px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Wide functional sections can use the full shared canvas */
+.commentary-row,
+.toolkit-grid,
+.headshot-grid,
+.toolkit-table {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Mobile: keep the same page structure with compact gutters */
 @media (max-width: 760px) {
   .container {
     max-width: 100%;
@@ -1546,15 +1558,17 @@ main,
     padding-right: 14px;
   }
 
-  .prose,
+  main,
+  .research-page,
   .media-section,
   .mfi-section,
-  .contact-form {
-    max-width: 100%;
+  .prose,
+  .contact-form,
+  .bio-card > p:first-of-type {
+    width: 100%;
+    max-width: 100% !important;
   }
 }
-
-
 
 
 
