@@ -1866,3 +1866,100 @@ body .commentary-note {
 .short-page .footer {
   margin-top: auto;
 }
+
+/* Contact page: three-column layout */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1.25fr;
+  width: 100%;
+  max-width: 900px;
+  margin: 4rem auto 0;
+  align-items: start;
+}
+
+.contact-column {
+  min-width: 0;
+  padding: 0 2rem;
+}
+
+.contact-column:first-child {
+  padding-left: 0;
+}
+
+.contact-column:last-child {
+  padding-right: 0;
+}
+
+/* Vertical separators */
+.contact-column + .contact-column {
+  border-left: 1px solid #e5e7eb;
+}
+
+.contact-column p {
+  margin-top: 0;
+}
+
+.contact-links {
+  text-align: left;
+}
+
+.contact-links p {
+  margin: 0 0 0.45rem;
+}
+
+.contact-links p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-column a {
+  text-decoration: none;
+}
+
+.contact-column a:hover {
+  text-decoration: underline;
+}
+
+.consulting-note .muted {
+  margin: 0 0 0.3rem;
+}
+
+.consulting-note p {
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.consulting-note a {
+  color: #9A7418;
+  font-weight: 600;
+}
+
+.consulting-note a:hover {
+  color: #9A7418;
+  text-decoration: underline;
+}
+
+
+/* Mobile */
+
+@media (max-width: 760px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+
+  .contact-column,
+  .contact-column:first-child,
+  .contact-column:last-child {
+    padding: 0;
+  }
+
+  .contact-column + .contact-column {
+    border-left: 0;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+  }
+
+}
