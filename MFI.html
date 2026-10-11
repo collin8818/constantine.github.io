@@ -6,24 +6,40 @@
 
   <title>Macro-Finance Intelligence - Collin M. Constantine</title>
 
-  <meta name="description" content="Macro-Finance Intelligence provides historically informed and institutionally grounded macro-financial analysis for emerging-market economies.">
+  <meta
+    name="description"
+    content="Macro-Finance Intelligence provides historically informed and institutionally grounded macro-financial analysis for emerging-market economies."
+  >
 
-<link rel="stylesheet" href="/styles.css?v=23">
+  <link rel="stylesheet" href="/styles.css?v=23">
+
+  <style>
+    .mfi-contact-form {
+      width: 100%;
+      max-width: 820px;
+      margin: 2rem auto 0;
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
+
     <header class="header">
+
       <div class="site-title">
-        <a href="/" class="site-title-link" rel="home">Collin M. Constantine</a>
+        <a href="/" class="site-title-link" rel="home">
+          Collin M. Constantine
+        </a>
       </div>
 
-      <button 
-        type="button" 
-        id="menu-btn" 
-        aria-label="Menu" 
-        aria-expanded="false" 
-        aria-controls="site-nav">
+      <button
+        type="button"
+        id="menu-btn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
         ☰
       </button>
 
@@ -37,74 +53,104 @@
         <a href="/contact.html">Contact</a>
         <a href="/CV_CMC.pdf" class="button">CV</a>
       </nav>
+
     </header>
-    
 
 
-  <div>
+    <div>
 
-  <img src="/mfi.png" alt="Macro-Finance Intelligence logo" class="mfi-brand-logo">
-
-
-<section class="mfi-section">
-<p>  
-  Macro-Finance Intelligence is focused on economies where standard models travel poorly: import-dependent economies, financially dollarised systems, commodity exporters, foreign-exchange-constrained states, and countries where fiscal dominance limits monetary autonomy.
-</p>
-
-<p>
-  MFI offers focused advisory work for a select and limited number of clients requiring historically informed and institutionally grounded macro-financial analysis.
-</p>
-
-<p>
-  Its purpose is to help decision-makers understand how policy choices, institutional constraints, and balance-sheet dynamics shape economic and political risk. The emphasis is on distinguishing symptoms from causes, temporary relief from durable adjustment, and official narratives from underlying macro-financial realities.
-</p>
-</section>
+      <img
+        src="/mfi.png"
+        alt="Macro-Finance Intelligence logo"
+        class="mfi-brand-logo"
+      >
 
 
+      <section class="mfi-section">
 
-    
+        <p>
+          Macro-Finance Intelligence is focused on economies where standard models travel poorly: import-dependent economies, financially dollarised systems, commodity exporters, foreign-exchange-constrained states, and countries where fiscal dominance limits monetary autonomy.
+        </p>
 
-      <form action="https://formspree.io/f/mykqopkl" method="POST" class="contact-form">
-        <input type="hidden" name="_subject" value="New MFI enquiry">
+        <p>
+          MFI offers focused advisory work for a select and limited number of clients requiring historically informed and institutionally grounded macro-financial analysis.
+        </p>
+
+        <p>
+          Its purpose is to help decision-makers understand how policy choices, institutional constraints, and balance-sheet dynamics shape economic and political risk. The emphasis is on distinguishing symptoms from causes, temporary relief from durable adjustment, and official narratives from underlying macro-financial realities.
+        </p>
+
+      </section>
+
+
+      <form
+        action="https://formspree.io/f/mykqopkl"
+        method="POST"
+        class="contact-form mfi-contact-form"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="New MFI enquiry"
+        >
 
         <label for="name">Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          required>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+        >
 
         <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          required>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+        >
 
         <label for="subject">Subject</label>
-        <input 
-          type="text" 
-          id="subject" 
-          name="subject">
+
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+        >
 
         <label for="message">Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="6" 
-          required></textarea>
 
-        <button type="submit" class="button">Send message</button>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+        ></textarea>
+
+        <button type="submit" class="button">
+          Send message
+        </button>
+
       </form>
-   
 
-    <footer class="footer">
-      <div>© <span id="y"></span> Collin M. Constantine</div>
-    </footer>
+
+      <footer class="footer">
+        <div>
+          © <span id="y"></span> Collin M. Constantine
+        </div>
+      </footer>
+
+    </div>
+
   </div>
 
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent =
+      new Date().getFullYear();
 
     document.addEventListener('DOMContentLoaded', function () {
       const btn = document.getElementById('menu-btn');
@@ -114,9 +160,13 @@
 
       btn.addEventListener('click', function () {
         const open = nav.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute(
+          'aria-expanded',
+          open ? 'true' : 'false'
+        );
       });
     });
   </script>
+
 </body>
 </html>
