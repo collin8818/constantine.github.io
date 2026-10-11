@@ -246,8 +246,8 @@ img,video { max-width: 100%; height: auto; }
 .bio-card { text-align: center; }
 .bio-card::after { content:""; display: block; clear: both; }
 .bio-pic {
-  width: 180px;
-  height: 180px;
+  width: 210px;
+  height: 210px;
   object-fit: cover;
   border-radius: 50%;
   display: block;
