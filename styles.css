@@ -1819,8 +1819,8 @@ main,
     text-align: left;
   }
 
-  .bio-card.no-card > .bio-pic,
-  .bio-card.no-card > p:first-of-type {
+  .bio-card > .bio-pic,
+  .bio-card > p:first-of-type {
     transform: translateY(16px);
   }
 
