@@ -15,12 +15,11 @@
 
   <style>
 
-    /* Contact page: two-column layout */
+    /* Contact page: three-column layout */
 
     .contact-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1fr 0.85fr 1.25fr;
       width: 100%;
       max-width: 900px;
       margin: 4rem auto 0;
@@ -29,15 +28,25 @@
 
     .contact-column {
       min-width: 0;
+      padding: 0 2rem;
     }
 
-    .contact-column .muted {
-      margin: 0 0 0.3rem;
+    .contact-column:first-child {
+      padding-left: 0;
+    }
+
+    .contact-column:last-child {
+      padding-right: 0;
+    }
+
+    /* Vertical separators */
+
+    .contact-column + .contact-column {
+      border-left: 1px solid #e5e7eb;
     }
 
     .contact-column p {
       margin-top: 0;
-      margin-bottom: 1.7rem;
     }
 
     .contact-column a {
@@ -48,11 +57,8 @@
       text-decoration: underline;
     }
 
-    /* Keep email, X, and Substack compact */
 
-    .contact-links {
-      margin-top: 0;
-    }
+    /* Middle column: email, X, Substack */
 
     .contact-links p {
       margin: 0 0 0.45rem;
@@ -62,8 +68,11 @@
       margin-bottom: 0;
     }
 
-    .consulting-note {
-      max-width: 420px;
+
+    /* Consulting column */
+
+    .consulting-note .muted {
+      margin: 0 0 0.3rem;
     }
 
     .consulting-note p {
@@ -88,12 +97,20 @@
 
       .contact-layout {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
         margin-top: 3rem;
       }
 
-      .consulting-note {
-        max-width: none;
+      .contact-column,
+      .contact-column:first-child,
+      .contact-column:last-child {
+        padding: 0;
+      }
+
+      .contact-column + .contact-column {
+        border-left: 0;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 1.75rem;
+        padding-top: 1.75rem;
       }
 
     }
@@ -148,11 +165,9 @@
 
     <main class="contact-layout">
 
-      <!-- Left column -->
+      <!-- Address -->
 
       <section class="contact-column">
-
-      <p class="muted"></p>
 
         <p>
           Girton College<br>
@@ -162,40 +177,43 @@
           United Kingdom
         </p>
 
-        <div class="contact-links">
+      </section>
 
-          <p>
-            <a href="mailto:cc2082@cam.ac.uk">
-              cc2082@cam.ac.uk
-            </a>
-          </p>
 
-          <p>
-            <a
-              href="https://x.com/cmc_constantine"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @cmc_constantine
-            </a>
-          </p>
+      <!-- Email, X, Substack -->
 
-          <p>
-            <a
-              href="https://collinconstantine.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              collinconstantine.substack.com
-            </a>
-          </p>
+      <section class="contact-column contact-links">
 
-        </div>
+        <p>
+          <a href="mailto:cc2082@cam.ac.uk">
+            cc2082@cam.ac.uk
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://x.com/cmc_constantine"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @cmc_constantine
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://collinconstantine.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            collinconstantine.substack.com
+          </a>
+        </p>
 
       </section>
 
 
-      <!-- Right column -->
+      <!-- Consulting -->
 
       <section class="contact-column consulting-note">
 
