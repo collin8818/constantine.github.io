@@ -1853,3 +1853,16 @@ body .commentary-note {
   font-weight: 500;
 }
 
+/* =========================================================
+   Short pages: keep footer at bottom of viewport
+   ========================================================= */
+
+.short-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.short-page .footer {
+  margin-top: auto;
+}
