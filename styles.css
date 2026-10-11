@@ -1585,3 +1585,43 @@ main,
     max-width: 100% !important;
   }
 }
+
+
+/* =========================================================
+   Research Agenda: centered sections with RA-style prose width
+   ========================================================= */
+
+.agenda-page .media-section {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agenda-page .media-section h2 {
+  text-align: center;
+}
+
+.agenda-page .media-section p {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Preserve the tighter spacing after the concepts grid */
+.agenda-page .agenda-concepts + .media-section {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .agenda-page .media-section h2 {
+    text-align: left;
+  }
+
+  .agenda-page .media-section p {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
