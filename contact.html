@@ -12,9 +12,25 @@
     name="description"
     content="Contact Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge."
   >
+
+  <style>
+    .contact-page .media-section {
+      max-width: 900px;
+      margin-left: 60px;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    @media (max-width: 760px) {
+      .contact-page .media-section {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="contact-page">
 
   <div class="container short-page">
 
@@ -58,8 +74,6 @@
 
     </header>
 
-
-    <!-- Contact details -->
 
     <section class="media-section">
 
@@ -108,8 +122,6 @@
 
   </div>
 
-
-  <!-- Mobile nav script -->
 
   <script>
     document.addEventListener(
