@@ -1754,15 +1754,15 @@ main,
 }
 
 /* =========================================================
-   Desktop site name: larger, no other header changes
+   Site-wide desktop name size
    ========================================================= */
 
 @media (min-width: 761px) {
   .header .site-title,
-  .header .site-title a,
+  .header .site-title > a,
   .header .site-title-link,
   .header .site-wordmark-desktop {
-    font-size: 31px !important;
+    font-size: 29px !important;
   }
 }
 
