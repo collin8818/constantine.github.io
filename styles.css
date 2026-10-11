@@ -1753,3 +1753,17 @@ main,
   }
 }
 
+
+/* =========================================================
+   Site-wide header name
+   Match the larger MFI presentation on every page
+   ========================================================= */
+
+@media (min-width: 761px) {
+  .header .site-title,
+  .header .site-title > a,
+  .header .site-title-link,
+  .header .site-wordmark-desktop {
+    font-size: 31px !important;
+  }
+}
