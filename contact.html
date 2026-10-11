@@ -21,17 +21,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 4rem;
+      row-gap: 0;
       width: 100% !important;
       max-width: 980px !important;
       margin: 5.5rem auto 0 !important;
       align-items: start;
       font-size: 1.04rem;
-
-      background: #fbfcfe;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 2.5rem 3rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
     }
 
     .contact-column {
@@ -82,6 +77,36 @@
     }
 
 
+    /* Wide Substack subscribe bar */
+
+    .contact-subscribe-wide {
+      grid-column: 1 / -1;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    .contact-subscribe-wide a {
+      display: block;
+      width: 100%;
+      padding: 0.95rem 1.25rem;
+      background: #8B0000;
+      color: #ffffff !important;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.3;
+      text-decoration: none !important;
+      transition: background 0.2s ease;
+    }
+
+    .contact-subscribe-wide a:hover {
+      background: #741010;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+
+
     /* Mobile */
 
     @media (max-width: 760px) {
@@ -92,11 +117,15 @@
         width: 100% !important;
         max-width: 100% !important;
         margin: 3rem auto 0 !important;
-        padding: 1.75rem 1.5rem;
       }
 
       .contact-column {
         padding: 0;
+      }
+
+      .contact-subscribe-wide {
+        grid-column: 1;
+        margin-top: 0.75rem;
       }
 
     }
@@ -210,6 +239,21 @@
         </p>
 
       </section>
+
+
+      <!-- Wide Substack subscribe -->
+
+      <div class="contact-subscribe-wide">
+
+        <a
+          href="https://collinconstantine.substack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Subscribe for new research and commentary
+        </a>
+
+      </div>
 
     </main>
 
