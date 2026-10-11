@@ -19,30 +19,17 @@
 
     .contact-layout {
       display: grid;
-      grid-template-columns: 1fr 0.85fr 1.25fr;
-      width: 100%;
-      max-width: 900px;
-      margin: 4rem auto 0;
+      grid-template-columns: 1fr 0.8fr 1.25fr;
+      column-gap: 4rem;
+      width: 100% !important;
+      max-width: 980px !important;
+      margin: 5.5rem auto 0 !important;
       align-items: start;
     }
 
     .contact-column {
       min-width: 0;
-      padding: 0 2rem;
-    }
-
-    .contact-column:first-child {
-      padding-left: 0;
-    }
-
-    .contact-column:last-child {
-      padding-right: 0;
-    }
-
-    /* Vertical separators */
-
-    .contact-column + .contact-column {
-      border-left: 1px solid #e5e7eb;
+      padding: 0;
     }
 
     .contact-column p {
@@ -71,11 +58,8 @@
 
     /* Consulting column */
 
-    .consulting-note .muted {
-      margin: 0 0 0.3rem;
-    }
-
     .consulting-note p {
+      margin-top: 0;
       line-height: 1.7;
       color: #4b5563;
     }
@@ -97,20 +81,14 @@
 
       .contact-layout {
         grid-template-columns: 1fr;
-        margin-top: 3rem;
+        row-gap: 1.75rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 3rem auto 0 !important;
       }
 
-      .contact-column,
-      .contact-column:first-child,
-      .contact-column:last-child {
+      .contact-column {
         padding: 0;
-      }
-
-      .contact-column + .contact-column {
-        border-left: 0;
-        border-top: 1px solid #e5e7eb;
-        margin-top: 1.75rem;
-        padding-top: 1.75rem;
       }
 
     }
@@ -216,8 +194,6 @@
       <!-- Consulting -->
 
       <section class="contact-column consulting-note">
-
-       
 
         <p>
           For consulting and advisory enquiries, please visit
