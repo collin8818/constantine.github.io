@@ -1853,3 +1853,13 @@ body .commentary-note {
   font-weight: 500;
 }
 
+/* =========================================================
+   Home page: narrower opening bio measure
+   ========================================================= */
+
+@media (min-width: 800px) {
+  .bio-intro > p:first-of-type {
+    max-width: 640px;
+  }
+}
+
