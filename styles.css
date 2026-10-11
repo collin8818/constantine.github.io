@@ -1829,3 +1829,13 @@ main,
   }
 }
 
+/* =========================================================
+   Home page: lower portrait slightly on mobile
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .bio-intro > .bio-pic {
+    transform: translateY(10px);
+  }
+}
+
