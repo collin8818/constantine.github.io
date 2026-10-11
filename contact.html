@@ -23,7 +23,7 @@
       gap: 5rem;
       width: 100%;
       max-width: 900px;
-      margin: 3rem auto 0;
+      margin: 4rem auto 0;
       align-items: start;
     }
 
@@ -46,6 +46,20 @@
 
     .contact-column a:hover {
       text-decoration: underline;
+    }
+
+    /* Keep email, X, and Substack compact */
+
+    .contact-links {
+      margin-top: 0;
+    }
+
+    .contact-links p {
+      margin: 0 0 0.45rem;
+    }
+
+    .contact-links p:last-child {
+      margin-bottom: 0;
     }
 
     .consulting-note {
@@ -75,7 +89,7 @@
       .contact-layout {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-        margin-top: 2rem;
+        margin-top: 3rem;
       }
 
       .consulting-note {
@@ -146,31 +160,35 @@
           United Kingdom
         </p>
 
-        <p>
-          <a href="mailto:cc2082@cam.ac.uk">
-            cc2082@cam.ac.uk
-          </a>
-        </p>
+        <div class="contact-links">
 
-        <p>
-          <a
-            href="https://x.com/cmc_constantine"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @cmc_constantine
-          </a>
-        </p>
+          <p>
+            <a href="mailto:cc2082@cam.ac.uk">
+              cc2082@cam.ac.uk
+            </a>
+          </p>
 
-        <p>
-          <a
-            href="https://collinconstantine.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            collinconstantine.substack.com
-          </a>
-        </p>
+          <p>
+            <a
+              href="https://x.com/cmc_constantine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @cmc_constantine
+            </a>
+          </p>
+
+          <p>
+            <a
+              href="https://collinconstantine.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              collinconstantine.substack.com
+            </a>
+          </p>
+
+        </div>
 
       </section>
 
@@ -183,7 +201,8 @@
 
         <p>
           For consulting and advisory enquiries, please visit
-          <a href="/MFI.html">Macro-Finance Intelligence (MFI)</a> and use the contact form.
+          <a href="/MFI.html">Macro-Finance Intelligence (MFI)</a>
+          and use the contact form.
         </p>
 
       </section>
