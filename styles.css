@@ -1675,3 +1675,81 @@ main,
   }
 }
 
+/* =========================================================
+   Desktop header preview: three-line name wordmark
+   ========================================================= */
+
+@media (min-width: 761px) {
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .site-title {
+    flex: 0 0 155px;
+    width: 155px;
+    font-size: inherit;
+    line-height: 1;
+  }
+
+  .site-title-link {
+    display: block;
+    width: 100%;
+  }
+
+  .site-wordmark-desktop {
+    display: block;
+    color: #1f3a5f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: 0;
+  }
+
+  .site-wordmark-desktop > span {
+    display: block;
+  }
+
+  .site-wordmark-mobile {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}
+
+
+/* Keep the original compact mobile identity */
+
+@media (max-width: 760px) {
+
+  .site-wordmark-desktop {
+    display: none !important;
+  }
+
+  .site-wordmark-mobile {
+    display: inline !important;
+    color: #1f3a5f;
+    font-weight: 700;
+  }
+
+  .site-title {
+    width: auto !important;
+    flex: 1 1 auto !important;
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+}
+
