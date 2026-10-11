@@ -1705,7 +1705,7 @@ main,
     display: block;
     color: #1f3a5f;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 31px !important;
+    font-size: 25px;
     font-weight: 700;
     line-height: 0.98;
     letter-spacing: 0;
@@ -1750,6 +1750,19 @@ main,
     flex: 1 1 auto !important;
     font-size: 22px !important;
     line-height: 1.2 !important;
+  }
+}
+
+/* =========================================================
+   Desktop site name: larger, no other header changes
+   ========================================================= */
+
+@media (min-width: 761px) {
+  .header .site-title,
+  .header .site-title a,
+  .header .site-title-link,
+  .header .site-wordmark-desktop {
+    font-size: 31px !important;
   }
 }
 
