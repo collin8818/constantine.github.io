@@ -1480,6 +1480,19 @@ footer { color: #555; font-size: .9rem; }
 }
 
 
+
+
+/* Home page: keep opening bio readable on the wider canvas */
+.bio-card > p:first-of-type {
+  max-width: 800px;
+}
+
+@media (max-width: 760px) {
+  .bio-card > p:first-of-type {
+    max-width: 100%;
+  }
+}
+
 /* =========================================================
    Site-wide layout system: wider canvas, readable prose
    ========================================================= */
