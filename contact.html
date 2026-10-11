@@ -3,45 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <title>Contact - Collin M. Constantine</title>
-
   <link rel="stylesheet" href="/styles.css?v=23">
-
   <meta
     name="description"
     content="Contact Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge."
   >
-
-  <style>
-    .contact-page .media-section {
-      max-width: 900px;
-      margin-left: 60px;
-      margin-right: 0;
-      text-align: left;
-    }
-
-    @media (max-width: 760px) {
-      .contact-page .media-section {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  </style>
 </head>
-
-<body class="contact-page">
-
+<body>
   <div class="container short-page">
 
     <header class="header">
-
       <div class="site-title">
-        <a
-          href="https://collinconstantine.com"
-          class="site-title-link"
-          rel="home"
-        >
+        <a href="https://collinconstantine.com" class="site-title-link" rel="home">
           Collin M. Constantine
         </a>
       </div>
@@ -56,12 +30,7 @@
         ☰
       </button>
 
-      <nav
-        class="nav"
-        id="site-nav"
-        role="navigation"
-        aria-label="Main"
-      >
+      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
         <a href="/">Home</a>
         <a href="/research.html">Papers</a>
         <a href="/RA.html">RA Positions</a>
@@ -71,15 +40,13 @@
         <a href="/contact.html" aria-current="page">Contact</a>
         <a href="/CV_CMC.pdf" class="button">CV</a>
       </nav>
-
     </header>
 
+    <!-- Contact content in the same layout as the RA page -->
 
     <section class="media-section">
 
-      <p class="muted">
-        Address
-      </p>
+      <p class="muted">Address</p>
 
       <p>
         Girton College<br>
@@ -89,14 +56,7 @@
         United Kingdom
       </p>
 
-    </section>
-
-
-    <section class="media-section">
-
-      <p class="muted">
-        Email
-      </p>
+      <p class="muted">Email</p>
 
       <p>
         <a href="mailto:cc2082@cam.ac.uk">
@@ -106,54 +66,27 @@
 
     </section>
 
-
     <footer class="footer">
-
-      <div>
-        © <span id="y"></span> Collin M. Constantine
-      </div>
-
+      <div>© <span id="y"></span> Collin M. Constantine</div>
       <script>
-        document.getElementById('y').textContent =
-          new Date().getFullYear();
+        document.getElementById('y').textContent = new Date().getFullYear();
       </script>
-
     </footer>
 
   </div>
 
-
   <script>
-    document.addEventListener(
-      'DOMContentLoaded',
-      function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
 
-        const btn =
-          document.getElementById('menu-btn');
+      if (!btn || !nav) return;
 
-        const nav =
-          document.getElementById('site-nav');
-
-        if (!btn || !nav) return;
-
-        btn.addEventListener(
-          'click',
-          function () {
-
-            const open =
-              nav.classList.toggle('open');
-
-            btn.setAttribute(
-              'aria-expanded',
-              open ? 'true' : 'false'
-            );
-
-          }
-        );
-
-      }
-    );
+      btn.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
   </script>
-
 </body>
 </html>
