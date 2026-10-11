@@ -1891,11 +1891,6 @@ body .commentary-note {
   padding-right: 0;
 }
 
-/* Vertical separators */
-.contact-column + .contact-column {
-  border-left: 1px solid #e5e7eb;
-}
-
 .contact-column p {
   margin-top: 0;
 }
@@ -1956,8 +1951,6 @@ body .commentary-note {
   }
 
   .contact-column + .contact-column {
-    border-left: 0;
-    border-top: 1px solid #e5e7eb;
     margin-top: 1.75rem;
     padding-top: 1.75rem;
   }
