@@ -1460,6 +1460,10 @@ footer { color: #555; font-size: .9rem; }
   text-decoration: underline;
 }
 
+.substack-carousel-controls[hidden] {
+  display: none;
+}
+
 
 /* Accessibility */
 
