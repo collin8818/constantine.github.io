@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +33,7 @@
       font-weight: 700;
     }
 
-    /* Subscribe box + latest commentary */
+    /* Subscribe box and latest commentary */
 
     .commentary-row {
       display: grid;
@@ -139,6 +140,12 @@
       font-size: 0.88rem;
     }
 
+    /* Hide controls until posts are available */
+
+    .substack-carousel-controls[hidden] {
+      display: none;
+    }
+
     .substack-carousel-arrow {
       border: 0;
       padding: 0.15rem 0.2rem;
@@ -183,7 +190,6 @@
     }
 
     @media (max-width: 760px) {
-
       .what-i-do-summary {
         margin-top: 1rem;
         line-height: 1.55;
@@ -216,11 +222,10 @@
         font-size: 0.94rem;
         line-height: 1.55;
       }
-
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
 
   <script
     async
@@ -240,16 +245,15 @@
 
 </head>
 
-
 <body>
 
   <div class="container">
 
+    <!-- Header -->
 
     <header class="header">
 
       <div class="site-title">
-
         <a
           href="/"
           class="site-title-link"
@@ -262,9 +266,7 @@
         >
           Collin M. Constantine
         </a>
-
       </div>
-
 
       <button
         type="button"
@@ -276,53 +278,25 @@
         ☰
       </button>
 
-
       <nav
         class="nav"
         id="site-nav"
         role="navigation"
         aria-label="Main"
       >
-
-        <a href="/">
-          Home
-        </a>
-
-        <a href="/research.html">
-          Papers
-        </a>
-
-        <a href="/RA.html">
-          RA Positions
-        </a>
-
-        <a href="/about.html">
-          Research Agenda
-        </a>
-
-        <a href="/media.html">
-          Press
-        </a>
-
-        <a href="/MFI.html">
-          MFI
-        </a>
-
-        <a href="/contact.html">
-          Contact
-        </a>
-
-        <a href="/CV_CMC.pdf">
-          CV
-        </a>
-
+        <a href="/">Home</a>
+        <a href="/research.html">Papers</a>
+        <a href="/RA.html">RA Positions</a>
+        <a href="/about.html">Research Agenda</a>
+        <a href="/media.html">Press</a>
+        <a href="/MFI.html">MFI</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/CV_CMC.pdf">CV</a>
       </nav>
 
     </header>
 
-
-
-    <!-- Bio section -->
+    <!-- Biography -->
 
     <div class="bio-intro">
 
@@ -341,8 +315,6 @@
 
     </div>
 
-
-
     <!-- What I Do -->
 
     <section
@@ -350,7 +322,7 @@
         clear: both;
         text-align: center;
         max-width: 820px;
-      margin: 5rem auto;
+        margin: 5rem auto;
         padding: 0 1rem;
       "
     >
@@ -368,7 +340,6 @@
         What I Do
       </div>
 
-
       <p
         style="
           font-size: 1.2rem;
@@ -384,15 +355,12 @@
         and financial dollarisation as central features of their macro-dynamics.
       </p>
 
-
       <p class="what-i-do-summary">
         This research explains why standard measures of overheating, fiscal space,
         and policy effectiveness often prove unreliable in developing economies.
       </p>
 
     </section>
-
-
 
     <!-- Main links -->
 
@@ -405,7 +373,6 @@
         Download CV
       </a>
 
-
       <a
         href="https://scholar.google.com/citations?user=8pueeqQAAAAJ&amp;hl=en"
         target="_blank"
@@ -414,7 +381,6 @@
       >
         Google Scholar
       </a>
-
 
       <a
         href="https://x.com/cmc_constantine"
@@ -431,7 +397,6 @@
         𝕏
       </a>
 
-
       <a
         href="/MFI.html"
         style="color: #9A7418; font-weight: 600;"
@@ -441,14 +406,11 @@
 
     </p>
 
-
-
-    <!-- Subscribe + latest commentary -->
+    <!-- Subscribe and latest commentary -->
 
     <div class="commentary-row">
 
-
-      <!-- Subscribe box -->
+      <!-- Substack subscription box -->
 
       <div class="substack-embed">
 
@@ -464,9 +426,7 @@
 
       </div>
 
-
-
-      <!-- Latest Substack posts carousel -->
+      <!-- Latest Substack posts -->
 
       <section
         class="latest-feed substack-carousel"
@@ -479,13 +439,8 @@
           class="substack-carousel-stage"
           aria-live="off"
         >
-
-          <p>
-            Loading latest posts...
-          </p>
-
+          <p>Loading latest posts...</p>
         </div>
-
 
         <div
           class="substack-carousel-controls"
@@ -503,7 +458,6 @@
             ←
           </button>
 
-
           <span
             class="substack-carousel-count"
             id="substack-count"
@@ -511,7 +465,6 @@
           >
             1 / 3
           </span>
-
 
           <button
             class="substack-carousel-arrow"
@@ -521,7 +474,6 @@
           >
             →
           </button>
-
 
           <a
             class="substack-carousel-all"
@@ -538,26 +490,22 @@
 
     </div>
 
-
     <p class="commentary-note">
       Subscribe for occasional updates on new papers and accessible commentary
       on live economic puzzles in developing economies.
     </p>
 
-
+    <!-- Footer -->
 
     <footer class="footer">
-
       <div>
         © <span id="y"></span> Collin M. Constantine
       </div>
-
     </footer>
-
 
   </div>
 
-
+  <!-- JavaScript -->
 
   <script>
 
@@ -567,167 +515,93 @@
       new Date().getFullYear();
 
 
+    /* Mobile navigation */
 
-    /* Mobile menu */
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('site-nav');
 
-    document.addEventListener(
-      'DOMContentLoaded',
-      function () {
+      if (!btn || !nav) return;
 
-        const btn =
-          document.getElementById('menu-btn');
+      btn.addEventListener('click', function () {
+        const open = nav.classList.toggle('open');
 
-        const nav =
-          document.getElementById('site-nav');
-
-
-        if (!btn || !nav) {
-          return;
-        }
-
-
-        btn.addEventListener(
-          'click',
-          function () {
-
-            const open =
-              nav.classList.toggle('open');
-
-
-            btn.setAttribute(
-              'aria-expanded',
-              open ? 'true' : 'false'
-            );
-
-          }
+        btn.setAttribute(
+          'aria-expanded',
+          open ? 'true' : 'false'
         );
-
-      }
-    );
-
+      });
+    });
 
 
     /* Substack carousel */
 
     const substackCarousel =
-      document.getElementById(
-        'substack-carousel'
-      );
-
+      document.getElementById('substack-carousel');
 
     const substackControls =
-      document.getElementById(
-        'substack-carousel-controls'
-      );
-
+      document.getElementById('substack-carousel-controls');
 
     const substackPrev =
-      document.getElementById(
-        'substack-prev'
-      );
-
+      document.getElementById('substack-prev');
 
     const substackNext =
-      document.getElementById(
-        'substack-next'
-      );
-
+      document.getElementById('substack-next');
 
     const substackCount =
-      document.getElementById(
-        'substack-count'
-      );
-
+      document.getElementById('substack-count');
 
     let substackPosts = [];
-
     let substackIndex = 0;
-
     let substackTimer = null;
 
-
-
     const reduceMotion =
-      window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-      );
-
+      window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const mobileLayout =
-      window.matchMedia(
-        '(max-width: 760px)'
-      );
+      window.matchMedia('(max-width: 760px)');
 
 
+    /* Display selected post */
 
     function showSubstackPost(index) {
-
-      if (!substackPosts.length) {
-        return;
-      }
-
+      if (!substackPosts.length) return;
 
       substackIndex =
-        (
-          index +
-          substackPosts.length
-        ) %
-        substackPosts.length;
+        (index + substackPosts.length) % substackPosts.length;
 
+      substackPosts.forEach((post, postIndex) => {
+        const active = postIndex === substackIndex;
 
-      substackPosts.forEach(
-        (post, postIndex) => {
+        post.classList.toggle('is-active', active);
 
-          const active =
-            postIndex === substackIndex;
-
-
-          post.classList.toggle(
-            'is-active',
-            active
-          );
-
-
-          post.setAttribute(
-            'aria-hidden',
-            active ? 'false' : 'true'
-          );
-
-        }
-      );
-
+        post.setAttribute(
+          'aria-hidden',
+          active ? 'false' : 'true'
+        );
+      });
 
       if (substackCount) {
-
         substackCount.textContent =
           `${substackIndex + 1} / ${substackPosts.length}`;
-
       }
-
     }
 
 
+    /* Stop automatic rotation */
 
     function stopSubstackRotation() {
-
       if (substackTimer) {
-
-        window.clearInterval(
-          substackTimer
-        );
-
+        window.clearInterval(substackTimer);
         substackTimer = null;
-
       }
-
     }
 
 
+    /* Start automatic rotation */
 
     function startSubstackRotation() {
-
       stopSubstackRotation();
-
 
       if (
         reduceMotion.matches ||
@@ -737,216 +611,391 @@
         return;
       }
 
-
-      substackTimer =
-        window.setInterval(
-          function () {
-
-            showSubstackPost(
-              substackIndex + 1
-            );
-
-          },
-          8000
-        );
-
+      substackTimer = window.setInterval(function () {
+        showSubstackPost(substackIndex + 1);
+      }, 8000);
     }
 
 
+    /*
+      Load the newest Substack posts.
+
+      Two independent feed services are checked.
+      Results are combined, duplicates removed,
+      and posts sorted by publication date.
+
+      No hardcoded post list or persistent browser
+      cache is used.
+    */
 
     async function loadSubstackFeed() {
 
       const feedContainer =
-        document.getElementById(
-          'substack-feed'
-        );
+        document.getElementById('substack-feed');
 
+      if (!feedContainer) return;
 
-      const feedUrl =
-        encodeURIComponent(
-          'https://collinconstantine.substack.com/feed'
-        );
+      const feedURL =
+        'https://collinconstantine.substack.com/feed';
 
+      const requestId = Date.now();
 
-      const apiUrl =
-        `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
-
-
-      try {
-
-        const response =
-          await fetch(apiUrl);
-
-
-        const data =
-          await response.json();
-
-
-        if (
-          !data.items ||
-          data.items.length === 0
-        ) {
-
-          feedContainer.innerHTML =
-            '<p>Latest posts could not be loaded.</p>';
-
-          return;
-
+      const sources = [
+        {
+          url:
+            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedURL)}&count=10&_=${requestId}`,
+          type: 'json'
+        },
+        {
+          url:
+            `https://api.allorigins.win/raw?url=${encodeURIComponent(feedURL)}&_=${requestId}`,
+          type: 'xml'
         }
+      ];
+
+      const availablePosts = new Map();
+
+      let displayedKeys = '';
 
 
-        const posts =
-          data.items.slice(0, 3);
+      /* Remove HTML markup from descriptions */
+
+      function cleanText(value) {
+        const doc = new DOMParser().parseFromString(
+          String(value || ''),
+          'text/html'
+        );
+
+        return (doc.body.textContent || '')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
 
 
-        feedContainer.innerHTML =
-          posts.map(
-            (post, index) => {
+      /* Standardise post information */
+
+      function normalize(post) {
+        try {
+          const url = new URL(post.link);
+
+          if (
+            url.protocol !== 'https:' ||
+            url.hostname !== 'collinconstantine.substack.com' ||
+            !url.pathname.startsWith('/p/')
+          ) {
+            return null;
+          }
+
+          const title = cleanText(post.title);
+
+          if (!title) return null;
+
+          const rawDate =
+            String(post.pubDate || '').trim();
+
+          let timestamp = Date.parse(rawDate);
+
+          if (!Number.isFinite(timestamp)) {
+            timestamp = Date.parse(
+              rawDate.replace(
+                /^(\d{4}-\d{2}-\d{2})\s+(\d{2}:)/,
+                '$1T$2'
+              )
+            );
+          }
+
+          return {
+            link: url.origin + url.pathname.replace(/\/$/, ''),
+            title: title,
+            description: cleanText(post.description),
+            timestamp: Number.isFinite(timestamp)
+              ? timestamp
+              : 0
+          };
+
+        } catch (error) {
+          return null;
+        }
+      }
 
 
-              const date =
-                new Date(
-                  post.pubDate
-                ).toLocaleDateString(
-                  'en-GB',
-                  {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  }
-                );
+      /* Retrieve posts from one feed service */
 
+      async function getPosts(source) {
 
-              const description =
-                post.description
-                  ? post.description
-                      .replace(
-                        /<[^>]*>?/gm,
-                        ''
-                      )
-                      .replace(
-                        /\s+/g,
-                        ' '
-                      )
-                      .trim()
-                      .slice(
-                        0,
-                        190
-                      ) + '...'
-                  : '';
+        const controller = new AbortController();
 
+        const timeout = setTimeout(
+          () => controller.abort(),
+          9000
+        );
 
-              return `
+        try {
+          const response = await fetch(source.url, {
+            signal: controller.signal,
+            cache: 'no-store'
+          });
 
-                <article
-                  class="feed-item${index === 0 ? ' is-active' : ''}"
-                  data-substack-post
-                  aria-hidden="${index === 0 ? 'false' : 'true'}"
-                >
+          if (!response.ok) {
+            throw new Error(
+              `Feed returned HTTP ${response.status}`
+            );
+          }
 
-                  <div class="feed-date">
-                    ${date}
-                  </div>
+          /* RSS2JSON response */
 
+          if (source.type === 'json') {
 
-                  <h3>
+            const data = await response.json();
 
-                    <a
-                      href="${post.link}"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      ${post.title}
-                    </a>
-
-                  </h3>
-
-
-                  <p>
-                    ${description}
-                  </p>
-
-                </article>
-
-              `;
-
+            if (data.status && data.status !== 'ok') {
+              throw new Error(
+                'RSS2JSON did not return a valid feed'
+              );
             }
-          ).join('');
+
+            return Array.isArray(data.items)
+              ? data.items
+              : [];
+          }
+
+          /* XML RSS response */
+
+          const xml = new DOMParser().parseFromString(
+            await response.text(),
+            'application/xml'
+          );
+
+          if (xml.querySelector('parsererror')) {
+            throw new Error('Invalid RSS XML');
+          }
+
+          const value = (item, tag) =>
+            item.getElementsByTagName(tag)[0]?.textContent || '';
+
+          return Array.from(
+            xml.getElementsByTagName('item'),
+            item => ({
+              title: value(item, 'title'),
+              link: value(item, 'link'),
+              pubDate: value(item, 'pubDate'),
+              description: value(item, 'description')
+            })
+          );
+
+        } finally {
+          clearTimeout(timeout);
+        }
+      }
 
 
-        substackPosts =
-          Array.from(
-            document.querySelectorAll(
-              '[data-substack-post]'
-            )
+      /* Display the three most recent posts */
+
+      function displayLatestPosts() {
+
+        const posts = Array.from(availablePosts.values())
+          .sort((a, b) => b.timestamp - a.timestamp)
+          .slice(0, 3);
+
+        if (!posts.length) return;
+
+        const keys = posts
+          .map(post => post.link)
+          .join('|');
+
+        if (keys === displayedKeys) return;
+
+        displayedKeys = keys;
+
+        const elements = posts.map((post, index) => {
+
+          const article = document.createElement('article');
+
+          article.className =
+            'feed-item' +
+            (index === 0 ? ' is-active' : '');
+
+          article.setAttribute(
+            'data-substack-post',
+            ''
+          );
+
+          article.setAttribute(
+            'aria-hidden',
+            index === 0 ? 'false' : 'true'
           );
 
 
-        if (
-          substackPosts.length > 1
-        ) {
+          /* Publication date */
 
+          if (post.timestamp) {
+
+            const date = document.createElement('div');
+
+            date.className = 'feed-date';
+
+            date.textContent =
+              new Date(post.timestamp).toLocaleDateString(
+                'en-GB',
+                {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                }
+              );
+
+            article.appendChild(date);
+          }
+
+
+          /* Post title and link */
+
+          const heading = document.createElement('h3');
+          const link = document.createElement('a');
+
+          link.href = post.link;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.textContent = post.title;
+
+          heading.appendChild(link);
+          article.appendChild(heading);
+
+
+          /* Post excerpt */
+
+          if (post.description) {
+
+            const paragraph = document.createElement('p');
+
+            paragraph.textContent =
+              post.description.slice(0, 190) +
+              (post.description.length > 190 ? '…' : '');
+
+            article.appendChild(paragraph);
+          }
+
+          return article;
+        });
+
+
+        /* Update carousel */
+
+        stopSubstackRotation();
+
+        feedContainer.replaceChildren(...elements);
+
+        substackPosts = elements;
+        substackIndex = 0;
+
+        if (substackControls) {
           substackControls.hidden =
-            false;
-
+            elements.length < 2;
         }
 
-
         showSubstackPost(0);
-
         startSubstackRotation();
+      }
 
 
-      } catch (error) {
+      /* Check both feed sources */
 
-        feedContainer.innerHTML =
-          '<p>Latest posts could not be loaded.</p>';
+      await Promise.allSettled(
+        sources.map(async source => {
 
+          try {
+
+            const posts = await getPosts(source);
+
+            for (const item of posts) {
+
+              const post = normalize(item);
+
+              if (!post) continue;
+
+              const existing =
+                availablePosts.get(post.link);
+
+              if (
+                !existing ||
+                post.timestamp > existing.timestamp
+              ) {
+                availablePosts.set(
+                  post.link,
+                  post
+                );
+              }
+            }
+
+            displayLatestPosts();
+
+          } catch (error) {
+
+            console.warn(
+              'Substack feed source unavailable:',
+              error
+            );
+
+          }
+        })
+      );
+
+
+      /* Fallback if both services fail */
+
+      if (!availablePosts.size) {
+
+        const paragraph = document.createElement('p');
+
+        paragraph.append(
+          'For the latest commentary, '
+        );
+
+        const link = document.createElement('a');
+
+        link.href =
+          'https://collinconstantine.substack.com/';
+
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'visit Substack';
+
+        paragraph.append(link, '.');
+
+        feedContainer.replaceChildren(paragraph);
+
+        if (substackControls) {
+          substackControls.hidden = true;
+        }
       }
 
     }
 
 
+    /* Carousel navigation arrows */
 
-    /* Carousel arrows */
-
-    if (
-      substackPrev &&
-      substackNext
-    ) {
+    if (substackPrev && substackNext) {
 
       substackPrev.addEventListener(
         'click',
         function () {
-
-          showSubstackPost(
-            substackIndex - 1
-          );
-
+          showSubstackPost(substackIndex - 1);
           startSubstackRotation();
-
         }
       );
-
 
       substackNext.addEventListener(
         'click',
         function () {
-
-          showSubstackPost(
-            substackIndex + 1
-          );
-
+          showSubstackPost(substackIndex + 1);
           startSubstackRotation();
-
         }
       );
 
     }
 
 
-
-    /* Pause carousel on hover/focus */
+    /* Pause carousel on hover or keyboard focus */
 
     if (substackCarousel) {
 
@@ -955,18 +1004,15 @@
         stopSubstackRotation
       );
 
-
       substackCarousel.addEventListener(
         'mouseleave',
         startSubstackRotation
       );
 
-
       substackCarousel.addEventListener(
         'focusin',
         stopSubstackRotation
       );
-
 
       substackCarousel.addEventListener(
         'focusout',
@@ -976,12 +1022,12 @@
     }
 
 
+    /* Respect accessibility and screen width settings */
 
     reduceMotion.addEventListener(
       'change',
       startSubstackRotation
     );
-
 
     mobileLayout.addEventListener(
       'change',
@@ -989,11 +1035,11 @@
     );
 
 
+    /* Load latest posts when page opens */
 
     loadSubstackFeed();
 
   </script>
-
 
 </body>
 </html>
