@@ -33,7 +33,7 @@
     }
 
 
-    /* Subscription box and latest commentary */
+    /* Subscription box and commentary */
 
     .commentary-row {
       display: grid;
@@ -63,7 +63,7 @@
     }
 
 
-    /* Latest post section */
+    /* Supascribe feed */
 
     .commentary-row .latest-feed {
       width: 100%;
@@ -78,15 +78,6 @@
 
     .latest-feed iframe {
       max-width: 100%;
-    }
-
-    .latest-feed-heading {
-      margin: 0 0 0.8rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1F5A3A;
     }
 
 
@@ -187,7 +178,7 @@
     }
 
 
-    /* Hide original feed only when carousel works */
+    /* Hide Supascribe source only when carousel works */
 
     .supascribe-source.is-offscreen {
       position: absolute !important;
@@ -221,11 +212,9 @@
     /* Accessibility */
 
     @media (prefers-reduced-motion: reduce) {
-
       .latest-carousel-stage .feed-item {
         transition: none;
       }
-
     }
 
 
@@ -477,7 +466,7 @@
 
 
 
-    <!-- Latest Commentary -->
+    <!-- Subscription and commentary -->
 
     <div class="commentary-row">
 
@@ -499,15 +488,13 @@
 
 
 
-      <!-- Latest Post with automatic carousel -->
+      <!-- Automatic commentary carousel -->
 
       <section
         class="latest-feed"
         id="latest-feed"
         aria-label="Latest Substack posts"
       >
-
-    
 
 
         <!-- Rotating posts -->
@@ -658,7 +645,7 @@
 
 
 
-    /* Latest posts carousel */
+    /* Automatic commentary carousel */
 
     const feedSection =
       document.getElementById('latest-feed');
@@ -874,9 +861,32 @@
 
       const posts = getLivePosts();
 
-      if (!posts.length) {
+      /*
+       * Keep the complete Supascribe feed visible
+       * unless all three unique articles are found.
+       */
+
+      if (posts.length < 3) {
+
+        stopRotation();
+
+        sourceWrapper.classList.remove('is-offscreen');
+
+        sourceWrapper.removeAttribute('aria-hidden');
+
+        sourceWrapper.inert = false;
+
+        stage.hidden = true;
+
+        controls.hidden = true;
+
+        cards = [];
+
+        feedSignature = '';
+
         return;
       }
+
 
       const signature =
         JSON.stringify(posts);
@@ -888,6 +898,7 @@
       feedSignature = signature;
 
       stopRotation();
+
 
       const newCards = posts.map((post) => {
 
@@ -937,11 +948,15 @@
           document.createElement('a');
 
         link.href = post.url;
+
         link.target = '_blank';
+
         link.rel = 'noopener noreferrer';
+
         link.textContent = post.title;
 
         heading.append(link);
+
         article.append(heading);
 
 
@@ -981,7 +996,7 @@
         cards.length < 2;
 
 
-      /* Hide original widget when carousel is working */
+      /* Hide original widget when carousel works */
 
       sourceWrapper.classList.add('is-offscreen');
 
@@ -994,6 +1009,7 @@
 
 
       showPost(0);
+
       startRotation();
 
     }
@@ -1082,7 +1098,7 @@
 
 
 
-  <!-- Supascribe live feed loader -->
+  <!-- Supascribe automatic feed loader -->
 
   <script
     src="https://js.supascribe.com/v1/loader/j4urcr461JXe3Dk9MQYrSOSF9FN2.js"
