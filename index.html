@@ -4,12 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Home - Collin M. Constantine</title>
-  <meta name="description" content="Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy.">
-  <meta name="google-site-verification" content="luO5IkFzKO6OnJfulAR-xGdN7-XADGQ8_12w_P0mNog">
+
+  <meta
+    name="description"
+    content="Collin M. Constantine — College Assistant Professor of Economics at Girton College, University of Cambridge. Research in international macroeconomics, trade, and political economy."
+  >
+
+  <meta
+    name="google-site-verification"
+    content="luO5IkFzKO6OnJfulAR-xGdN7-XADGQ8_12w_P0mNog"
+  >
+
   <link rel="stylesheet" href="/styles.css?v=24">
 
   <style>
+
+    /* What I Do */
+
     .what-i-do-summary {
       max-width: 760px;
       margin: 1.4rem auto 0;
@@ -18,7 +31,13 @@
       color: #4b5563;
       text-align: center;
     }
-    .what-i-do-summary a { font-weight: 700; }
+
+    .what-i-do-summary a {
+      font-weight: 700;
+    }
+
+
+    /* Subscribe box and latest commentary */
 
     .commentary-row {
       display: grid;
@@ -27,6 +46,7 @@
       align-items: center;
       margin: 1.5rem 0 1rem;
     }
+
     .commentary-note {
       max-width: 720px;
       margin: 1rem auto 0;
@@ -35,372 +55,441 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .commentary-row .substack-embed { width: 300px; margin: 0; }
-    .commentary-row .substack-embed iframe { display: block; max-width: 100%; }
-    .commentary-row .substack-carousel { width: 100%; max-width: none; margin: 0; }
 
-    .substack-carousel { max-width: 820px; margin: 1.5rem auto 2.5rem; }
-    .substack-carousel-stage { display: grid; position: relative; min-width: 0; }
-    .substack-carousel .feed-item {
-      grid-area: 1 / 1;
+    .commentary-row .substack-embed {
+      width: 300px;
       margin: 0;
-      padding: 0;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 420ms ease;
     }
-    .substack-carousel .feed-item.is-active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+
+    .commentary-row .substack-embed iframe {
+      display: block;
+      max-width: 100%;
     }
-    .substack-carousel .feed-date {
-      margin-bottom: 0.35rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #6b7280;
-      font-weight: 600;
-    }
-    .substack-carousel .feed-item h3 {
-      margin: 0 0 0.45rem;
-      font-size: 1.05rem;
-      line-height: 1.4;
-      font-weight: 500;
-    }
-    .substack-carousel .feed-item h3 a,
-    .substack-carousel .feed-item h3 a:link,
-    .substack-carousel .feed-item h3 a:visited {
-      color: #1f3a5f;
-      text-decoration: none;
-    }
-    .substack-carousel .feed-item h3 a:hover { text-decoration: underline; }
-    .substack-carousel .feed-item p {
-      max-width: 760px;
+
+
+    /* Supascribe latest posts */
+
+    .commentary-row .latest-feed {
+      width: 100%;
+      min-width: 0;
       margin: 0;
-      font-size: 0.96rem;
-      line-height: 1.6;
-      color: #4b5563;
     }
-    .substack-carousel-controls[hidden] { display: none; }
-    .substack-carousel-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-top: 1rem;
+
+    .latest-feed [data-supascribe-feed] {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .latest-feed iframe {
+      max-width: 100%;
+    }
+
+    .commentary-all {
+      margin: 0.8rem 0 0;
+      text-align: right;
       font-size: 0.88rem;
     }
-    .substack-carousel-arrow {
-      border: 0;
-      padding: 0.15rem 0.2rem;
-      background: transparent;
-      color: #1f3a5f;
-      font: inherit;
-      font-size: 1.15rem;
-      line-height: 1;
-      cursor: pointer;
-    }
-    .substack-carousel-arrow:hover { color: #345b8c; }
-    .substack-carousel-arrow:focus-visible {
-      outline: 2px solid #1f3a5f;
-      outline-offset: 3px;
-    }
-    .substack-carousel-count {
-      min-width: 2.6rem;
-      color: #777;
-      text-align: center;
-    }
-    .substack-carousel-all {
-      margin-left: auto;
+
+    .commentary-all a {
       color: #8B0000;
       text-decoration: none;
       font-weight: 500;
     }
-    .substack-carousel-all:hover { text-decoration: underline; }
-    @media (prefers-reduced-motion: reduce) {
-      .substack-carousel .feed-item { transition: none; }
+
+    .commentary-all a:hover {
+      text-decoration: underline;
     }
+
+
+    /* Mobile layout */
+
     @media (max-width: 760px) {
-      .what-i-do-summary { margin-top: 1rem; line-height: 1.55; }
+
+      .what-i-do-summary {
+        margin-top: 1rem;
+        line-height: 1.55;
+      }
+
       .commentary-row {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         align-items: start;
       }
-      .commentary-row .substack-embed { width: 100%; }
-      .commentary-row .substack-embed iframe { width: 300px; max-width: 100%; }
-      .substack-carousel { margin-top: 0; }
-      .substack-carousel .feed-item h3 { font-size: 1rem; }
-      .substack-carousel .feed-item p { font-size: 0.94rem; line-height: 1.55; }
+
+      .commentary-row .substack-embed {
+        width: 100%;
+      }
+
+      .commentary-row .substack-embed iframe {
+        width: 300px;
+        max-width: 100%;
+      }
+
     }
+
   </style>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CSXZE3K2Z"></script>
+
+  <!-- Google Analytics -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-7CSXZE3K2Z"
+  ></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'G-7CSXZE3K2Z');
   </script>
+
 </head>
+
+
 <body>
+
   <div class="container">
+
+
+    <!-- Header -->
+
     <header class="header">
+
       <div class="site-title">
-        <a href="/" class="site-title-link" rel="home"
-           style="color:#1f3a5f!important;text-decoration:none!important;font-weight:700!important;">
+
+        <a
+          href="/"
+          class="site-title-link"
+          rel="home"
+          style="
+            color: #1f3a5f !important;
+            text-decoration: none !important;
+            font-weight: 700 !important;
+          "
+        >
           Collin M. Constantine
         </a>
+
       </div>
-      <button type="button" id="menu-btn" aria-label="Menu"
-              aria-expanded="false" aria-controls="site-nav">☰</button>
-      <nav class="nav" id="site-nav" role="navigation" aria-label="Main">
+
+
+      <!-- Mobile menu -->
+
+      <button
+        type="button"
+        id="menu-btn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        ☰
+      </button>
+
+
+      <!-- Navigation -->
+
+      <nav
+        class="nav"
+        id="site-nav"
+        role="navigation"
+        aria-label="Main"
+      >
+
         <a href="/">Home</a>
+
         <a href="/research.html">Papers</a>
+
         <a href="/RA.html">RA Positions</a>
+
         <a href="/about.html">Research Agenda</a>
+
         <a href="/media.html">Press</a>
+
         <a href="/MFI.html">MFI</a>
+
         <a href="/contact.html">Contact</a>
+
         <a href="/CV_CMC.pdf">CV</a>
+
       </nav>
+
     </header>
 
+
+
+    <!-- Biography -->
+
     <div class="bio-intro">
-      <img src="/Untitled.jpg" alt="Collin M. Constantine"
-           class="bio-pic" loading="lazy">
+
+      <img
+        src="/Untitled.jpg"
+        alt="Collin M. Constantine"
+        class="bio-pic"
+        loading="lazy"
+      >
+
       <p>
-        Collin M. Constantine is a College Assistant Professor of Economics at Girton College,
-        University of Cambridge. His research lies at the intersection of international
-        macroeconomics, finance, and the political economy of development.
+        Collin M. Constantine is a College Assistant Professor
+        of Economics at Girton College, University of Cambridge.
+        His research lies at the intersection of international
+        macroeconomics, finance, and the political economy
+        of development.
       </p>
+
     </div>
 
-    <section style="clear:both;text-align:center;max-width:820px;margin:5rem auto;padding:0 1rem;">
-      <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.08em;
-                  text-transform:uppercase;color:#1F5A3A;margin:0 0 0.8rem;">
+
+
+    <!-- What I Do -->
+
+    <section
+      style="
+        clear: both;
+        text-align: center;
+        max-width: 820px;
+        margin: 5rem auto;
+        padding: 0 1rem;
+      "
+    >
+
+      <div
+        style="
+          font-size: 1.5rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #1F5A3A;
+          margin: 0 0 0.8rem 0;
+        "
+      >
         What I Do
       </div>
-      <p style="font-size:1.2rem;line-height:1.4;font-weight:500;
-                color:#1a2b3c;margin:0 auto;">
-        My research helps shape a macroeconomics <em>of</em> and <em>for</em>
-        developing economies, where standard assumptions often travel poorly.
-        It treats foreign exchange scarcity, import dependence, fiscal dominance,
-        and financial dollarisation as central features of their macro-dynamics.
+
+
+      <p
+        style="
+          font-size: 1.2rem;
+          line-height: 1.4;
+          font-weight: 500;
+          color: #1a2b3c;
+          margin: 0 auto;
+        "
+      >
+
+        My research helps shape a macroeconomics
+        <em>of</em> and <em>for</em>
+        developing economies, where standard assumptions
+        often travel poorly.
+
+        It treats foreign exchange scarcity,
+        import dependence, fiscal dominance,
+        and financial dollarisation as central
+        features of their macro-dynamics.
+
       </p>
+
+
       <p class="what-i-do-summary">
-        This research explains why standard measures of overheating, fiscal space,
-        and policy effectiveness often prove unreliable in developing economies.
+
+        This research explains why standard measures
+        of overheating, fiscal space, and policy
+        effectiveness often prove unreliable
+        in developing economies.
+
       </p>
+
     </section>
 
+
+
+    <!-- Main links -->
+
     <p class="inline-links">
-      <a href="/CV_CMC.pdf" style="color:#1F5A3A;font-weight:600;">Download CV</a>
-      <a href="https://scholar.google.com/citations?user=8pueeqQAAAAJ&amp;hl=en"
-         target="_blank" rel="noopener" style="font-weight:600;">Google Scholar</a>
-      <a href="https://x.com/cmc_constantine" target="_blank" rel="noopener"
-         aria-label="Collin Constantine on X"
-         style="font-size:1.45rem;color:#000;line-height:1;vertical-align:-0.05em;">𝕏</a>
-      <a href="/MFI.html" style="color:#9A7418;font-weight:600;">
+
+      <a
+        href="/CV_CMC.pdf"
+        style="color: #1F5A3A; font-weight: 600;"
+      >
+        Download CV
+      </a>
+
+
+      <a
+        href="https://scholar.google.com/citations?user=8pueeqQAAAAJ&amp;hl=en"
+        target="_blank"
+        rel="noopener"
+        style="font-weight: 600;"
+      >
+        Google Scholar
+      </a>
+
+
+      <a
+        href="https://x.com/cmc_constantine"
+        target="_blank"
+        rel="noopener"
+        aria-label="Collin Constantine on X"
+        style="
+          font-size: 1.45rem;
+          color: #000;
+          line-height: 1;
+          vertical-align: -0.05em;
+        "
+      >
+        𝕏
+      </a>
+
+
+      <a
+        href="/MFI.html"
+        style="color: #9A7418; font-weight: 600;"
+      >
         Macro-Finance Intelligence (MFI)
       </a>
+
     </p>
+
+
+
+    <!-- Subscription and latest commentary -->
 
     <div class="commentary-row">
+
+
+      <!-- Substack subscription box -->
+
       <div class="substack-embed">
-        <iframe src="https://collinconstantine.substack.com/embed"
-                width="300" height="180" style="border:none;background:white;"
-                scrolling="no" title="Subscribe to Collin Constantine on Substack"></iframe>
+
+        <iframe
+          src="https://collinconstantine.substack.com/embed"
+          width="300"
+          height="180"
+          style="border: none; background: white;"
+          scrolling="no"
+          title="Subscribe to Collin Constantine on Substack"
+        ></iframe>
+
       </div>
 
-      <section class="latest-feed substack-carousel" id="substack-carousel"
-               aria-label="Latest Substack posts">
-        <div id="substack-feed" class="substack-carousel-stage" aria-live="off">
-          <p>Loading latest posts...</p>
-        </div>
-        <div class="substack-carousel-controls" id="substack-carousel-controls"
-             aria-label="Latest commentary controls" hidden>
-          <button class="substack-carousel-arrow" id="substack-prev"
-                  type="button" aria-label="Previous post">←</button>
-          <span class="substack-carousel-count" id="substack-count"
-                aria-live="polite">1 / 3</span>
-          <button class="substack-carousel-arrow" id="substack-next"
-                  type="button" aria-label="Next post">→</button>
-          <a class="substack-carousel-all" href="https://collinconstantine.substack.com/"
-             target="_blank" rel="noopener">View all commentary</a>
-        </div>
+
+
+      <!-- Latest posts using Supascribe -->
+
+      <section
+        class="latest-feed"
+        aria-label="Latest Substack posts"
+      >
+
+        <!-- Supascribe Feed Embed -->
+
+        <div
+          data-supascribe-embed-id="311241146221"
+          data-supascribe-feed
+        ></div>
+
+
+        <!-- All commentary link -->
+
+        <p class="commentary-all">
+
+          <a
+            href="https://collinconstantine.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View all commentary
+          </a>
+
+        </p>
+
       </section>
+
     </div>
 
+
+
+    <!-- Commentary note -->
+
     <p class="commentary-note">
-      Subscribe for occasional updates on new papers and accessible commentary
-      on live economic puzzles in developing economies.
+
+      Subscribe for occasional updates on new papers
+      and accessible commentary on live economic
+      puzzles in developing economies.
+
     </p>
 
+
+
+    <!-- Footer -->
+
     <footer class="footer">
-      <div>© <span id="y"></span> Collin M. Constantine</div>
+
+      <div>
+        © <span id="y"></span> Collin M. Constantine
+      </div>
+
     </footer>
+
+
   </div>
 
+
+
+  <!-- Website JavaScript -->
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Mobile navigation
-    const menuButton = document.getElementById('menu-btn');
-    const navigation = document.getElementById('site-nav');
+    /* Current year */
+
+    document.getElementById('y').textContent =
+      new Date().getFullYear();
+
+
+
+    /* Mobile menu */
+
+    const menuButton =
+      document.getElementById('menu-btn');
+
+    const navigation =
+      document.getElementById('site-nav');
+
+
     if (menuButton && navigation) {
-      menuButton.addEventListener('click', () => {
-        const open = navigation.classList.toggle('open');
-        menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
 
-    // Substack carousel
-    const substackCarousel = document.getElementById('substack-carousel');
-    const substackControls = document.getElementById('substack-carousel-controls');
-    const substackPrev = document.getElementById('substack-prev');
-    const substackNext = document.getElementById('substack-next');
-    const substackCount = document.getElementById('substack-count');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const mobileLayout = window.matchMedia('(max-width: 760px)');
-    let substackPosts = [];
-    let substackIndex = 0;
-    let substackTimer = null;
+      menuButton.addEventListener(
+        'click',
+        function () {
 
-    function showSubstackPost(index) {
-      if (!substackPosts.length) return;
-      substackIndex = (index + substackPosts.length) % substackPosts.length;
-      substackPosts.forEach((post, i) => {
-        const active = i === substackIndex;
-        post.classList.toggle('is-active', active);
-        post.setAttribute('aria-hidden', active ? 'false' : 'true');
-      });
-      if (substackCount) {
-        substackCount.textContent = `${substackIndex + 1} / ${substackPosts.length}`;
-      }
-    }
+          const open =
+            navigation.classList.toggle('open');
 
-    function stopSubstackRotation() {
-      if (substackTimer !== null) {
-        clearInterval(substackTimer);
-        substackTimer = null;
-      }
-    }
+          menuButton.setAttribute(
+            'aria-expanded',
+            open ? 'true' : 'false'
+          );
 
-    function startSubstackRotation() {
-      stopSubstackRotation();
-      if (reduceMotion.matches || mobileLayout.matches || substackPosts.length < 2) return;
-      substackTimer = setInterval(() => showSubstackPost(substackIndex + 1), 8000);
-    }
-
-    // The GitHub workflow builds this file from the Substack RSS feed.
-    async function loadSubstackFeed() {
-      const feedContainer = document.getElementById('substack-feed');
-      if (!feedContainer) return;
-
-      function showUnavailable() {
-        const message = document.createElement('p');
-        message.append('Recent posts are available on ');
-        const link = document.createElement('a');
-        link.href = 'https://collinconstantine.substack.com/';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = 'Substack';
-        message.append(link, '.');
-        feedContainer.replaceChildren(message);
-        if (substackControls) substackControls.hidden = true;
-      }
-
-      try {
-        const response = await fetch('/substack-posts.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error(`Feed HTTP ${response.status}`);
-
-        const data = await response.json();
-        if (!Array.isArray(data.posts) || data.posts.length === 0) {
-          throw new Error('Missing or empty posts array');
         }
+      );
 
-        const cards = [];
-        for (const post of data.posts.slice(0, 3)) {
-          const url = new URL(post.link);
-          if (url.protocol !== 'https:' ||
-              url.hostname !== 'collinconstantine.substack.com') continue;
-
-          const card = document.createElement('article');
-          card.className = 'feed-item';
-          card.dataset.substackPost = '';
-          card.setAttribute('aria-hidden', 'true');
-
-          const dateEl = document.createElement('div');
-          dateEl.className = 'feed-date';
-          const date = new Date(post.pubDate);
-          if (!Number.isNaN(date.getTime())) {
-            dateEl.textContent = date.toLocaleDateString('en-GB', {
-              year: 'numeric', month: 'long', day: 'numeric'
-            });
-          }
-
-          const heading = document.createElement('h3');
-          const link = document.createElement('a');
-          link.href = url.href;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.textContent = post.title || 'Read article';
-          heading.appendChild(link);
-
-          const summaryEl = document.createElement('p');
-          const summary = String(post.description || '').replace(/\s+/g, ' ').trim();
-          if (summary.length > 190) {
-            summaryEl.textContent = summary.slice(0, 190).replace(/\s+\S*$/, '') + '…';
-          } else {
-            summaryEl.textContent = summary;
-          }
-
-          card.append(dateEl, heading, summaryEl);
-          cards.push(card);
-        }
-
-        if (!cards.length) throw new Error('No valid posts');
-        feedContainer.replaceChildren(...cards);
-        substackPosts = cards;
-        substackIndex = 0;
-        if (substackControls) substackControls.hidden = cards.length < 2;
-        showSubstackPost(0);
-        startSubstackRotation();
-      } catch (error) {
-        console.error('Substack feed could not be loaded:', error);
-        showUnavailable();
-      }
     }
 
-    if (substackPrev) {
-      substackPrev.addEventListener('click', () => {
-        showSubstackPost(substackIndex - 1);
-        startSubstackRotation();
-      });
-    }
-    if (substackNext) {
-      substackNext.addEventListener('click', () => {
-        showSubstackPost(substackIndex + 1);
-        startSubstackRotation();
-      });
-    }
-    if (substackCarousel) {
-      substackCarousel.addEventListener('mouseenter', stopSubstackRotation);
-      substackCarousel.addEventListener('mouseleave', startSubstackRotation);
-      substackCarousel.addEventListener('focusin', stopSubstackRotation);
-      substackCarousel.addEventListener('focusout', startSubstackRotation);
-    }
-    [reduceMotion, mobileLayout].forEach(query => {
-      if (typeof query.addEventListener === 'function') {
-        query.addEventListener('change', startSubstackRotation);
-      } else if (typeof query.addListener === 'function') {
-        query.addListener(startSubstackRotation);
-      }
-    });
-
-    loadSubstackFeed();
   </script>
+
+
+
+  <!-- Supascribe automatic feed loader -->
+
+  <script
+    src="https://js.supascribe.com/v1/loader/j4urcr461JXe3Dk9MQYrSOSF9FN2.js"
+    async
+  ></script>
+
+
 </body>
 </html>
