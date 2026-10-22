@@ -126,14 +126,16 @@ def main():
         OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
                        encoding="utf-8")
         print(f"Wrote {len(posts)} latest posts to {OUT.name}")
+        print("Posts currently returned by the Substack feed:")
+        for post in posts:
+            print(f"  {post['pubDate'][:10]} | {post['title']}")
     except Exception as error:
-        # Keeping the checked-in snapshot is better than breaking the site.
-        if OUT.exists():
-            old = json.loads(OUT.read_text(encoding="utf-8"))
-            if old.get("posts"):
-                print(f"Feed refresh failed ({error}); using previous posts snapshot.")
-                return
-        raise
+        # Never silently deploy an old JSON snapshot as a successful refresh.
+        # A failed GitHub Actions run tells the site owner the feed needs attention.
+        raise RuntimeError(
+            f"Substack refresh FAILED; existing {OUT.name} has not been updated. "
+            f"Reason: {error}"
+        ) from error
 
 
 if __name__ == "__main__":
