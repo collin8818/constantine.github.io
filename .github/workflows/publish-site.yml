@@ -1,14 +1,29 @@
-name: Publish website and update Substack posts
+name: Publish website and update commentary
 
 on:
   push:
     branches: [main, master]
-  schedule:
-    - cron: '17 */6 * * *'
   workflow_dispatch:
+    inputs:
+      post_title:
+        description: 'New Substack post title (leave blank just to deploy)'
+        required: false
+        type: string
+      post_url:
+        description: 'Full Substack article link'
+        required: false
+        type: string
+      post_date:
+        description: 'Publication date YYYY-MM-DD'
+        required: false
+        type: string
+      post_summary:
+        description: 'Brief description for homepage'
+        required: false
+        type: string
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,14 +40,70 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          persist-credentials: true
 
-      - name: Update latest Substack posts
-        run: python scripts/update_substack.py
+      - name: Add new Substack post, if supplied
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.post_title != '' }}
+        env:
+          POST_TITLE: ${{ inputs.post_title }}
+          POST_URL: ${{ inputs.post_url }}
+          POST_DATE: ${{ inputs.post_date }}
+          POST_SUMMARY: ${{ inputs.post_summary }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import date, datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          title = os.environ['POST_TITLE'].strip()
+          link = os.environ['POST_URL'].strip()
+          date_text = os.environ['POST_DATE'].strip()
+          summary = os.environ['POST_SUMMARY'].strip()
+
+          parsed = urlparse(link)
+          if not (parsed.scheme == 'https' and
+                  parsed.hostname == 'collinconstantine.substack.com' and
+                  parsed.path.startswith('/p/')):
+              raise ValueError('Enter a valid collinconstantine.substack.com/p/ article URL.')
+          published = date.fromisoformat(date_text)
+          if not title:
+              raise ValueError('The post needs a title.')
+
+          path = Path('substack-posts.json')
+          payload = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+          posts = payload.get('posts', [])
+          new_post = {
+              'title': title,
+              'link': link,
+              'pubDate': published.isoformat() + 'T12:00:00+00:00',
+              'description': summary,
+          }
+          posts = [post for post in posts if post.get('link') != link]
+          posts.append(new_post)
+          posts.sort(key=lambda post: post.get('pubDate', ''), reverse=True)
+          payload = {
+              'updated_at': datetime.now(timezone.utc).isoformat(),
+              'posts': posts[:3],
+          }
+          path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print('Homepage commentary:')
+          for post in payload['posts']:
+              print(post['pubDate'][:10], post['title'])
+          PY
+
+      - name: Save updated posts to repository
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.post_title != '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add substack-posts.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update latest Substack commentary"
+            git push
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
